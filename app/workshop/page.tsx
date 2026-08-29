@@ -76,11 +76,18 @@ const includes = [
 ];
 
 const whoShouldCome = [
-  'Business owners curious about AI but not sure where to start',
-  'Owners who\'ve tried ChatGPT and didn\'t know what to do with it',
-  'Anyone who wants to understand what\'s happening with AI well enough to talk about it confidently',
-  'Business owners ready to actually put AI to work — not just hear about it',
-  'Managers who want to bring ideas and tools back to their team',
+  {
+    label: 'Business Owners & Operators',
+    desc: 'You run the business. You\'ve heard the AI noise and want a straight answer on what it actually means for your bottom line — and how to start using it without handing it off to someone else.',
+  },
+  {
+    label: 'General Managers & Decision Makers',
+    desc: 'You\'re responsible for how your team operates. This workshop gives you the knowledge and tools to lead AI adoption in your organization — not just approve a budget for it.',
+  },
+  {
+    label: 'The Motivated Employee — Become the AI Expert',
+    desc: 'You want to be the person who brings this back to your company. Leave the workshop as the most AI-capable person in your office — with real tools, real knowledge, and a clear plan to make an impact.',
+  },
 ];
 
 const faqs = [
@@ -210,16 +217,19 @@ export default function WorkshopPage() {
             />
           </div>
           <div>
-            <h2 className="text-3xl font-bold text-white mb-6">Who this is for</h2>
-            <ul className="space-y-4">
+            <h2 className="text-3xl font-bold text-white mb-8">Who this is for</h2>
+            <div className="space-y-6">
               {whoShouldCome.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-[#CBD5E1]/70 text-sm leading-relaxed">
-                  <CheckCircle size={16} className="text-[#1488AA] shrink-0 mt-0.5" />
-                  {item}
-                </li>
+                <div key={item.label} className="flex gap-4">
+                  <div className="w-2 h-2 rounded-full gradient-teal-blue shrink-0 mt-2" />
+                  <div>
+                    <div className="text-white font-semibold mb-1">{item.label}</div>
+                    <p className="text-[#CBD5E1]/60 text-sm leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
               ))}
-            </ul>
-            <p className="text-[#CBD5E1]/40 text-xs mt-6 leading-relaxed">
+            </div>
+            <p className="text-[#CBD5E1]/40 text-xs mt-8 leading-relaxed">
               Local North Alabama businesses only — within about 30 miles of Huntsville.
             </p>
           </div>
