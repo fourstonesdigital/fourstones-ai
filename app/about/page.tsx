@@ -89,7 +89,7 @@ export default function AboutPage() {
                 to become a full-time entrepreneur.
               </p>
               <p>
-                That transition led him to nGenius Prep — the Huntsville area&apos;s number one
+                That transition led him to <a href="https://www.ngeniusprep.com" target="_blank" rel="noopener noreferrer" className="text-[#1488AA] hover:text-[#0686D4] transition-colors">nGenius Prep</a> — the Huntsville area&apos;s number one
                 ACT test prep company, located in Madison, AL. Rather than run it the way most
                 small businesses are run, Kyle leaned into AI. He built custom tools to handle
                 scheduling, lead follow-up, student management, and reporting — systems that would
