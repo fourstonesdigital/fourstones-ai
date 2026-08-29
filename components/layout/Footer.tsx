@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -7,15 +8,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="flex gap-[3px] items-end h-6">
-                {[14, 18, 22, 16].map((h, i) => (
-                  <div key={i} className="w-[4px] rounded-sm gradient-teal-blue" style={{ height: `${h}px` }} />
-                ))}
-              </div>
-              <span className="text-white font-semibold tracking-tight">
-                Four Stones <span className="text-gradient">AI</span>
-              </span>
+            <div className="mb-4">
+              <Image
+                src="/images/logos/logo-words-right-black-bg.png"
+                alt="Four Stones AI"
+                width={180}
+                height={57}
+                className="h-8 w-auto"
+              />
             </div>
             <p className="text-[#CBD5E1]/60 text-sm leading-relaxed">
               AI consulting for small businesses that are ready to stop talking about AI and start using it.

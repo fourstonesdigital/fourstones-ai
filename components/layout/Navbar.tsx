@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 
 const navLinks = [
@@ -30,19 +31,15 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3">
-          <div className="flex gap-[3px] items-end h-7">
-            {[16, 22, 26, 20].map((h, i) => (
-              <div
-                key={i}
-                className="w-[5px] rounded-sm gradient-teal-blue"
-                style={{ height: `${h}px` }}
-              />
-            ))}
-          </div>
-          <span className="text-white font-semibold text-lg tracking-tight">
-            Four Stones <span className="text-gradient">AI</span>
-          </span>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/images/logos/logo-words-right-black-bg.png"
+            alt="Four Stones AI"
+            width={220}
+            height={70}
+            className="h-10 w-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop links */}
