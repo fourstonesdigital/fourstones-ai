@@ -33,11 +33,11 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
-            src="/images/logos/logo-words-right-black-bg.png"
+            src="/images/logos/logo-navbar.png"
             alt="Four Stones AI"
             width={220}
-            height={70}
-            className="h-10 w-auto"
+            height={66}
+            className="h-14 w-auto"
             priority
           />
         </Link>

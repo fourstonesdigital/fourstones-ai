@@ -10,11 +10,11 @@ export default function Footer() {
           <div>
             <div className="mb-4">
               <Image
-                src="/images/logos/logo-words-right-black-bg.png"
+                src="/images/logos/logo-navbar.png"
                 alt="Four Stones AI"
                 width={180}
-                height={57}
-                className="h-8 w-auto"
+                height={54}
+                className="h-10 w-auto"
               />
             </div>
             <p className="text-[#CBD5E1]/60 text-sm leading-relaxed">
