@@ -29,6 +29,7 @@ export default function Footer() {
               {[
                 { href: '/services', label: 'Services' },
                 { href: '/workshop', label: 'Workshop' },
+                { href: '/case-studies', label: 'Case Studies' },
                 { href: '/about', label: 'About' },
                 { href: '/contact', label: 'Contact' },
               ].map((l) => (
@@ -59,7 +60,10 @@ export default function Footer() {
           <p className="text-[#CBD5E1]/40 text-xs">
             © {new Date().getFullYear()} Four Stones AI — a DBA of Four Stones Digital LLC. All rights reserved.
           </p>
-          <p className="text-[#CBD5E1]/40 text-xs">Huntsville / Madison, Alabama</p>
+          <div className="flex items-center gap-4">
+            <Link href="/privacy" className="text-[#CBD5E1]/40 hover:text-[#CBD5E1] text-xs transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="text-[#CBD5E1]/40 hover:text-[#CBD5E1] text-xs transition-colors">Terms of Service</Link>
+          </div>
         </div>
       </div>
     </footer>

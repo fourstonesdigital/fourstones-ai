@@ -9,14 +9,14 @@ const services = [
     showPrice: true,
     per: 'per person',
     description:
-      'A hands-on half-day session at our Madison office. You leave with a working AI tool built for your specific business. Not a demo. An actual tool.',
+      'A hands-on 4-hour session at our Madison office. You leave with a working AI tool built for your specific business. Not a demo. An actual tool.',
     features: [
       'Small group format (10 seats max)',
       'You build something real during the session',
       'In person — Madison, AL office',
       'Works for HVAC, law, dental, trades, and more',
     ],
-    cta: 'Reserve Your Seat',
+    cta: 'Reserve Your Seat — $497',
     href: '/workshop',
     highlight: false,
   },
@@ -60,12 +60,12 @@ const stats = [
   { value: 'EE PhD', label: 'Engineering credentials' },
   { value: '10+', label: 'AI systems built & deployed' },
   { value: 'Local', label: 'Huntsville, Madison & surrounding areas' },
-  { value: '100%', label: 'In-person. Face to face.' },
+  { value: 'Local', label: 'In person or Zoom — your call' },
 ];
 
 const localAreas = [
-  'Huntsville', 'Madison', 'Athens', 'Meridianville',
-  'Hazel Green', 'Gurley', 'Decatur', 'Harvest', 'Toney', 'New Market',
+  'Huntsville', 'Madison', 'Athens',
+  'North Alabama', 'Tennessee Valley', 'and surrounding areas',
 ];
 
 const industries = [
@@ -86,7 +86,7 @@ const faqs = [
   },
   {
     q: 'Is everything done in person?',
-    a: 'Yes — that\'s the point. Kyle is local and happy to meet at your office or his. He can also do a call if that makes sense as a first step, but the real work happens in person.',
+    a: 'The workshop is always in person at the Madison, AL office. For consulting and custom builds, Kyle is happy to meet at your location, his office, or on Zoom — whatever works best for you.',
   },
   {
     q: 'What area do you serve?',
@@ -111,14 +111,13 @@ export default function HomePage() {
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
 
           <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-6 tracking-tight">
-            North Alabama&apos;s
+            Stop talking about AI.
             <br />
-            <span className="text-gradient">local AI consultant.</span>
+            <span className="text-gradient">Start using it.</span>
           </h1>
 
           <p className="text-xl text-[#CBD5E1]/80 leading-relaxed max-w-2xl mx-auto mb-10">
-            Four Stones AI works exclusively with businesses in the Huntsville, Madison region
-            and surrounding areas — in person, face to face. Real AI tools built for real North Alabama businesses.
+            Four Stones AI works with businesses in the Huntsville–Madison area and surrounding North Alabama communities — in person or on Zoom. Real AI tools, built for real business problems.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -126,7 +125,7 @@ export default function HomePage() {
               href="/workshop"
               className="group px-8 py-4 text-base font-semibold text-white rounded-xl gradient-teal-blue hover:opacity-90 shadow-lg hover:shadow-[#1488AA]/30 transition-all flex items-center gap-2"
             >
-              Join the Workshop — $497
+              Reserve Your Seat — $497
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
@@ -159,9 +158,8 @@ export default function HomePage() {
                 <span className="text-gradient">a local AI expert.</span>
               </h2>
               <p className="text-[#CBD5E1]/70 leading-relaxed mb-6">
-                Most AI consultants are somewhere else — on a Zoom call, sending slide decks,
-                charging you for time zones. Kyle Montgomery is local, based in the Huntsville area, and happy to meet at your office to learn your operation firsthand
-                and build something that actually fits how you run things.
+                Most AI consultants are somewhere else — sending
+                a Zoom window and a slide deck from three time zones away. Kyle Montgomery is local, based in the Huntsville area, and happy to meet at your office or connect on Zoom to learn your operation firsthand and build something that actually fits how you run things.
               </p>
               <p className="text-[#CBD5E1]/70 leading-relaxed mb-8">
                 Whether you&apos;re an HVAC company in Athens, a law firm in Huntsville, or
@@ -177,7 +175,7 @@ export default function HomePage() {
             </div>
             <div className="space-y-4">
               {[
-                { icon: MapPin, title: 'In person. Always.', desc: 'Kyle comes to you or you come to the office in Madison. He can do a call as a first step — but the real work happens face to face.' },
+                { icon: MapPin, title: 'In person or on Zoom.', desc: 'Kyle comes to you, you come to the office in Madison, or you connect on Zoom — whatever works best for your schedule.' },
                 { icon: Users, title: 'Built for your workflow', desc: 'Not a generic tool. Custom AI designed around how your specific business actually runs — your data, your processes, your team.' },
                 { icon: TrendingUp, title: 'ROI you can measure', desc: 'Time saved, money recovered, staff hours freed up. Kyle focuses on results that show up in your bottom line.' },
               ].map(({ icon: Icon, title, desc }) => (
@@ -225,8 +223,8 @@ export default function HomePage() {
               Three ways to work together
             </h2>
             <p className="text-[#CBD5E1]/60 max-w-xl mx-auto">
-              All work is done in person, in North Alabama. Start with the workshop,
-              or reach out directly if you already know what you need.
+              All engagements start with a conversation — in person at your location or on Zoom, whatever works for you.
+              Start with the workshop, or reach out directly if you already know what you need.
             </p>
           </div>
 
@@ -354,11 +352,11 @@ export default function HomePage() {
               </h2>
               <p className="text-[#CBD5E1]/70 mb-8">
                 Start with the $497 workshop at our Madison, AL office. Walk out with a working
-                AI tool built for your business. Face to face. No fluff.
+                AI tool built for your business. No fluff, no slides — just results.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/workshop" className="group px-8 py-4 font-semibold text-white rounded-xl gradient-teal-blue hover:opacity-90 flex items-center gap-2 justify-center">
-                  Join the Workshop
+                  Reserve Your Seat — $497
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link href="/contact" className="px-8 py-4 font-semibold text-[#CBD5E1] rounded-xl border border-white/10 hover:bg-white/5 transition-all">

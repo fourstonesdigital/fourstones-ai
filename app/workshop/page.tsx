@@ -109,11 +109,11 @@ const faqs = [
   },
   {
     q: 'Is this in person?',
-    a: 'Yes. Held at the Four Stones AI office in Madison, AL. This workshop is for businesses in the Huntsville, Madison region and surrounding areas. Check Eventbrite for the latest dates and start times.',
+    a: 'Yes. Held at the Four Stones AI office in Madison, AL. This workshop is for businesses in the Huntsville–Madison area and surrounding areas. Check Eventbrite for the latest dates and start times.',
   },
   {
     q: 'What\'s the refund policy?',
-    a: 'Full refund if you cancel more than 48 hours before the session. No refund for no-shows.',
+    a: 'Full refund if you cancel at least 48 hours before the session. No refund for no-shows.'
   },
 ];
 
@@ -302,7 +302,7 @@ export default function WorkshopPage() {
               Questions? Contact Kyle
             </Link>
             <p className="text-center text-[#CBD5E1]/40 text-xs mt-4">
-              Full refund if cancelled 48+ hours before session
+              Full refund if cancelled at least 48 hours before session
             </p>
           </div>
         </div>

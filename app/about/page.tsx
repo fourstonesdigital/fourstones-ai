@@ -168,8 +168,7 @@ export default function AboutPage() {
                 ))}
               </ul>
               <p className="text-[#CBD5E1]/50 text-sm mt-8 leading-relaxed">
-                The workshops are held at the nGenius Prep office in Madison, AL — the same
-                place where all of this was built.
+                Workshops are held at the Four Stones AI office in Madison, AL — a suite shared with nGenius Prep, where all of these tools were originally built.
               </p>
             </div>
           </div>
@@ -188,7 +187,7 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/workshop" className="px-8 py-4 font-semibold text-white rounded-xl gradient-teal-blue hover:opacity-90 transition-all">
-              Join the Workshop
+              Reserve Your Seat — $497
             </Link>
             <Link href="/contact" className="px-8 py-4 font-semibold text-[#CBD5E1] rounded-xl border border-white/10 hover:bg-white/5 transition-all">
               Get in Touch

@@ -6,7 +6,7 @@ const process = [
   {
     step: '01',
     title: 'Reach out',
-    desc: 'Fill out the contact form or sign up for the workshop. Kyle reviews every inquiry personally and gets back to you within one business day.',
+    desc: 'Fill out the contact form or sign up for the workshop. Kyle responds within one business day.',
   },
   {
     step: '02',
@@ -36,7 +36,7 @@ const tiers = [
       'A hands-on workshop for business owners, managers, and motivated employees who want to understand AI, learn to use it, and leave with a working tool built for their specific business.',
     tagline: 'Start here',
     href: '/workshop',
-    ctaText: 'Reserve Your Seat',
+    ctaText: 'Reserve Your Seat — $497',
     features: [
       { label: 'In-person, Madison AL office', icon: MapPin },
       { label: 'Small group (10 max)', icon: Users },
