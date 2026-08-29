@@ -69,14 +69,7 @@ export default function AboutPage() {
                 priority
               />
             </div>
-            {/* Credential tag — below photo, not overlapping */}
-            <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-[#0B0F14] border border-[#1488AA]/20">
-              <div className="w-8 h-8 rounded-lg gradient-teal-blue flex items-center justify-center shrink-0 text-white text-xs font-bold">PhD</div>
-              <div>
-                <div className="text-white text-sm font-semibold">Electrical Engineering</div>
-                <div className="text-[#1488AA] text-xs">Purdue University</div>
-              </div>
-            </div>
+
           </div>
 
           {/* Bio */}
