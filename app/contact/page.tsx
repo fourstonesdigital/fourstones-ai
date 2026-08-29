@@ -78,12 +78,10 @@ export default function ContactPage() {
                     <Phone size={18} className="text-white" />
                   </div>
                   <div>
-                    <div className="text-white font-medium text-sm">Service Area</div>
-                    <p className="text-[#CBD5E1]/60 text-sm mt-1">
-                      Within ~30 miles of Huntsville<br />
-                      Huntsville · Madison · Athens<br />
-                      Meridianville · Hazel Green · Gurley
-                    </p>
+                    <div className="text-white font-medium text-sm">Phone</div>
+                    <a href="tel:+12568090048" className="text-[#CBD5E1]/60 hover:text-white text-sm mt-1 block transition-colors">
+                      (256) 809-0048
+                    </a>
                   </div>
                 </div>
               </div>

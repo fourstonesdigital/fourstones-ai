@@ -47,8 +47,8 @@ export default function Footer() {
             <address className="not-italic text-[#CBD5E1]/60 text-sm leading-relaxed">
               7771 Hwy 72 W, Suite C<br />
               Madison, AL 35758<br /><br />
-              Serving within ~30 miles of Huntsville<br />
-              <a href="/contact" className="text-[#1488AA] hover:text-white transition-colors mt-2 inline-block">
+              <a href="tel:+12568090048" className="hover:text-white transition-colors">(256) 809-0048</a><br />
+              <a href="/contact" className="text-[#1488AA] hover:text-white transition-colors mt-1 inline-block">
                 Send a message →
               </a>
             </address>
