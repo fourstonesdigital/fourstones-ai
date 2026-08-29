@@ -19,8 +19,8 @@ const credentials = [
   },
   {
     icon: Award,
-    title: 'Local Presence',
-    desc: 'Based in Madison, AL with a physical office. Not a remote consultant you Zoom with once and never hear from again.',
+    title: 'Local — In Person Only',
+    desc: 'Lives in Meridianville, office in Madison. Serves Huntsville, Athens, Hazel Green, Gurley, and surrounding communities. All work done face to face.',
   },
 ];
 
@@ -43,13 +43,13 @@ export default function AboutPage() {
             About Four Stones AI
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
-            This isn&apos;t a{' '}
-            <span className="text-gradient">consulting firm</span> that
-            discovered AI last year.
+            A North Alabama guy
+            <br />
+            <span className="text-gradient">who builds AI for a living.</span>
           </h1>
           <p className="text-xl text-[#CBD5E1]/70 leading-relaxed max-w-2xl">
-            Kyle Montgomery has been building with AI for years — before it was
-            trendy. He built the tools. They worked. Now he builds them for you.
+            Kyle Montgomery lives in Meridianville, works locally, and brings a PhD in
+            engineering and years of real AI builds to every client engagement — in person.
           </p>
         </div>
       </section>
@@ -81,28 +81,28 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold text-white mb-6">Meet Kyle Montgomery</h2>
             <div className="space-y-4 text-[#CBD5E1]/70 leading-relaxed">
               <p>
-                Kyle Montgomery holds a PhD in Electrical Engineering from Purdue University and
-                spent years in aerospace and defense before pivoting to something he cared about more:
-                helping businesses run smarter.
+                Kyle Montgomery holds a PhD in Electrical Engineering from Purdue University.
+                He lives in Meridianville, AL with his family and works exclusively with
+                businesses in the North Alabama area — Huntsville, Madison, Athens, Hazel Green,
+                Gurley, and nearby communities.
               </p>
               <p>
-                A few years ago, Kyle acquired nGenius Prep, a test prep company in Madison, AL.
-                Rather than run it the way everyone else runs a tutoring business, he built the
-                entire software infrastructure from scratch using AI — student management, scheduling,
-                automated follow-up, a custom testing platform. The kind of system that would
-                normally cost a company $10K–$50K to have built. He did it himself, proving that
-                AI in the right hands can make a small business operate like a much bigger one.
+                Kyle runs nGenius Prep, a test prep company in Madison, AL. Instead of using
+                off-the-shelf software like everyone else, he built the entire platform himself
+                using AI — student management, scheduling, automated follow-up, a live testing
+                app. A system that would cost $10K–$50K to hire out. He built it solo,
+                proving that AI done right can make a small local business punch way above its weight.
               </p>
               <p>
-                Four Stones AI is the natural extension of that work. Kyle now helps other business
-                owners do what he did for himself: identify the places where AI can save real time
-                and real money, then actually build the thing.
+                Four Stones AI is that same approach, applied to your business. Kyle meets with
+                you in person — at your office or his — learns your workflows, and builds
+                something that actually works. No remote-only consultants. No boilerplate solutions.
+                Just a local guy with real engineering chops who&apos;s done this before.
               </p>
               <p>
-                He&apos;s based in Madison, AL, has a physical office, and takes a deliberately
-                limited number of clients so the work is always done right. If you want someone
-                who&apos;s actually done this before — not just read about it — you&apos;re in
-                the right place.
+                He works with a small number of clients at a time so the work is done right.
+                If you&apos;re a North Alabama business owner ready to actually use AI,
+                this is the right call.
               </p>
             </div>
             <div className="mt-8">

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, CheckCircle, Zap, Users, TrendingUp, Star } from 'lucide-react';
+import { ArrowRight, CheckCircle, Zap, Users, TrendingUp, Star, MapPin } from 'lucide-react';
 
 const services = [
   {
@@ -7,12 +7,12 @@ const services = [
     price: '$497',
     per: 'per person',
     description:
-      'A hands-on half-day session where you leave with a working AI tool built for your specific business. Not a demo. Not a slide deck. An actual tool.',
+      'A hands-on half-day session at our Madison office. You leave with a working AI tool built for your specific business. Not a demo. An actual tool.',
     features: [
       'Small group format (10 seats max)',
       'You build something real during the session',
-      'Works for HVAC, law, dental, real estate, and more',
-      'Held at our Madison, AL office',
+      'In person — Madison, AL office',
+      'Works for HVAC, law, dental, trades, and more',
     ],
     cta: 'Reserve Your Seat',
     href: '/workshop',
@@ -23,9 +23,9 @@ const services = [
     price: '$15K–$25K',
     per: 'flat project',
     description:
-      'We map your entire business process, find every place AI can save you time or money, and deliver a prioritized implementation roadmap. Then we build it.',
+      'Kyle comes to your business, maps your workflows in person, identifies every AI opportunity, and delivers a prioritized roadmap. Then we build it.',
     features: [
-      'Full business process review',
+      'On-site business process review',
       'AI opportunity assessment',
       'Prioritized implementation plan',
       'Includes executive presentation',
@@ -39,12 +39,12 @@ const services = [
     price: '$25K–$50K+',
     per: 'per project',
     description:
-      'Done-for-you custom AI tools and automations built into your existing workflows. We engineer it, deploy it, train your team, and hand you the keys.',
+      'Done-for-you custom AI tools built into your existing workflows. We engineer it, deploy it, train your team on-site, and hand you the keys.',
     features: [
       'Full custom AI system development',
       'Integration with your existing software',
-      'Staff training and documentation',
-      'Ongoing support available',
+      'On-site staff training + documentation',
+      'You own all code and IP',
     ],
     cta: 'Start the Conversation',
     href: '/contact',
@@ -54,38 +54,43 @@ const services = [
 
 const stats = [
   { value: 'EE PhD', label: 'Engineering credentials' },
-  { value: '10+', label: 'AI systems built and deployed' },
-  { value: '$0', label: 'Fluff. Pure implementation.' },
-  { value: 'Local', label: 'North Alabama-based' },
+  { value: '10+', label: 'AI systems built & deployed' },
+  { value: '30 mi', label: 'Service radius from Meridianville' },
+  { value: '100%', label: 'In-person. No Zoom.' },
+];
+
+const localAreas = [
+  'Huntsville', 'Madison', 'Athens', 'Meridianville',
+  'Hazel Green', 'Gurley', 'Decatur', 'Harvest', 'Toney', 'New Market',
 ];
 
 const industries = [
   'HVAC & Home Services',
   'Law Firms',
-  'Dental Offices',
+  'Dental & Medical Offices',
   'Insurance Agencies',
   'Real Estate',
-  'Medical Practices',
   'Accounting Firms',
-  'Retail & E-commerce',
+  'Contractors & Trades',
+  'Local Retailers',
 ];
 
 const faqs = [
   {
-    q: "Do I need to understand AI to work with you?",
-    a: "No. That's literally the point. You understand your business. We handle the AI. You just need to show up with a real problem you want to solve.",
+    q: 'Do I need to understand AI to work with you?',
+    a: 'No. You understand your business. Kyle handles the AI. Show up with a real problem and he\'ll figure out the solution.',
   },
   {
-    q: "How is this different from ChatGPT?",
-    a: "ChatGPT is a general tool. We build AI systems that are specific to your business — trained on your data, integrated into your workflow, and doing your actual work.",
+    q: 'Is everything done in person?',
+    a: 'Yes — that\'s the point. Kyle meets at your office or his, learns your operation firsthand, and builds something that fits how you actually work. No Zoom-only consultants here.',
   },
   {
-    q: "What kinds of businesses do you work with?",
-    a: "Service-based SMBs primarily — HVAC, law, dental, insurance, real estate, and similar. If you have repetitive processes and a team, AI can almost certainly help.",
+    q: 'What area do you serve?',
+    a: 'Huntsville, Madison, Athens, Meridianville, Hazel Green, Gurley, and the surrounding North Alabama area — roughly a 30-mile radius from Meridianville. If you\'re local, you\'re in the right place.',
   },
   {
-    q: "Where are you located?",
-    a: "Our office is in Madison, AL (7771 Hwy 72 W, Suite C). We serve the Huntsville/Madison metro and work with businesses nationally for custom builds.",
+    q: 'How is this different from ChatGPT?',
+    a: 'ChatGPT is a general tool. Four Stones AI builds systems specific to your business — trained on your data, integrated into your workflow, and doing your actual work automatically.',
   },
 ];
 
@@ -94,7 +99,6 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="relative min-h-screen flex items-center justify-center bg-grid overflow-hidden pt-24">
-        {/* Background glow */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#1488AA]/10 rounded-full blur-[120px]" />
           <div className="absolute top-1/3 left-1/3 w-[400px] h-[400px] bg-[#0686D4]/8 rounded-full blur-[100px]" />
@@ -102,19 +106,19 @@ export default function HomePage() {
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#1488AA]/30 bg-[#1488AA]/10 text-[#1488AA] text-sm font-medium mb-8">
-            <Zap size={14} />
-            AI Consulting for Small Business — Huntsville, AL
+            <MapPin size={14} />
+            North Alabama AI Consulting — Huntsville · Madison · Athens · Meridianville
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-6 tracking-tight">
-            Stop talking about AI.
+            North Alabama&apos;s
             <br />
-            <span className="text-gradient">Start using it.</span>
+            <span className="text-gradient">local AI consultant.</span>
           </h1>
 
           <p className="text-xl text-[#CBD5E1]/80 leading-relaxed max-w-2xl mx-auto mb-10">
-            Four Stones AI builds custom AI tools for small businesses that actually work — not
-            demos, not PowerPoints. Real automation for real businesses.
+            Four Stones AI works exclusively with businesses in the Huntsville metro area —
+            in person, on-site, face to face. Real AI tools built for real North Alabama businesses.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -122,14 +126,14 @@ export default function HomePage() {
               href="/workshop"
               className="group px-8 py-4 text-base font-semibold text-white rounded-xl gradient-teal-blue hover:opacity-90 shadow-lg hover:shadow-[#1488AA]/30 transition-all flex items-center gap-2"
             >
-              Join the Next Workshop — $497
+              Join the Workshop — $497
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
-              href="/services"
+              href="/contact"
               className="px-8 py-4 text-base font-semibold text-[#CBD5E1] rounded-xl border border-white/10 hover:bg-white/5 hover:border-[#1488AA]/40 transition-all"
             >
-              See All Services
+              Talk to Kyle
             </Link>
           </div>
 
@@ -145,23 +149,25 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Problem / Positioning */}
+      {/* Local positioning */}
       <section className="py-24 px-6 bg-[#111827]">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
-                Every business owner has heard{' '}
-                <span className="text-gradient">&ldquo;you need to use AI.&rdquo;</span>
+                North Alabama businesses deserve{' '}
+                <span className="text-gradient">a local AI expert.</span>
               </h2>
               <p className="text-[#CBD5E1]/70 leading-relaxed mb-6">
-                Most of them have tried it. They played with ChatGPT for a week, got confused, and
-                went back to the way things were. Because general AI tools aren't built for your business.
+                Most AI consultants are somewhere else — on a Zoom call, sending slide decks,
+                and charging you for travel. Kyle Montgomery lives in Meridianville and works
+                exclusively in North Alabama. He meets at your office, learns your operation
+                in person, and builds something that actually works for the way you run things.
               </p>
               <p className="text-[#CBD5E1]/70 leading-relaxed mb-8">
-                Four Stones AI is different. We don't sell software. We don't run webinars about
-                the &ldquo;AI revolution.&rdquo; We sit down with you, understand your actual workflows,
-                and build something that replaces hours of manual work every week.
+                Whether you&apos;re an HVAC company in Athens, a law firm on the Parkway, or
+                a contractor in Madison — if you&apos;re within 30 miles and ready to put AI
+                to work, this is the call to make.
               </p>
               <Link
                 href="/about"
@@ -172,9 +178,9 @@ export default function HomePage() {
             </div>
             <div className="space-y-4">
               {[
-                { icon: Zap, title: 'Built for your business', desc: 'Not a generic tool. Custom AI that knows your workflow, your clients, your data.' },
-                { icon: Users, title: 'Hands-on, not theoretical', desc: 'You walk away from every engagement with something that actually runs. Not a roadmap.' },
-                { icon: TrendingUp, title: 'ROI you can measure', desc: "We focus on time saved and revenue recovered — not AI for the sake of AI." },
+                { icon: MapPin, title: 'In person. Always.', desc: 'Kyle comes to you or you come to the office in Madison. No remote-only work. He needs to see your operation to build something real.' },
+                { icon: Users, title: 'Built for your workflow', desc: 'Not a generic tool. Custom AI designed around how your specific business actually runs — your data, your processes, your team.' },
+                { icon: TrendingUp, title: 'ROI you can measure', desc: 'Time saved, money recovered, staff hours freed up. Kyle focuses on results that show up in your bottom line.' },
               ].map(({ icon: Icon, title, desc }) => (
                 <div key={title} className="flex gap-4 p-5 rounded-xl bg-[#0B0F14] border border-white/5 hover:border-[#1488AA]/20 transition-colors">
                   <div className="w-10 h-10 rounded-lg gradient-teal-blue flex items-center justify-center shrink-0">
@@ -199,7 +205,8 @@ export default function HomePage() {
               Three ways to work together
             </h2>
             <p className="text-[#CBD5E1]/60 max-w-xl mx-auto">
-              Start with the workshop and see what&apos;s possible. Or jump straight to a custom build if you already know what you need.
+              All work is done in person, in North Alabama. Start with the workshop and see
+              what&apos;s possible, or reach out directly if you already know what you need.
             </p>
           </div>
 
@@ -250,25 +257,48 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Industries */}
+      {/* Local areas + industries */}
       <section className="py-24 px-6 bg-[#111827]">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Built for service businesses
-          </h2>
-          <p className="text-[#CBD5E1]/60 mb-12 max-w-xl mx-auto">
-            If you have a team, repeatable processes, and customers — AI can make you faster,
-            cheaper, and better than your competition.
-          </p>
-          <div className="flex flex-wrap gap-3 justify-center">
-            {industries.map((ind) => (
-              <span
-                key={ind}
-                className="px-5 py-2.5 rounded-full bg-[#0B0F14] border border-white/8 text-[#CBD5E1]/70 text-sm hover:border-[#1488AA]/30 hover:text-white transition-all"
-              >
-                {ind}
-              </span>
-            ))}
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16">
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4">
+                Serving these communities
+              </h2>
+              <p className="text-[#CBD5E1]/60 mb-8 text-sm leading-relaxed">
+                Kyle works within roughly 30 miles of Meridianville — the heart of North Alabama.
+                If your business is here, he can be at your door.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {localAreas.map((area) => (
+                  <span
+                    key={area}
+                    className="px-4 py-2 rounded-full bg-[#0B0F14] border border-[#1488AA]/20 text-[#CBD5E1]/70 text-sm hover:text-white hover:border-[#1488AA]/50 transition-all"
+                  >
+                    {area}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4">
+                Industries we work with
+              </h2>
+              <p className="text-[#CBD5E1]/60 mb-8 text-sm leading-relaxed">
+                Service-based businesses with teams and repeatable processes — AI can make
+                you faster and cheaper than your competition.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {industries.map((ind) => (
+                  <span
+                    key={ind}
+                    className="px-4 py-2 rounded-full bg-[#0B0F14] border border-white/8 text-[#CBD5E1]/70 text-sm hover:border-[#1488AA]/30 hover:text-white transition-all"
+                  >
+                    {ind}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -299,12 +329,15 @@ export default function HomePage() {
           <div className="relative p-12 rounded-2xl bg-gradient-to-b from-[#1488AA]/10 to-[#0686D4]/5 border border-[#1488AA]/20 overflow-hidden">
             <div className="absolute inset-0 bg-grid opacity-30" />
             <div className="relative z-10">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1488AA]/30 bg-[#1488AA]/10 text-[#1488AA] text-xs font-medium mb-6">
+                <MapPin size={12} /> North Alabama — In Person Only
+              </div>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Ready to see what AI can actually do for your business?
+                Local business. Local consultant. Real results.
               </h2>
               <p className="text-[#CBD5E1]/70 mb-8">
-                Start with a $497 workshop. Walk out with a working tool and a clear picture of
-                what&apos;s possible. No commitment beyond that.
+                Start with the $497 workshop at our Madison, AL office. Walk out with a working
+                AI tool built for your business. In person. No Zoom. No fluff.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
@@ -318,7 +351,7 @@ export default function HomePage() {
                   href="/contact"
                   className="px-8 py-4 font-semibold text-[#CBD5E1] rounded-xl border border-white/10 hover:bg-white/5 transition-all"
                 >
-                  Contact Kyle Directly
+                  Talk to Kyle
                 </Link>
               </div>
             </div>

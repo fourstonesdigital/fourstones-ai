@@ -45,11 +45,12 @@ export default function ContactPage() {
             Get in Touch
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
-            Let&apos;s talk about your business.
+            Let&apos;s meet and talk about your business.
           </h1>
           <p className="text-lg text-[#CBD5E1]/70 leading-relaxed max-w-xl mx-auto">
-            Fill out the form below or reach out directly. Kyle personally reviews
-            every inquiry — you&apos;ll hear back within one business day.
+            Kyle works with businesses in the Huntsville, Madison, Athens, Meridianville,
+            and surrounding North Alabama area — in person. Fill out the form and he&apos;ll
+            be in touch within one business day.
           </p>
         </div>
       </section>
@@ -94,8 +95,8 @@ export default function ContactPage() {
             <div className="p-6 rounded-xl bg-[#0B0F14] border border-[#1488AA]/20">
               <h3 className="text-white font-semibold mb-3">Not sure what you need?</h3>
               <p className="text-[#CBD5E1]/60 text-sm leading-relaxed mb-4">
-                Start with the $497 workshop. It&apos;s the fastest way to find out what
-                AI can do for your specific business — with no commitment beyond the day.
+                Start with the $497 in-person workshop in Madison, AL. It&apos;s the fastest
+                way to see what AI can do for your North Alabama business — no commitment beyond the day.
               </p>
               <a
                 href="/workshop"
