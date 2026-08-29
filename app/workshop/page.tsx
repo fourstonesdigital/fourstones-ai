@@ -126,9 +126,6 @@ export default function WorkshopPage() {
           <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[#1488AA]/8 rounded-full blur-[100px]" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#1488AA]/30 bg-[#1488AA]/10 text-[#1488AA] text-sm font-medium mb-8">
-            <MapPin size={14} /> In-Person Workshop — Madison, AL
-          </div>
           <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
             Understand AI.
             <br />

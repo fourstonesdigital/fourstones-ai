@@ -43,9 +43,6 @@ export default function ContactPage() {
           <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-[#1488AA]/8 rounded-full blur-[100px]" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#1488AA]/30 bg-[#1488AA]/10 text-[#1488AA] text-sm font-medium mb-8">
-            <MapPin size={14} /> North Alabama — In Person
-          </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
             Let&apos;s meet and talk about your business.
           </h1>
@@ -228,7 +225,7 @@ export default function ContactPage() {
                     className="w-full px-4 py-3 rounded-lg bg-[#0B0F14] border border-white/10 text-white focus:outline-none focus:border-[#1488AA]/50 transition-colors text-sm"
                   >
                     <option value="">Choose one</option>
-                    <option>AI Workshop ($497/person)</option>
+                    <option>AI Implementation Workshop</option>
                     <option>AI Consulting / Process Review</option>
                     <option>Custom AI Tool Build</option>
                     <option>Not sure yet — want to talk first</option>

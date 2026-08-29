@@ -117,9 +117,6 @@ export default function ServicesPage() {
           <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-[#0686D4]/8 rounded-full blur-[100px]" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#1488AA]/30 bg-[#1488AA]/10 text-[#1488AA] text-sm font-medium mb-8">
-            <MapPin size={14} /> Huntsville, Madison & Surrounding Areas
-          </div>
           <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
             Three ways to work together —
             <br />

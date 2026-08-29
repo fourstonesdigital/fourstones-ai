@@ -40,9 +40,6 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-grid opacity-50" />
         <div className="absolute top-20 right-20 w-96 h-96 bg-[#1488AA]/8 rounded-full blur-[100px]" />
         <div className="relative z-10 max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#1488AA]/30 bg-[#1488AA]/10 text-[#1488AA] text-sm font-medium mb-8">
-            About Four Stones AI
-          </div>
           <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
             Built by someone who did it
             <br />
