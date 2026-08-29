@@ -58,8 +58,8 @@ export default function AboutPage() {
       <section className="py-20 px-6 bg-[#111827]">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           {/* Photo */}
-          <div className="relative">
-            <div className="aspect-square rounded-2xl overflow-hidden border border-[#1488AA]/20">
+          <div>
+            <div className="aspect-square rounded-2xl overflow-hidden border border-[#1488AA]/20 mb-4">
               <Image
                 src="/images/kyle.jpg"
                 alt="Kyle Montgomery — Four Stones AI"
@@ -69,11 +69,13 @@ export default function AboutPage() {
                 priority
               />
             </div>
-            {/* Credential card */}
-            <div className="absolute -bottom-4 -right-4 p-4 rounded-xl bg-[#0B0F14] border border-[#1488AA]/20 shadow-xl">
-              <div className="text-2xl font-bold text-white">PhD</div>
-              <div className="text-xs text-[#CBD5E1]/60">Electrical Engineering</div>
-              <div className="text-xs text-[#1488AA]">Purdue University</div>
+            {/* Credential tag — below photo, not overlapping */}
+            <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-[#0B0F14] border border-[#1488AA]/20">
+              <div className="w-8 h-8 rounded-lg gradient-teal-blue flex items-center justify-center shrink-0 text-white text-xs font-bold">PhD</div>
+              <div>
+                <div className="text-white text-sm font-semibold">Electrical Engineering</div>
+                <div className="text-[#1488AA] text-xs">Purdue University</div>
+              </div>
             </div>
           </div>
 
