@@ -6,75 +6,81 @@ const whatYouLearn = [
   {
     icon: BookOpen,
     title: 'What AI actually is — and isn\'t',
-    desc: 'Cut through the hype. Understand what these tools can realistically do for a service business in 2025, and what\'s still a long way off.',
+    desc: 'Cut through the hype. Understand what these tools can realistically do for a service business right now, and what\'s still a long way off. Leave with enough knowledge to talk about it confidently with your peers.',
   },
   {
     icon: Lightbulb,
     title: 'How to spot AI opportunities in your business',
-    desc: 'Learn the framework Kyle uses to identify which workflows are ripe for automation — so you can keep finding opportunities long after the workshop.',
+    desc: 'Learn the framework Kyle uses to identify which workflows are ripe for automation — so you can keep finding opportunities on your own long after the workshop.',
   },
   {
     icon: Wrench,
-    title: 'How to use AI tools on your own',
-    desc: 'Hands-on demonstrations with the actual tools — not slides about them. You\'ll use them yourself during the session and leave knowing how to keep building.',
+    title: 'How to use AI tools yourself',
+    desc: 'Hands-on time with the actual tools — not slides about them. You\'ll use them during the session and leave knowing how to keep building on your own without needing to hire anyone.',
   },
   {
     icon: CheckCircle,
     title: 'Walk out with something that works',
-    desc: 'You don\'t just learn about AI — you build a real tool for your business during the session and take it home running.',
+    desc: 'You don\'t just learn about AI — you build a real tool for your business during the session and take it home running. Something you can put to use the next day.',
   },
 ];
 
 const agenda = [
   {
-    time: '9:00 AM',
+    part: 'Part 1',
     title: 'The AI Landscape — What\'s Actually Happening',
-    desc: 'A grounded overview of where AI is today, what\'s changed in the last few years, and why it matters specifically for small service businesses in North Alabama. No hype, no sci-fi — just what\'s real and useful right now.',
+    desc: 'A grounded overview of where AI is today, what\'s changed in the last few years, and why it matters for small service businesses. No hype, no sci-fi — just what\'s real, what\'s useful, and what you actually need to know.',
+    isBreak: false,
   },
   {
-    time: '9:45 AM',
+    part: 'Part 2',
     title: 'Live Demos — See It Working',
-    desc: 'Kyle demonstrates AI tools live, applied to real business scenarios. You\'ll see exactly how a law firm, HVAC company, or dental office could use these tools today. Then you try them yourself.',
+    desc: 'Kyle demonstrates AI tools live, applied to real business scenarios relevant to the group. You\'ll see exactly how businesses like yours could be using these tools today — then try them yourself.',
+    isBreak: false,
   },
   {
-    time: '10:30 AM',
+    part: 'Part 3',
     title: 'Your Business, Your Opportunities',
     desc: 'We map out each participant\'s workflows and identify where AI can have the biggest impact. You leave knowing your specific opportunities — not just general possibilities.',
+    isBreak: false,
   },
   {
-    time: '11:15 AM',
-    title: 'Build Session — Build Your Tool',
-    desc: 'Guided hands-on building. You pick the tool most useful to your business and Kyle walks you through building it step by step. Every participant builds something different.',
-  },
-  {
-    time: '12:15 PM',
+    part: 'Break',
     title: 'Break + Open Q&A',
-    desc: 'Coffee, lunch, questions. Kyle answers anything — about your business, the tools, what to do next.',
+    desc: 'Coffee, questions, conversation. Kyle answers anything — about your business, the tools, what to build, or where to start.',
+    isBreak: true,
   },
   {
-    time: '12:45 PM',
+    part: 'Part 4',
+    title: 'Build Session — Build Your Tool',
+    desc: 'Guided hands-on building. You pick the AI tool most useful to your business and Kyle walks you through building it step by step. Every participant builds something different, specific to their operation.',
+    isBreak: false,
+  },
+  {
+    part: 'Part 5',
     title: 'What\'s Next — Building From Here',
-    desc: 'How to keep using and expanding what you built. Resources, next steps, and a clear picture of where AI can take your business from here.',
+    desc: 'How to keep using and expanding what you built on your own. Resources, next steps, and a clear picture of where AI can take your business. You leave equipped to keep going independently.',
+    isBreak: false,
   },
 ];
 
 const includes = [
-  'Full AI landscape briefing — what\'s real, what\'s hype',
-  'Live demonstrations with actual tools',
-  'Hands-on time using AI tools yourself',
-  'Personalized opportunity mapping for your business',
+  'Full AI landscape briefing — what\'s real, what\'s hype, what matters to you',
+  'Live tool demonstrations with real business scenarios',
+  'Hands-on time using AI tools yourself during the session',
+  'Personalized opportunity mapping for your specific business',
   'One working AI tool you built, tested, and take home',
   'Resource guide for continuing to build on your own',
   'Light breakfast and coffee',
-  'Small group (10 max) — real attention, not a lecture',
+  'Small group (10 max) — real attention, not a lecture hall',
 ];
 
 const whoShouldCome = [
   'Business owners curious about AI but not sure where to start',
   'Owners who\'ve tried ChatGPT and didn\'t know what to do with it',
-  'Anyone who wants to understand what\'s happening with AI so they can talk about it confidently',
-  'Business owners ready to actually put AI to work — not just learn about it',
-  'Managers who want to bring ideas back to their team',
+  'Anyone who wants to understand what\'s happening with AI well enough to talk about it confidently',
+  'Business owners ready to actually put AI to work — not just hear about it',
+  'Managers who want to bring ideas and tools back to their team',
 ];
 
 const faqs = [
@@ -87,7 +93,7 @@ const faqs = [
     a: 'It depends on your business. Kyle reviews attendees\' industries in advance so the build session is relevant to what you actually do. Common examples: a customer FAQ assistant, an automated follow-up tool, a document drafting system, or an internal knowledge base.',
   },
   {
-    q: 'Will I understand how to keep using AI after the workshop?',
+    q: 'Will I know how to keep using AI after the workshop?',
     a: 'Yes — that\'s a core goal. You\'ll leave understanding how the tools work, how to think about AI opportunities, and how to keep building on your own. You\'re not dependent on Kyle to keep going.',
   },
   {
@@ -96,7 +102,7 @@ const faqs = [
   },
   {
     q: 'Is this in person?',
-    a: 'Yes. Held at the Four Stones AI office in Madison, AL. This workshop is for local North Alabama businesses only — within about 30 miles of Huntsville.',
+    a: 'Yes. Held at the Four Stones AI office in Madison, AL. This workshop is for local North Alabama businesses — within about 30 miles of Huntsville. Check Eventbrite for the latest dates and start times.',
   },
   {
     q: 'What\'s the refund policy?',
@@ -124,9 +130,10 @@ export default function WorkshopPage() {
             <span className="text-gradient">Build something real.</span>
           </h1>
           <p className="text-xl text-[#CBD5E1]/70 leading-relaxed max-w-2xl mb-10">
-            This half-day workshop is equal parts education and application. You leave knowing
-            what AI actually is, how it can change your business, how to use these tools on your
-            own — and with a working AI tool you built yourself during the session.
+            This 4-hour workshop is equal parts education and application. You leave knowing
+            what AI actually is, how it can change your business, how to use these tools on
+            your own — and with a working AI tool you built yourself during the session.
+            Check Eventbrite for the latest dates and times.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -148,10 +155,10 @@ export default function WorkshopPage() {
 
           <div className="flex flex-wrap gap-6 mt-12">
             {[
-              { icon: Clock, label: '4 hours, 9 AM – 1 PM' },
+              { icon: Clock, label: '4-hour workshop' },
               { icon: Users, label: '10 seats maximum' },
               { icon: MapPin, label: 'Madison, AL — in person only' },
-              { icon: Calendar, label: 'Monthly sessions' },
+              { icon: Calendar, label: 'See Eventbrite for dates & times' },
             ].map(({ icon: Icon, label }) => (
               <div key={label} className="flex items-center gap-2 text-[#CBD5E1]/60 text-sm">
                 <Icon size={15} className="text-[#1488AA]" />
@@ -212,7 +219,7 @@ export default function WorkshopPage() {
                 </li>
               ))}
             </ul>
-            <p className="text-[#CBD5E1]/50 text-xs mt-6 leading-relaxed">
+            <p className="text-[#CBD5E1]/40 text-xs mt-6 leading-relaxed">
               Local North Alabama businesses only — within about 30 miles of Huntsville.
             </p>
           </div>
@@ -224,7 +231,8 @@ export default function WorkshopPage() {
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold text-white text-center mb-4">Workshop agenda</h2>
           <p className="text-[#CBD5E1]/60 text-center mb-12 max-w-xl mx-auto">
-            Four hours. Education, demonstration, and hands-on building — in that order.
+            4 hours. Education, demonstration, and hands-on building.
+            Check Eventbrite for the current start time.
           </p>
           <div className="relative">
             <div className="absolute left-[76px] top-6 bottom-6 w-px bg-[#1488AA]/20" />
@@ -232,11 +240,13 @@ export default function WorkshopPage() {
               {agenda.map((item, i) => (
                 <div key={i} className="flex gap-6">
                   <div className="w-[64px] shrink-0 text-right">
-                    <span className="text-[#1488AA] text-xs font-mono font-semibold leading-relaxed">{item.time}</span>
+                    <span className={`text-xs font-mono font-semibold leading-relaxed ${item.isBreak ? 'text-[#CBD5E1]/30' : 'text-[#1488AA]'}`}>
+                      {item.part}
+                    </span>
                   </div>
-                  <div className="w-3 h-3 rounded-full gradient-teal-blue shrink-0 mt-1.5 relative z-10" />
+                  <div className={`w-3 h-3 rounded-full shrink-0 mt-1.5 relative z-10 ${item.isBreak ? 'bg-[#CBD5E1]/20' : 'gradient-teal-blue'}`} />
                   <div className="pb-6">
-                    <h3 className="text-white font-semibold mb-1">{item.title}</h3>
+                    <h3 className={`font-semibold mb-1 ${item.isBreak ? 'text-[#CBD5E1]/50' : 'text-white'}`}>{item.title}</h3>
                     <p className="text-[#CBD5E1]/60 text-sm leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
@@ -266,7 +276,10 @@ export default function WorkshopPage() {
               <span className="text-4xl font-bold text-gradient">$497</span>
               <span className="text-[#CBD5E1]/50">per person</span>
             </div>
-            <p className="text-[#CBD5E1]/50 text-xs mb-6">In-person · Madison, AL · 9 AM – 1 PM</p>
+            <p className="text-[#CBD5E1]/50 text-xs mb-6">
+              In-person · Madison, AL · 4-hour session<br />
+              See Eventbrite for current dates &amp; times
+            </p>
             <a
               href="https://www.eventbrite.com"
               target="_blank"
