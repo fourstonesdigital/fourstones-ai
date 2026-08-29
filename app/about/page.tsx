@@ -4,31 +4,32 @@ import { ArrowRight, Award, Cpu, Building2, GraduationCap } from 'lucide-react';
 const credentials = [
   {
     icon: GraduationCap,
-    title: 'EE PhD, Purdue University',
-    desc: 'Electrical Engineering doctorate — the engineering background that makes AI implementation rigorous, not guesswork.',
-  },
-  {
-    icon: Cpu,
-    title: 'AI Practitioner',
-    desc: 'Built and deployed 10+ production AI systems — not prototypes, real tools used by real businesses every day.',
+    title: 'PhD, Electrical Engineering — Purdue University',
+    desc: 'A rigorous engineering background that makes AI implementation precise and results-driven — not guesswork.',
   },
   {
     icon: Building2,
-    title: 'Founder, nGenius Prep',
-    desc: 'Grew and operates a test prep business, built its entire custom software platform with AI — proving the model works.',
+    title: 'Aerospace Industry Veteran',
+    desc: 'Spent many years working in the aerospace industry before transitioning to full-time entrepreneurship.',
+  },
+  {
+    icon: Cpu,
+    title: 'Built Real AI Systems — For His Own Business',
+    desc: 'Used AI to build the tools that run nGenius Prep — reducing his own weekly hours to a minimum while the business thrives.',
   },
   {
     icon: Award,
-    title: 'Local — In Person Only',
-    desc: 'Lives in Meridianville, office in Madison. Serves Huntsville, Athens, Hazel Green, Gurley, and surrounding communities. All work done face to face.',
+    title: 'Local — Huntsville Area',
+    desc: 'Based in the Huntsville area with a physical office in Madison. Works exclusively with local North Alabama businesses, in person.',
   },
 ];
 
 const proofPoints = [
-  'Built a full custom student management system using AI tools — replacing $500/mo in SaaS',
-  'Automated lead follow-up, scheduling, and reporting for a 4-person tutoring business',
-  'Reduced admin overhead by ~15 hrs/week with AI-powered workflows',
-  'Deployed live student testing platform serving hundreds of ACT prep students',
+  'Built a full custom student management system using AI — replacing expensive off-the-shelf SaaS',
+  'Automated lead follow-up, scheduling, and reporting workflows',
+  'Reduced his own weekly hours managing the business to a minimum',
+  'Deployed a live student testing platform serving hundreds of ACT prep students',
+  'Maintains a great staff and team running day-to-day operations — fully independently',
 ];
 
 export default function AboutPage() {
@@ -43,13 +44,14 @@ export default function AboutPage() {
             About Four Stones AI
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
-            A North Alabama guy
+            Built by someone who did it
             <br />
-            <span className="text-gradient">who builds AI for a living.</span>
+            <span className="text-gradient">for himself first.</span>
           </h1>
           <p className="text-xl text-[#CBD5E1]/70 leading-relaxed max-w-2xl">
-            Kyle Montgomery lives in Meridianville, works locally, and brings a PhD in
-            engineering and years of real AI builds to every client engagement — in person.
+            Kyle Montgomery didn&apos;t start a consulting firm because he read about AI.
+            He built the tools, ran them in his own business, and saw what they actually do.
+            Now he helps other owners do the same.
           </p>
         </div>
       </section>
@@ -60,7 +62,6 @@ export default function AboutPage() {
           {/* Photo placeholder */}
           <div className="relative">
             <div className="aspect-square rounded-2xl bg-gradient-to-br from-[#1488AA]/20 to-[#0686D4]/10 border border-[#1488AA]/20 flex items-center justify-center overflow-hidden">
-              {/* AI-generated placeholder — replace with Kyle's photo */}
               <div className="w-full h-full bg-gradient-to-br from-[#111827] to-[#0B0F14] flex flex-col items-center justify-center gap-4">
                 <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#1488AA] to-[#0686D4] flex items-center justify-center text-4xl font-bold text-white">
                   K
@@ -68,7 +69,7 @@ export default function AboutPage() {
                 <p className="text-[#CBD5E1]/40 text-sm">Photo coming soon</p>
               </div>
             </div>
-            {/* Accent card */}
+            {/* Credential card */}
             <div className="absolute -bottom-4 -right-4 p-4 rounded-xl bg-[#0B0F14] border border-[#1488AA]/20 shadow-xl">
               <div className="text-2xl font-bold text-white">PhD</div>
               <div className="text-xs text-[#CBD5E1]/60">Electrical Engineering</div>
@@ -81,28 +82,32 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold text-white mb-6">Meet Kyle Montgomery</h2>
             <div className="space-y-4 text-[#CBD5E1]/70 leading-relaxed">
               <p>
-                Kyle Montgomery holds a PhD in Electrical Engineering from Purdue University.
-                He lives in Meridianville, AL with his family and works exclusively with
-                businesses in the North Alabama area — Huntsville, Madison, Athens, Hazel Green,
-                Gurley, and nearby communities.
+                Kyle holds a PhD in Electrical Engineering from Purdue University and spent
+                many years working in the aerospace industry before making a deliberate decision
+                to become a full-time entrepreneur.
               </p>
               <p>
-                Kyle runs nGenius Prep, a test prep company in Madison, AL. Instead of using
-                off-the-shelf software like everyone else, he built the entire platform himself
-                using AI — student management, scheduling, automated follow-up, a live testing
-                app. A system that would cost $10K–$50K to hire out. He built it solo,
-                proving that AI done right can make a small local business punch way above its weight.
+                That transition led him to nGenius Prep — the Huntsville area&apos;s number one
+                ACT test prep company, located in Madison, AL. Rather than run it the way most
+                small businesses are run, Kyle leaned into AI. He built custom tools to handle
+                scheduling, lead follow-up, student management, and reporting — systems that would
+                normally require a full administrative team or expensive software subscriptions.
               </p>
               <p>
-                Four Stones AI is that same approach, applied to your business. Kyle meets with
-                you in person — at your office or his — learns your workflows, and builds
-                something that actually works. No remote-only consultants. No boilerplate solutions.
-                Just a local guy with real engineering chops who&apos;s done this before.
+                Going through that process as a business owner — figuring out which AI tools
+                actually made sense, which ones were overhyped, and how to build something that
+                genuinely worked — Kyle found something unexpected: he loved it. The problem-solving,
+                the building, the tangible impact on how the business ran.
               </p>
               <p>
-                He works with a small number of clients at a time so the work is done right.
-                If you&apos;re a North Alabama business owner ready to actually use AI,
-                this is the right call.
+                Today, nGenius Prep has a great staff running day-to-day operations nearly
+                independently, and Kyle spends minimal hours each week managing the business.
+                That freed-up time and hard-won experience is now focused on one thing: helping
+                other North Alabama business owners go through the same transformation.
+              </p>
+              <p>
+                The workshops at the Madison office are where that starts. Come see what&apos;s
+                possible — from someone who&apos;s already done it.
               </p>
             </div>
             <div className="mt-8">
@@ -121,7 +126,7 @@ export default function AboutPage() {
       <section className="py-20 px-6 bg-[#0B0F14]">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-white text-center mb-12">
-            The credentials that matter
+            The background that makes this different
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {credentials.map(({ icon: Icon, title, desc }) => (
@@ -149,14 +154,15 @@ export default function AboutPage() {
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#1488AA]/5 rounded-full blur-[80px]" />
             <div className="relative z-10">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1488AA]/10 border border-[#1488AA]/20 text-[#1488AA] text-xs font-semibold mb-6 uppercase tracking-wider">
-                Proof of Work
+                Proof of Work — nGenius Prep
               </div>
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                nGenius Prep — built with the same approach
+                He built it for himself first.
               </h2>
               <p className="text-[#CBD5E1]/70 leading-relaxed mb-8">
-                Before Four Stones AI was a business, Kyle was building. Here&apos;s what he
-                built for his own company — the same kind of work he now does for clients:
+                Before advising anyone else, Kyle went through the exact same process he now
+                guides clients through — figuring out where AI could make the biggest difference
+                in a real, operating small business. Here&apos;s what came out of it:
               </p>
               <ul className="space-y-3">
                 {proofPoints.map((pt) => (
@@ -166,6 +172,10 @@ export default function AboutPage() {
                   </li>
                 ))}
               </ul>
+              <p className="text-[#CBD5E1]/50 text-sm mt-8 leading-relaxed">
+                The workshops are held at the nGenius Prep office in Madison, AL — the same
+                place where all of this was built.
+              </p>
             </div>
           </div>
         </div>
@@ -175,11 +185,11 @@ export default function AboutPage() {
       <section className="py-20 px-6 bg-[#0B0F14] text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl font-bold text-white mb-4">
-            Ready to work with someone who&apos;s actually done this?
+            Ready to work with someone who&apos;s already done this?
           </h2>
           <p className="text-[#CBD5E1]/60 mb-8">
-            Start with the workshop or reach out directly. Either way, the first
-            conversation is free.
+            Start with the workshop or reach out directly.
+            Either way, the first conversation is free.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/workshop" className="px-8 py-4 font-semibold text-white rounded-xl gradient-teal-blue hover:opacity-90 transition-all">
