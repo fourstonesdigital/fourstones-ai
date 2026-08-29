@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Award, Cpu, Building2, GraduationCap } from 'lucide-react';
 
 const credentials = [
@@ -56,15 +57,17 @@ export default function AboutPage() {
       {/* Bio + Photo */}
       <section className="py-20 px-6 bg-[#111827]">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          {/* Photo placeholder */}
+          {/* Photo */}
           <div className="relative">
-            <div className="aspect-square rounded-2xl bg-gradient-to-br from-[#1488AA]/20 to-[#0686D4]/10 border border-[#1488AA]/20 flex items-center justify-center overflow-hidden">
-              <div className="w-full h-full bg-gradient-to-br from-[#111827] to-[#0B0F14] flex flex-col items-center justify-center gap-4">
-                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#1488AA] to-[#0686D4] flex items-center justify-center text-4xl font-bold text-white">
-                  K
-                </div>
-                <p className="text-[#CBD5E1]/40 text-sm">Photo coming soon</p>
-              </div>
+            <div className="aspect-square rounded-2xl overflow-hidden border border-[#1488AA]/20">
+              <Image
+                src="/images/kyle.jpg"
+                alt="Kyle Montgomery — Four Stones AI"
+                width={800}
+                height={800}
+                className="w-full h-full object-cover object-top"
+                priority
+              />
             </div>
             {/* Credential card */}
             <div className="absolute -bottom-4 -right-4 p-4 rounded-xl bg-[#0B0F14] border border-[#1488AA]/20 shadow-xl">
