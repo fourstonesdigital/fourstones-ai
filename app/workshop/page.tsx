@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Clock, Users, MapPin, CheckCircle, Calendar, BookOpen, Wrench, Lightbulb } from 'lucide-react';
+import WorkshopEvents from '@/components/sections/WorkshopEvents';
 
 const whatYouLearn = [
   {
@@ -141,12 +142,10 @@ export default function WorkshopPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
-              href="https://www.eventbrite.com"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#dates"
               className="group px-8 py-4 text-base font-semibold text-white rounded-xl gradient-teal-blue hover:opacity-90 shadow-lg transition-all flex items-center gap-2 justify-center"
             >
-              Reserve Your Seat — $497
+              See Upcoming Dates
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </a>
             <Link
@@ -277,27 +276,19 @@ export default function WorkshopPage() {
               ))}
             </ul>
           </div>
-          <div className="rounded-2xl bg-[#111827] border border-[#1488AA]/20 p-8">
+          <div className="rounded-2xl bg-[#111827] border border-[#1488AA]/20 p-8" id="dates">
             <h3 className="text-white font-bold text-xl mb-2">AI Implementation Workshop</h3>
             <div className="flex items-baseline gap-2 mb-1">
               <span className="text-4xl font-bold text-gradient">$497</span>
               <span className="text-[#CBD5E1]/50">per person</span>
             </div>
             <p className="text-[#CBD5E1]/50 text-xs mb-6">
-              In-person · Madison, AL · 4-hour session<br />
-              See Eventbrite for current dates &amp; times
+              In-person · Madison, AL · 4-hour session
             </p>
-            <a
-              href="https://www.eventbrite.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full text-center py-4 px-6 font-semibold text-white rounded-xl gradient-teal-blue hover:opacity-90 transition-all mb-4"
-            >
-              Reserve Your Seat on Eventbrite
-            </a>
+            <WorkshopEvents />
             <Link
               href="/contact"
-              className="block w-full text-center py-3 px-6 font-semibold text-[#1488AA] rounded-xl border border-[#1488AA]/30 hover:bg-[#1488AA]/10 transition-all text-sm"
+              className="block w-full text-center py-3 px-6 font-semibold text-[#1488AA] rounded-xl border border-[#1488AA]/30 hover:bg-[#1488AA]/10 transition-all text-sm mt-4"
             >
               Questions? Contact Kyle
             </Link>
@@ -334,12 +325,10 @@ export default function WorkshopPage() {
             understand AI and put it to work — not just hear about it.
           </p>
           <a
-            href="https://www.eventbrite.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#dates"
             className="inline-flex items-center gap-2 px-8 py-4 font-semibold text-white rounded-xl gradient-teal-blue hover:opacity-90 shadow-lg transition-all"
           >
-            Register on Eventbrite — $497 <ArrowRight size={18} />
+            See Upcoming Dates <ArrowRight size={18} />
           </a>
         </div>
       </section>
