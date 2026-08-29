@@ -59,7 +59,7 @@ const services = [
 const stats = [
   { value: 'EE PhD', label: 'Engineering credentials' },
   { value: '10+', label: 'AI systems built & deployed' },
-  { value: '~30 mi', label: 'Service radius from Huntsville' },
+  { value: 'Local', label: 'Huntsville, Madison & surrounding areas' },
   { value: '100%', label: 'In-person. Face to face.' },
 ];
 
@@ -90,7 +90,7 @@ const faqs = [
   },
   {
     q: 'What area do you serve?',
-    a: 'Within about 30 miles of Huntsville — Huntsville, Madison, Athens, Meridianville, Hazel Green, Gurley, and nearby communities. If you\'re local, you\'re in the right place.',
+    a: 'Huntsville, Madison, and the surrounding North Alabama area. If you\'re local, you\'re in the right place.',
   },
   {
     q: 'How is this different from ChatGPT?',
@@ -117,8 +117,8 @@ export default function HomePage() {
           </h1>
 
           <p className="text-xl text-[#CBD5E1]/80 leading-relaxed max-w-2xl mx-auto mb-10">
-            Four Stones AI works exclusively with businesses within about 30 miles of Huntsville —
-            in person, face to face. Real AI tools built for real North Alabama businesses.
+            Four Stones AI works exclusively with businesses in the Huntsville, Madison region
+            and surrounding areas — in person, face to face. Real AI tools built for real North Alabama businesses.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -160,13 +160,12 @@ export default function HomePage() {
               </h2>
               <p className="text-[#CBD5E1]/70 leading-relaxed mb-6">
                 Most AI consultants are somewhere else — on a Zoom call, sending slide decks,
-                charging you for time zones. Kyle Montgomery is local, within 30 miles of
-                Huntsville, and happy to meet at your office to learn your operation firsthand
+                charging you for time zones. Kyle Montgomery is local, based in the Huntsville area, and happy to meet at your office to learn your operation firsthand
                 and build something that actually fits how you run things.
               </p>
               <p className="text-[#CBD5E1]/70 leading-relaxed mb-8">
                 Whether you&apos;re an HVAC company in Athens, a law firm in Huntsville, or
-                a contractor in Madison — if you&apos;re within 30 miles and ready to put AI
+                a contractor in Madison — if you&apos;re in the area and ready to put AI
                 to work, this is the call to make.
               </p>
               <Link
@@ -291,7 +290,7 @@ export default function HomePage() {
             <div>
               <h2 className="text-2xl font-bold text-white mb-4">Serving these communities</h2>
               <p className="text-[#CBD5E1]/60 mb-6 text-sm leading-relaxed">
-                Within about 30 miles of Huntsville. If your business is in North Alabama,
+                Huntsville, Madison, and surrounding areas. If your business is local,
                 Kyle can be at your door.
               </p>
               <div className="flex flex-wrap gap-2 mb-8">
