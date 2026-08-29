@@ -4,7 +4,7 @@ import { ArrowRight, CheckCircle, Zap, Users, TrendingUp, Star, MapPin } from 'l
 
 const services = [
   {
-    name: 'AI Workshop',
+    name: 'AI Implementation Workshop',
     price: '$497',
     showPrice: true,
     per: 'per person',
