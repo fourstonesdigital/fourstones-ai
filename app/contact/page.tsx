@@ -47,8 +47,8 @@ export default function ContactPage() {
             Let&apos;s meet and talk about your business.
           </h1>
           <p className="text-lg text-[#CBD5E1]/70 leading-relaxed max-w-xl mx-auto">
-            Kyle works with businesses within about 30 miles of Huntsville — and he&apos;s
-            happy to come to you. Fill out the form and he&apos;ll be in touch within one business day.
+            Kyle works with businesses in the Huntsville, Madison region and surrounding areas.
+            Fill out the form and he&apos;ll be in touch within one business day.
           </p>
         </div>
       </section>
