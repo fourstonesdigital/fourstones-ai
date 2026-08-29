@@ -47,8 +47,9 @@ export default function Footer() {
             <address className="not-italic text-[#CBD5E1]/60 text-sm leading-relaxed">
               7771 Hwy 72 W, Suite C<br />
               Madison, AL 35758<br /><br />
-              <a href="mailto:kyle@fourstones.ai" className="hover:text-white transition-colors">
-                kyle@fourstones.ai
+              Serving within ~30 miles of Huntsville<br />
+              <a href="/contact" className="text-[#1488AA] hover:text-white transition-colors mt-2 inline-block">
+                Send a message →
               </a>
             </address>
           </div>

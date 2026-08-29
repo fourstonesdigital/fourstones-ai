@@ -1,75 +1,105 @@
 import Link from 'next/link';
-import { ArrowRight, Clock, Users, Wrench, MapPin, CheckCircle, Calendar } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowRight, Clock, Users, MapPin, CheckCircle, Calendar, BookOpen, Wrench, Lightbulb } from 'lucide-react';
+
+const whatYouLearn = [
+  {
+    icon: BookOpen,
+    title: 'What AI actually is — and isn\'t',
+    desc: 'Cut through the hype. Understand what these tools can realistically do for a service business in 2025, and what\'s still a long way off.',
+  },
+  {
+    icon: Lightbulb,
+    title: 'How to spot AI opportunities in your business',
+    desc: 'Learn the framework Kyle uses to identify which workflows are ripe for automation — so you can keep finding opportunities long after the workshop.',
+  },
+  {
+    icon: Wrench,
+    title: 'How to use AI tools on your own',
+    desc: 'Hands-on demonstrations with the actual tools — not slides about them. You\'ll use them yourself during the session and leave knowing how to keep building.',
+  },
+  {
+    icon: CheckCircle,
+    title: 'Walk out with something that works',
+    desc: 'You don\'t just learn about AI — you build a real tool for your business during the session and take it home running.',
+  },
+];
 
 const agenda = [
   {
     time: '9:00 AM',
-    title: 'Welcome & The AI Landscape',
-    desc: 'What AI can actually do for a service business in 2025 — no hype, just what works.',
+    title: 'The AI Landscape — What\'s Actually Happening',
+    desc: 'A grounded overview of where AI is today, what\'s changed in the last few years, and why it matters specifically for small service businesses in North Alabama. No hype, no sci-fi — just what\'s real and useful right now.',
   },
   {
     time: '9:45 AM',
-    title: 'Your Business, Your Problems',
-    desc: 'We map out your specific workflows and identify the highest-value AI opportunities.',
+    title: 'Live Demos — See It Working',
+    desc: 'Kyle demonstrates AI tools live, applied to real business scenarios. You\'ll see exactly how a law firm, HVAC company, or dental office could use these tools today. Then you try them yourself.',
   },
   {
     time: '10:30 AM',
-    title: 'Build Session — Part 1',
-    desc: 'Hands-on building. You pick the tool, we guide you through building it step by step.',
+    title: 'Your Business, Your Opportunities',
+    desc: 'We map out each participant\'s workflows and identify where AI can have the biggest impact. You leave knowing your specific opportunities — not just general possibilities.',
   },
   {
-    time: '11:30 AM',
-    title: 'Break',
-    desc: 'Coffee, questions, networking with other local business owners.',
+    time: '11:15 AM',
+    title: 'Build Session — Build Your Tool',
+    desc: 'Guided hands-on building. You pick the tool most useful to your business and Kyle walks you through building it step by step. Every participant builds something different.',
   },
   {
-    time: '11:45 AM',
-    title: 'Build Session — Part 2',
-    desc: 'Finish, refine, and test your tool. Deploy it so it\'s live when you leave.',
+    time: '12:15 PM',
+    title: 'Break + Open Q&A',
+    desc: 'Coffee, lunch, questions. Kyle answers anything — about your business, the tools, what to do next.',
   },
   {
-    time: '12:30 PM',
-    title: 'What\'s Next + Q&A',
-    desc: 'How to keep building after today, resources, and open Q&A with Kyle.',
+    time: '12:45 PM',
+    title: 'What\'s Next — Building From Here',
+    desc: 'How to keep using and expanding what you built. Resources, next steps, and a clear picture of where AI can take your business from here.',
   },
-];
-
-const whatYouBuild = [
-  'An AI assistant trained on your business FAQs that handles customer questions 24/7',
-  'An automated lead follow-up system that responds to new inquiries instantly',
-  'A document drafting tool that generates contracts, proposals, or emails in your voice',
-  'An internal knowledge base that your team can query with natural language',
-  'A scheduling assistant that handles back-and-forth coordination automatically',
 ];
 
 const includes = [
-  'Half-day hands-on session (9 AM – 1 PM)',
-  'All tools and software provided during session',
-  'Working AI tool you keep and deploy',
-  'Resource guide for continuing to build',
-  'Access to post-workshop Q&A chat',
+  'Full AI landscape briefing — what\'s real, what\'s hype',
+  'Live demonstrations with actual tools',
+  'Hands-on time using AI tools yourself',
+  'Personalized opportunity mapping for your business',
+  'One working AI tool you built, tested, and take home',
+  'Resource guide for continuing to build on your own',
   'Light breakfast and coffee',
+  'Small group (10 max) — real attention, not a lecture',
+];
+
+const whoShouldCome = [
+  'Business owners curious about AI but not sure where to start',
+  'Owners who\'ve tried ChatGPT and didn\'t know what to do with it',
+  'Anyone who wants to understand what\'s happening with AI so they can talk about it confidently',
+  'Business owners ready to actually put AI to work — not just learn about it',
+  'Managers who want to bring ideas back to their team',
 ];
 
 const faqs = [
   {
     q: 'Do I need any technical background?',
-    a: 'None whatsoever. The workshop is designed for business owners, not engineers. If you can use a smartphone, you can build what we build in this session.',
+    a: 'None. This workshop is designed for business owners, not engineers. If you can use a smartphone, you\'re ready. The goal is to make AI approachable and immediately useful — not to teach you to code.',
   },
   {
-    q: 'What tools/software will I need?',
-    a: 'Just bring a laptop. We\'ll set up everything else together. No prior software subscriptions required to attend.',
+    q: 'What will I actually build?',
+    a: 'It depends on your business. Kyle reviews attendees\' industries in advance so the build session is relevant to what you actually do. Common examples: a customer FAQ assistant, an automated follow-up tool, a document drafting system, or an internal knowledge base.',
+  },
+  {
+    q: 'Will I understand how to keep using AI after the workshop?',
+    a: 'Yes — that\'s a core goal. You\'ll leave understanding how the tools work, how to think about AI opportunities, and how to keep building on your own. You\'re not dependent on Kyle to keep going.',
   },
   {
     q: 'How many people are in each session?',
-    a: 'We cap every session at 10 participants. This is not a webinar — it\'s a workshop, and everyone gets real attention.',
+    a: 'Maximum 10. This is not a seminar — it\'s a working session. Everyone gets real attention and builds something specific to their business.',
   },
   {
-    q: 'What kind of AI tool will I actually build?',
-    a: 'It depends on your business. Before the session, Kyle reviews everyone\'s industry so each participant builds something relevant. Common examples: a customer-facing chatbot, an automated follow-up system, or a document drafting assistant.',
+    q: 'Is this in person?',
+    a: 'Yes. Held at the Four Stones AI office in Madison, AL. This workshop is for local North Alabama businesses only — within about 30 miles of Huntsville.',
   },
   {
-    q: 'Is there a refund policy?',
+    q: 'What\'s the refund policy?',
     a: 'Full refund if you cancel more than 48 hours before the session. No refund for no-shows.',
   },
 ];
@@ -84,17 +114,19 @@ export default function WorkshopPage() {
         </div>
         <div className="relative z-10 max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#1488AA]/30 bg-[#1488AA]/10 text-[#1488AA] text-sm font-medium mb-8">
-            <Wrench size={14} />
-            Hands-On AI Workshop
+            <MapPin size={14} /> In-Person Workshop — Madison, AL
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
-            Walk in as a business owner.
+            Understand AI.
             <br />
-            <span className="text-gradient">Walk out with a working AI tool.</span>
+            Use it yourself.
+            <br />
+            <span className="text-gradient">Build something real.</span>
           </h1>
           <p className="text-xl text-[#CBD5E1]/70 leading-relaxed max-w-2xl mb-10">
-            This is not a webinar. This is not a demo. In a single half-day session, you build
-            an AI tool specific to your business — from scratch, with your own hands.
+            This half-day workshop is equal parts education and application. You leave knowing
+            what AI actually is, how it can change your business, how to use these tools on your
+            own — and with a working AI tool you built yourself during the session.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -114,13 +146,12 @@ export default function WorkshopPage() {
             </Link>
           </div>
 
-          {/* Quick stats */}
           <div className="flex flex-wrap gap-6 mt-12">
             {[
               { icon: Clock, label: '4 hours, 9 AM – 1 PM' },
               { icon: Users, label: '10 seats maximum' },
-              { icon: MapPin, label: 'Madison, AL office' },
-              { icon: Calendar, label: 'Sessions monthly' },
+              { icon: MapPin, label: 'Madison, AL — in person only' },
+              { icon: Calendar, label: 'Monthly sessions' },
             ].map(({ icon: Icon, label }) => (
               <div key={label} className="flex items-center gap-2 text-[#CBD5E1]/60 text-sm">
                 <Icon size={15} className="text-[#1488AA]" />
@@ -131,70 +162,79 @@ export default function WorkshopPage() {
         </div>
       </section>
 
-      {/* What you build */}
+      {/* What you get */}
       <section className="py-20 px-6 bg-[#111827]">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <div>
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-14">
             <h2 className="text-3xl font-bold text-white mb-4">
-              What will you build?
+              Not just a workshop. A turning point.
             </h2>
-            <p className="text-[#CBD5E1]/70 leading-relaxed mb-8">
-              Every participant builds something different — because every business is different.
-              Kyle reviews your industry and goals in advance so your build session is tailored.
-              Past participants have built:
+            <p className="text-[#CBD5E1]/60 max-w-2xl mx-auto leading-relaxed">
+              Most AI events leave you with a notebook full of notes and no idea what to do next.
+              This one leaves you educated, confident, and holding a working tool you built yourself.
             </p>
-            <ul className="space-y-3">
-              {whatYouBuild.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm text-[#CBD5E1]/70">
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {whatYouLearn.map(({ icon: Icon, title, desc }) => (
+              <div key={title} className="flex gap-5 p-6 rounded-xl bg-[#0B0F14] border border-white/5 hover:border-[#1488AA]/20 transition-colors">
+                <div className="w-12 h-12 rounded-xl gradient-teal-blue flex items-center justify-center shrink-0">
+                  <Icon size={22} className="text-white" />
+                </div>
+                <div>
+                  <h3 className="text-white font-semibold text-lg mb-2">{title}</h3>
+                  <p className="text-[#CBD5E1]/60 text-sm leading-relaxed">{desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Who should come */}
+      <section className="py-20 px-6 bg-[#0B0F14]">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <div className="rounded-2xl overflow-hidden border border-white/5">
+            <Image
+              src="/images/meeting.png"
+              alt="In-person workshop session"
+              width={720}
+              height={480}
+              className="w-full h-72 object-cover"
+            />
+          </div>
+          <div>
+            <h2 className="text-3xl font-bold text-white mb-6">Who this is for</h2>
+            <ul className="space-y-4">
+              {whoShouldCome.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-[#CBD5E1]/70 text-sm leading-relaxed">
                   <CheckCircle size={16} className="text-[#1488AA] shrink-0 mt-0.5" />
                   {item}
                 </li>
               ))}
             </ul>
-          </div>
-          <div className="rounded-2xl bg-[#0B0F14] border border-[#1488AA]/20 p-8">
-            <h3 className="text-white font-bold text-xl mb-6">What&apos;s included</h3>
-            <ul className="space-y-4">
-              {includes.map((item) => (
-                <li key={item} className="flex items-center gap-3 text-[#CBD5E1]/70 text-sm">
-                  <span className="w-5 h-5 rounded-full gradient-teal-blue flex items-center justify-center shrink-0 text-white text-xs">✓</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <div className="mt-8 pt-6 border-t border-white/5">
-              <div className="flex items-baseline gap-2 mb-4">
-                <span className="text-4xl font-bold text-white">$497</span>
-                <span className="text-[#CBD5E1]/50">per person</span>
-              </div>
-              <a
-                href="https://www.eventbrite.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center py-3 px-6 font-semibold text-white rounded-xl gradient-teal-blue hover:opacity-90 transition-all"
-              >
-                Reserve Your Seat on Eventbrite
-              </a>
-            </div>
+            <p className="text-[#CBD5E1]/50 text-xs mt-6 leading-relaxed">
+              Local North Alabama businesses only — within about 30 miles of Huntsville.
+            </p>
           </div>
         </div>
       </section>
 
       {/* Agenda */}
-      <section className="py-20 px-6 bg-[#0B0F14]">
+      <section className="py-20 px-6 bg-[#111827]">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">
-            Workshop agenda
-          </h2>
+          <h2 className="text-3xl font-bold text-white text-center mb-4">Workshop agenda</h2>
+          <p className="text-[#CBD5E1]/60 text-center mb-12 max-w-xl mx-auto">
+            Four hours. Education, demonstration, and hands-on building — in that order.
+          </p>
           <div className="relative">
-            <div className="absolute left-[72px] top-6 bottom-6 w-px bg-[#1488AA]/20" />
+            <div className="absolute left-[76px] top-6 bottom-6 w-px bg-[#1488AA]/20" />
             <div className="space-y-6">
               {agenda.map((item, i) => (
                 <div key={i} className="flex gap-6">
-                  <div className="w-[60px] shrink-0 text-right">
-                    <span className="text-[#1488AA] text-xs font-mono font-semibold">{item.time}</span>
+                  <div className="w-[64px] shrink-0 text-right">
+                    <span className="text-[#1488AA] text-xs font-mono font-semibold leading-relaxed">{item.time}</span>
                   </div>
-                  <div className="w-3 h-3 rounded-full gradient-teal-blue shrink-0 mt-1 relative z-10" />
+                  <div className="w-3 h-3 rounded-full gradient-teal-blue shrink-0 mt-1.5 relative z-10" />
                   <div className="pb-6">
                     <h3 className="text-white font-semibold mb-1">{item.title}</h3>
                     <p className="text-[#CBD5E1]/60 text-sm leading-relaxed">{item.desc}</p>
@@ -206,43 +246,55 @@ export default function WorkshopPage() {
         </div>
       </section>
 
-      {/* Location */}
-      <section className="py-20 px-6 bg-[#111827]">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-10 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-4">In-person, in Madison AL</h2>
-              <p className="text-[#CBD5E1]/70 leading-relaxed mb-6">
-                Workshops are held at the Four Stones AI office — a real space where you can
-                focus, ask questions, and build without distractions.
-              </p>
-              <address className="not-italic">
-                <div className="flex items-start gap-3 text-[#CBD5E1]/70">
-                  <MapPin size={18} className="text-[#1488AA] shrink-0 mt-0.5" />
-                  <div>
-                    <div className="text-white font-medium">7771 Hwy 72 W, Suite C</div>
-                    <div>Madison, AL 35758</div>
-                    <div className="text-sm text-[#CBD5E1]/50 mt-1">(Near the Huntsville area)</div>
-                  </div>
-                </div>
-              </address>
+      {/* Includes + Pricing */}
+      <section className="py-20 px-6 bg-[#0B0F14]">
+        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 items-start">
+          <div>
+            <h2 className="text-2xl font-bold text-white mb-6">What&apos;s included</h2>
+            <ul className="space-y-4">
+              {includes.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-[#CBD5E1]/70 text-sm">
+                  <span className="w-5 h-5 rounded-full gradient-teal-blue flex items-center justify-center shrink-0 mt-0.5 text-white text-xs">✓</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-2xl bg-[#111827] border border-[#1488AA]/20 p-8">
+            <h3 className="text-white font-bold text-xl mb-2">AI Workshop</h3>
+            <div className="flex items-baseline gap-2 mb-1">
+              <span className="text-4xl font-bold text-gradient">$497</span>
+              <span className="text-[#CBD5E1]/50">per person</span>
             </div>
-            <div className="rounded-xl bg-[#0B0F14] border border-white/5 p-6 text-center">
-              <div className="text-6xl mb-4">📍</div>
-              <div className="text-white font-semibold">Madison, Alabama</div>
-              <div className="text-[#CBD5E1]/50 text-sm">Huntsville Metro Area</div>
-            </div>
+            <p className="text-[#CBD5E1]/50 text-xs mb-6">In-person · Madison, AL · 9 AM – 1 PM</p>
+            <a
+              href="https://www.eventbrite.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full text-center py-4 px-6 font-semibold text-white rounded-xl gradient-teal-blue hover:opacity-90 transition-all mb-4"
+            >
+              Reserve Your Seat on Eventbrite
+            </a>
+            <Link
+              href="/contact"
+              className="block w-full text-center py-3 px-6 font-semibold text-[#1488AA] rounded-xl border border-[#1488AA]/30 hover:bg-[#1488AA]/10 transition-all text-sm"
+            >
+              Questions? Contact Kyle
+            </Link>
+            <p className="text-center text-[#CBD5E1]/40 text-xs mt-4">
+              Full refund if cancelled 48+ hours before session
+            </p>
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-20 px-6 bg-[#0B0F14]">
+      <section className="py-20 px-6 bg-[#111827]">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold text-white text-center mb-12">Questions</h2>
           <div className="space-y-4">
             {faqs.map((faq) => (
-              <div key={faq.q} className="p-6 rounded-xl bg-[#111827] border border-white/5">
+              <div key={faq.q} className="p-6 rounded-xl bg-[#0B0F14] border border-white/5">
                 <h3 className="text-white font-semibold mb-3">{faq.q}</h3>
                 <p className="text-[#CBD5E1]/70 text-sm leading-relaxed">{faq.a}</p>
               </div>
@@ -251,14 +303,15 @@ export default function WorkshopPage() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-20 px-6 bg-[#111827] text-center">
+      {/* CTA */}
+      <section className="py-20 px-6 bg-[#0B0F14] text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl font-bold text-white mb-4">
-            Seats fill fast. 10 per session.
+            10 seats. Local businesses only.
           </h2>
           <p className="text-[#CBD5E1]/60 mb-8">
-            If you&apos;re on the fence, ask yourself: what does it cost you to keep doing things manually?
+            This workshop is for North Alabama business owners who are ready to actually
+            understand AI and put it to work — not just hear about it.
           </p>
           <a
             href="https://www.eventbrite.com"

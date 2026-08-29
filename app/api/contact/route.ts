@@ -2,10 +2,10 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
-  const { name, email, business, industry, interest, message } = body;
+  const { name, email, phone, smsConsent, business, industry, interest, message } = body;
 
-  if (!name || !email) {
-    return NextResponse.json({ error: 'Name and email required' }, { status: 400 });
+  if (!name || !email || !phone) {
+    return NextResponse.json({ error: 'Name, email, and phone are required' }, { status: 400 });
   }
 
   const POSTMARK_API_KEY = process.env.POSTMARK_API_KEY;
@@ -14,10 +14,14 @@ export async function POST(req: NextRequest) {
   }
 
   const emailBody = `
-New contact form submission from fourstones.ai
+New inquiry from fourstones.ai
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Name: ${name}
-Email: ${email}
+Name:     ${name}
+Email:    ${email}
+Phone:    ${phone}
+SMS OK:   ${smsConsent ? 'Yes — consented to SMS' : 'No — did not consent to SMS'}
+
 Business: ${business || 'Not provided'}
 Industry: ${industry || 'Not provided'}
 Interest: ${interest || 'Not provided'}
@@ -35,9 +39,9 @@ ${message || '(no message)'}
     body: JSON.stringify({
       From: 'maxclaw2020@gmail.com',
       To: 'fourstonesdigital@gmail.com',
-      Subject: `New inquiry from ${name}${business ? ` — ${business}` : ''} via fourstones.ai`,
+      Subject: `New inquiry: ${name}${business ? ` — ${business}` : ''} (${interest || 'General'})`,
       TextBody: emailBody,
-      HtmlBody: `<pre style="font-family:sans-serif;font-size:14px;line-height:1.6">${emailBody.replace(/\n/g, '<br>')}</pre>`,
+      HtmlBody: `<pre style="font-family:sans-serif;font-size:14px;line-height:1.8;max-width:600px">${emailBody.replace(/\n/g, '<br>').replace(/━/g, '─')}</pre>`,
       ReplyTo: email,
       MessageStream: 'outbound',
     }),

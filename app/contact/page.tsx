@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { MapPin, Mail, Phone, Send, CheckCircle } from 'lucide-react';
+import { MapPin, Send, CheckCircle, Phone } from 'lucide-react';
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -9,6 +9,8 @@ export default function ContactPage() {
   const [form, setForm] = useState({
     name: '',
     email: '',
+    phone: '',
+    smsConsent: false,
     business: '',
     industry: '',
     interest: '',
@@ -27,7 +29,7 @@ export default function ContactPage() {
       if (!res.ok) throw new Error('Failed');
       setSubmitted(true);
     } catch {
-      alert('Something went wrong. Please email kyle@fourstones.ai directly.');
+      alert('Something went wrong. Please try again or reach out directly.');
     } finally {
       setLoading(false);
     }
@@ -42,15 +44,14 @@ export default function ContactPage() {
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#1488AA]/30 bg-[#1488AA]/10 text-[#1488AA] text-sm font-medium mb-8">
-            Get in Touch
+            <MapPin size={14} /> North Alabama — In Person
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
             Let&apos;s meet and talk about your business.
           </h1>
           <p className="text-lg text-[#CBD5E1]/70 leading-relaxed max-w-xl mx-auto">
-            Kyle works with businesses in the Huntsville, Madison, Athens, Meridianville,
-            and surrounding North Alabama area — in person. Fill out the form and he&apos;ll
-            be in touch within one business day.
+            Kyle works with businesses within about 30 miles of Huntsville — and he&apos;s
+            happy to come to you. Fill out the form and he&apos;ll be in touch within one business day.
           </p>
         </div>
       </section>
@@ -59,9 +60,9 @@ export default function ContactPage() {
       <section className="py-16 px-6 bg-[#111827]">
         <div className="max-w-5xl mx-auto grid md:grid-cols-5 gap-12">
           {/* Contact info */}
-          <div className="md:col-span-2 space-y-8">
+          <div className="md:col-span-2 space-y-6">
             <div>
-              <h2 className="text-white font-bold text-xl mb-6">Contact info</h2>
+              <h2 className="text-white font-bold text-xl mb-6">Get in touch</h2>
               <div className="space-y-5">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-lg gradient-teal-blue flex items-center justify-center shrink-0">
@@ -77,40 +78,37 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-lg gradient-teal-blue flex items-center justify-center shrink-0">
-                    <Mail size={18} className="text-white" />
+                    <Phone size={18} className="text-white" />
                   </div>
                   <div>
-                    <div className="text-white font-medium text-sm">Email</div>
-                    <a
-                      href="mailto:kyle@fourstones.ai"
-                      className="text-[#1488AA] hover:text-[#0686D4] text-sm mt-1 block transition-colors"
-                    >
-                      kyle@fourstones.ai
-                    </a>
+                    <div className="text-white font-medium text-sm">Service Area</div>
+                    <p className="text-[#CBD5E1]/60 text-sm mt-1">
+                      Within ~30 miles of Huntsville<br />
+                      Huntsville · Madison · Athens<br />
+                      Meridianville · Hazel Green · Gurley
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="p-6 rounded-xl bg-[#0B0F14] border border-[#1488AA]/20">
-              <h3 className="text-white font-semibold mb-3">Not sure what you need?</h3>
+              <h3 className="text-white font-semibold mb-3">Prefer to start with a workshop?</h3>
               <p className="text-[#CBD5E1]/60 text-sm leading-relaxed mb-4">
-                Start with the $497 in-person workshop in Madison, AL. It&apos;s the fastest
-                way to see what AI can do for your North Alabama business — no commitment beyond the day.
+                The $497 in-person workshop in Madison is the fastest way to see what
+                AI can do for your business — no commitment beyond the day.
               </p>
-              <a
-                href="/workshop"
-                className="inline-flex items-center gap-2 text-[#1488AA] hover:text-[#0686D4] text-sm font-medium transition-colors"
-              >
+              <a href="/workshop" className="inline-flex items-center gap-2 text-[#1488AA] hover:text-[#0686D4] text-sm font-medium transition-colors">
                 Learn about the workshop →
               </a>
             </div>
 
             <div className="p-6 rounded-xl bg-[#0B0F14] border border-white/5">
-              <h3 className="text-white font-semibold mb-2">Response time</h3>
-              <p className="text-[#CBD5E1]/60 text-sm">
-                Kyle reviews every inquiry personally. Expect a reply within 1 business day,
-                usually same day.
+              <h3 className="text-white font-semibold mb-2">How it works</h3>
+              <p className="text-[#CBD5E1]/60 text-sm leading-relaxed">
+                Fill out the form, Kyle reviews it personally and reaches out within
+                one business day. He&apos;s happy to meet at your location or at the
+                Madison office to talk through your needs.
               </p>
             </div>
           </div>
@@ -160,11 +158,37 @@ export default function ContactPage() {
                   </div>
                 </div>
 
+                {/* Phone — required */}
+                <div>
+                  <label className="block text-white text-sm font-medium mb-2">
+                    Phone number <span className="text-[#1488AA]">*</span>
+                  </label>
+                  <input
+                    type="tel"
+                    required
+                    value={form.phone}
+                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                    placeholder="(256) 555-0100"
+                    className="w-full px-4 py-3 rounded-lg bg-[#0B0F14] border border-white/10 text-white placeholder-[#CBD5E1]/30 focus:outline-none focus:border-[#1488AA]/50 transition-colors text-sm"
+                  />
+                  {/* SMS consent */}
+                  <label className="flex items-start gap-3 mt-3 cursor-pointer group">
+                    <input
+                      type="checkbox"
+                      checked={form.smsConsent}
+                      onChange={(e) => setForm({ ...form, smsConsent: e.target.checked })}
+                      className="mt-0.5 w-4 h-4 rounded border-white/20 bg-[#0B0F14] accent-[#1488AA] shrink-0"
+                    />
+                    <span className="text-[#CBD5E1]/50 text-xs leading-relaxed group-hover:text-[#CBD5E1]/70 transition-colors">
+                      I consent to receiving SMS messages from Four Stones AI at the number above.
+                      Message and data rates may apply. You are not required to consent to receive services.
+                    </span>
+                  </label>
+                </div>
+
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-white text-sm font-medium mb-2">
-                      Business name
-                    </label>
+                    <label className="block text-white text-sm font-medium mb-2">Business name</label>
                     <input
                       type="text"
                       value={form.business}
@@ -174,9 +198,7 @@ export default function ContactPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-white text-sm font-medium mb-2">
-                      Industry
-                    </label>
+                    <label className="block text-white text-sm font-medium mb-2">Industry</label>
                     <select
                       value={form.industry}
                       onChange={(e) => setForm({ ...form, industry: e.target.value })}
@@ -189,7 +211,8 @@ export default function ContactPage() {
                       <option>Insurance</option>
                       <option>Real Estate</option>
                       <option>Accounting / Finance</option>
-                      <option>Retail / E-commerce</option>
+                      <option>Contractors & Trades</option>
+                      <option>Retail / Local Business</option>
                       <option>Other</option>
                     </select>
                   </div>
@@ -206,8 +229,8 @@ export default function ContactPage() {
                   >
                     <option value="">Choose one</option>
                     <option>AI Workshop ($497/person)</option>
-                    <option>Corporate AI Audit ($15K–$25K)</option>
-                    <option>Custom AI Build ($25K–$50K+)</option>
+                    <option>AI Consulting / Process Review</option>
+                    <option>Custom AI Tool Build</option>
                     <option>Not sure yet — want to talk first</option>
                   </select>
                 </div>
@@ -220,7 +243,7 @@ export default function ContactPage() {
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     rows={5}
-                    placeholder="What's eating up the most time in your business right now? What would be worth automating if you could?"
+                    placeholder="What's eating up the most time in your business right now? What would you automate if you could?"
                     className="w-full px-4 py-3 rounded-lg bg-[#0B0F14] border border-white/10 text-white placeholder-[#CBD5E1]/30 focus:outline-none focus:border-[#1488AA]/50 transition-colors text-sm resize-none"
                   />
                 </div>
@@ -233,14 +256,12 @@ export default function ContactPage() {
                   {loading ? (
                     <span className="animate-pulse">Sending...</span>
                   ) : (
-                    <>
-                      Send Message <Send size={18} />
-                    </>
+                    <><Send size={18} /> Send Message</>
                   )}
                 </button>
 
                 <p className="text-center text-[#CBD5E1]/40 text-xs">
-                  No spam. No sales calls unless you ask. Kyle will reply directly.
+                  Kyle reviews every submission personally and responds within one business day.
                 </p>
               </form>
             )}

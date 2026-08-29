@@ -1,10 +1,12 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, CheckCircle, Zap, Users, TrendingUp, Star, MapPin } from 'lucide-react';
 
 const services = [
   {
     name: 'AI Workshop',
     price: '$497',
+    showPrice: true,
     per: 'per person',
     description:
       'A hands-on half-day session at our Madison office. You leave with a working AI tool built for your specific business. Not a demo. An actual tool.',
@@ -19,27 +21,29 @@ const services = [
     highlight: false,
   },
   {
-    name: 'Corporate AI Audit',
-    price: '$15K–$25K',
-    per: 'flat project',
+    name: 'AI Consulting & Process Review',
+    price: 'Quoted based on your needs',
+    showPrice: false,
+    per: '',
     description:
-      'Kyle comes to your business, maps your workflows in person, identifies every AI opportunity, and delivers a prioritized roadmap. Then we build it.',
+      'Kyle comes to your business, maps your workflows in person, identifies every AI opportunity, and delivers a prioritized plan. Scope and pricing discussed during your initial meeting.',
     features: [
       'On-site business process review',
       'AI opportunity assessment',
       'Prioritized implementation plan',
-      'Includes executive presentation',
+      'Pricing based on size and complexity',
     ],
-    cta: 'Let\'s Talk',
+    cta: 'Request a Quote',
     href: '/contact',
     highlight: true,
   },
   {
     name: 'Custom AI Build',
-    price: '$25K–$50K+',
-    per: 'per project',
+    price: 'Quoted based on your needs',
+    showPrice: false,
+    per: '',
     description:
-      'Done-for-you custom AI tools built into your existing workflows. We engineer it, deploy it, train your team on-site, and hand you the keys.',
+      'Done-for-you custom AI tools built into your existing workflows. We engineer it, deploy it, train your team on-site, and hand you the keys. Scope and pricing discussed in person.',
     features: [
       'Full custom AI system development',
       'Integration with your existing software',
@@ -55,8 +59,8 @@ const services = [
 const stats = [
   { value: 'EE PhD', label: 'Engineering credentials' },
   { value: '10+', label: 'AI systems built & deployed' },
-  { value: '30 mi', label: 'Service radius from Meridianville' },
-  { value: '100%', label: 'In-person. No Zoom.' },
+  { value: '~30 mi', label: 'Service radius from Huntsville' },
+  { value: '100%', label: 'In-person. Face to face.' },
 ];
 
 const localAreas = [
@@ -82,11 +86,11 @@ const faqs = [
   },
   {
     q: 'Is everything done in person?',
-    a: 'Yes — that\'s the point. Kyle meets at your office or his, learns your operation firsthand, and builds something that fits how you actually work. No Zoom-only consultants here.',
+    a: 'Yes — that\'s the point. Kyle is local and happy to meet at your office or his. He can also do a call if that makes sense as a first step, but the real work happens in person.',
   },
   {
     q: 'What area do you serve?',
-    a: 'Huntsville, Madison, Athens, Meridianville, Hazel Green, Gurley, and the surrounding North Alabama area — roughly a 30-mile radius from Meridianville. If you\'re local, you\'re in the right place.',
+    a: 'Within about 30 miles of Huntsville — Huntsville, Madison, Athens, Meridianville, Hazel Green, Gurley, and nearby communities. If you\'re local, you\'re in the right place.',
   },
   {
     q: 'How is this different from ChatGPT?',
@@ -107,7 +111,7 @@ export default function HomePage() {
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#1488AA]/30 bg-[#1488AA]/10 text-[#1488AA] text-sm font-medium mb-8">
             <MapPin size={14} />
-            North Alabama AI Consulting — Huntsville · Madison · Athens · Meridianville
+            North Alabama AI Consulting — Huntsville · Madison · Athens and surrounding areas
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-6 tracking-tight">
@@ -117,8 +121,8 @@ export default function HomePage() {
           </h1>
 
           <p className="text-xl text-[#CBD5E1]/80 leading-relaxed max-w-2xl mx-auto mb-10">
-            Four Stones AI works exclusively with businesses in the Huntsville metro area —
-            in person, on-site, face to face. Real AI tools built for real North Alabama businesses.
+            Four Stones AI works exclusively with businesses within about 30 miles of Huntsville —
+            in person, face to face. Real AI tools built for real North Alabama businesses.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -160,12 +164,12 @@ export default function HomePage() {
               </h2>
               <p className="text-[#CBD5E1]/70 leading-relaxed mb-6">
                 Most AI consultants are somewhere else — on a Zoom call, sending slide decks,
-                and charging you for travel. Kyle Montgomery lives in Meridianville and works
-                exclusively in North Alabama. He meets at your office, learns your operation
-                in person, and builds something that actually works for the way you run things.
+                charging you for time zones. Kyle Montgomery is local, within 30 miles of
+                Huntsville, and happy to meet at your office to learn your operation firsthand
+                and build something that actually fits how you run things.
               </p>
               <p className="text-[#CBD5E1]/70 leading-relaxed mb-8">
-                Whether you&apos;re an HVAC company in Athens, a law firm on the Parkway, or
+                Whether you&apos;re an HVAC company in Athens, a law firm in Huntsville, or
                 a contractor in Madison — if you&apos;re within 30 miles and ready to put AI
                 to work, this is the call to make.
               </p>
@@ -178,7 +182,7 @@ export default function HomePage() {
             </div>
             <div className="space-y-4">
               {[
-                { icon: MapPin, title: 'In person. Always.', desc: 'Kyle comes to you or you come to the office in Madison. No remote-only work. He needs to see your operation to build something real.' },
+                { icon: MapPin, title: 'In person. Always.', desc: 'Kyle comes to you or you come to the office in Madison. He can do a call as a first step — but the real work happens face to face.' },
                 { icon: Users, title: 'Built for your workflow', desc: 'Not a generic tool. Custom AI designed around how your specific business actually runs — your data, your processes, your team.' },
                 { icon: TrendingUp, title: 'ROI you can measure', desc: 'Time saved, money recovered, staff hours freed up. Kyle focuses on results that show up in your bottom line.' },
               ].map(({ icon: Icon, title, desc }) => (
@@ -197,6 +201,27 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Huntsville image banner */}
+      <section className="px-6 bg-[#0B0F14] py-4">
+        <div className="max-w-6xl mx-auto rounded-2xl overflow-hidden border border-white/5 relative">
+          <Image
+            src="/images/huntsville.png"
+            alt="Huntsville Alabama"
+            width={1280}
+            height={480}
+            className="w-full h-56 md:h-72 object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B0F14]/70 via-transparent to-[#0B0F14]/40 flex items-center px-10">
+            <div>
+              <div className="text-[#1488AA] text-xs font-semibold uppercase tracking-widest mb-2">Serving North Alabama</div>
+              <div className="text-white text-2xl md:text-3xl font-bold leading-snug">
+                Huntsville · Madison · Athens<br />and surrounding communities
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services */}
       <section className="py-24 px-6 bg-[#0B0F14]">
         <div className="max-w-6xl mx-auto">
@@ -205,8 +230,8 @@ export default function HomePage() {
               Three ways to work together
             </h2>
             <p className="text-[#CBD5E1]/60 max-w-xl mx-auto">
-              All work is done in person, in North Alabama. Start with the workshop and see
-              what&apos;s possible, or reach out directly if you already know what you need.
+              All work is done in person, in North Alabama. Start with the workshop,
+              or reach out directly if you already know what you need.
             </p>
           </div>
 
@@ -221,16 +246,22 @@ export default function HomePage() {
                 }`}
               >
                 {s.highlight && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full gradient-teal-blue text-white text-xs font-semibold">
-                    Most Popular
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full gradient-teal-blue text-white text-xs font-semibold whitespace-nowrap">
+                    Most Requested
                   </div>
                 )}
                 <div className="mb-6">
                   <h3 className="text-white font-bold text-xl mb-2">{s.name}</h3>
-                  <div className="flex items-baseline gap-2 mb-4">
-                    <span className="text-3xl font-bold text-gradient">{s.price}</span>
-                    <span className="text-[#CBD5E1]/50 text-sm">{s.per}</span>
-                  </div>
+                  {s.showPrice ? (
+                    <div className="flex items-baseline gap-2 mb-4">
+                      <span className="text-3xl font-bold text-gradient">{s.price}</span>
+                      <span className="text-[#CBD5E1]/50 text-sm">{s.per}</span>
+                    </div>
+                  ) : (
+                    <div className="mb-4">
+                      <span className="text-base font-medium text-[#CBD5E1]/60">Quoted based on your needs</span>
+                    </div>
+                  )}
                   <p className="text-[#CBD5E1]/70 text-sm leading-relaxed">{s.description}</p>
                 </div>
                 <ul className="space-y-3 mb-8 flex-1">
@@ -257,47 +288,40 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Local areas + industries */}
+      {/* Automation image + local areas */}
       <section className="py-24 px-6 bg-[#111827]">
         <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-16">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
-              <h2 className="text-2xl font-bold text-white mb-4">
-                Serving these communities
-              </h2>
-              <p className="text-[#CBD5E1]/60 mb-8 text-sm leading-relaxed">
-                Kyle works within roughly 30 miles of Meridianville — the heart of North Alabama.
-                If your business is here, he can be at your door.
+              <h2 className="text-2xl font-bold text-white mb-4">Serving these communities</h2>
+              <p className="text-[#CBD5E1]/60 mb-6 text-sm leading-relaxed">
+                Within about 30 miles of Huntsville. If your business is in North Alabama,
+                Kyle can be at your door.
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mb-8">
                 {localAreas.map((area) => (
-                  <span
-                    key={area}
-                    className="px-4 py-2 rounded-full bg-[#0B0F14] border border-[#1488AA]/20 text-[#CBD5E1]/70 text-sm hover:text-white hover:border-[#1488AA]/50 transition-all"
-                  >
+                  <span key={area} className="px-4 py-2 rounded-full bg-[#0B0F14] border border-[#1488AA]/20 text-[#CBD5E1]/70 text-sm hover:text-white hover:border-[#1488AA]/50 transition-all">
                     {area}
                   </span>
                 ))}
               </div>
-            </div>
-            <div>
-              <h2 className="text-2xl font-bold text-white mb-4">
-                Industries we work with
-              </h2>
-              <p className="text-[#CBD5E1]/60 mb-8 text-sm leading-relaxed">
-                Service-based businesses with teams and repeatable processes — AI can make
-                you faster and cheaper than your competition.
-              </p>
+              <h2 className="text-2xl font-bold text-white mb-4">Industries we work with</h2>
               <div className="flex flex-wrap gap-2">
                 {industries.map((ind) => (
-                  <span
-                    key={ind}
-                    className="px-4 py-2 rounded-full bg-[#0B0F14] border border-white/8 text-[#CBD5E1]/70 text-sm hover:border-[#1488AA]/30 hover:text-white transition-all"
-                  >
+                  <span key={ind} className="px-4 py-2 rounded-full bg-[#0B0F14] border border-white/8 text-[#CBD5E1]/70 text-sm hover:border-[#1488AA]/30 hover:text-white transition-all">
                     {ind}
                   </span>
                 ))}
               </div>
+            </div>
+            <div className="rounded-2xl overflow-hidden border border-white/5">
+              <Image
+                src="/images/automation.png"
+                alt="AI automation for small business"
+                width={720}
+                height={480}
+                className="w-full h-72 object-cover"
+              />
             </div>
           </div>
         </div>
@@ -306,9 +330,7 @@ export default function HomePage() {
       {/* FAQ */}
       <section className="py-24 px-6 bg-[#0B0F14]">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">
-            Common questions
-          </h2>
+          <h2 className="text-3xl font-bold text-white text-center mb-12">Common questions</h2>
           <div className="space-y-4">
             {faqs.map((faq) => (
               <div key={faq.q} className="p-6 rounded-xl bg-[#111827] border border-white/5">
@@ -330,27 +352,21 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-grid opacity-30" />
             <div className="relative z-10">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1488AA]/30 bg-[#1488AA]/10 text-[#1488AA] text-xs font-medium mb-6">
-                <MapPin size={12} /> North Alabama — In Person Only
+                <MapPin size={12} /> North Alabama — In Person
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Local business. Local consultant. Real results.
               </h2>
               <p className="text-[#CBD5E1]/70 mb-8">
                 Start with the $497 workshop at our Madison, AL office. Walk out with a working
-                AI tool built for your business. In person. No Zoom. No fluff.
+                AI tool built for your business. Face to face. No fluff.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/workshop"
-                  className="group px-8 py-4 font-semibold text-white rounded-xl gradient-teal-blue hover:opacity-90 flex items-center gap-2 justify-center"
-                >
+                <Link href="/workshop" className="group px-8 py-4 font-semibold text-white rounded-xl gradient-teal-blue hover:opacity-90 flex items-center gap-2 justify-center">
                   Join the Workshop
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <Link
-                  href="/contact"
-                  className="px-8 py-4 font-semibold text-[#CBD5E1] rounded-xl border border-white/10 hover:bg-white/5 transition-all"
-                >
+                <Link href="/contact" className="px-8 py-4 font-semibold text-[#CBD5E1] rounded-xl border border-white/10 hover:bg-white/5 transition-all">
                   Talk to Kyle
                 </Link>
               </div>

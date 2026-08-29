@@ -1,26 +1,27 @@
 import Link from 'next/link';
-import { ArrowRight, CheckCircle, Clock, Users, Cpu, BarChart3, Shield } from 'lucide-react';
+import { ArrowRight, CheckCircle, Clock, Users, Cpu, BarChart3, Shield, MapPin } from 'lucide-react';
+import Image from 'next/image';
 
 const process = [
   {
     step: '01',
-    title: 'Discovery call',
-    desc: 'We spend 30–60 minutes understanding your business, your biggest pain points, and where AI can make the most impact. Free, no commitment.',
+    title: 'You reach out',
+    desc: 'Fill out the contact form or come to the workshop. Either way, Kyle reviews it personally and gets back to you within one business day.',
   },
   {
     step: '02',
-    title: 'Assessment & plan',
-    desc: 'Kyle maps your workflows and identifies the highest-ROI AI opportunities. For custom builds, this becomes the project spec.',
+    title: 'In-person meeting',
+    desc: 'Kyle meets with you — at your location or at the Madison office. He learns your business, your team, and your biggest pain points firsthand.',
   },
   {
     step: '03',
     title: 'Build & deploy',
-    desc: 'We build the tool, test it against real scenarios from your business, and deploy it into your workflow.',
+    desc: 'Once the scope is clear, Kyle builds the tool, tests it with real scenarios from your business, and deploys it into your workflow.',
   },
   {
     step: '04',
     title: 'Handoff & training',
-    desc: 'You and your team get trained on the tool. Documentation included. You own everything we build.',
+    desc: 'Your team gets trained on-site. Documentation included. You own everything — no lock-in, no subscriptions, no hostage IP.',
   },
 ];
 
@@ -29,81 +30,84 @@ const tiers = [
     name: 'AI Workshop',
     price: '$497',
     unit: 'per person',
-    duration: 'Half day',
+    showPrice: true,
+    duration: 'Half day — 9 AM to 1 PM',
     description:
-      'The fastest way to understand what AI can do for your business — by building something in one session.',
-    tagline: 'See what\'s possible',
+      'The fastest way to understand what AI can do for your business — by actually building something during a single in-person session.',
+    tagline: 'Start here',
     href: '/workshop',
     ctaText: 'Reserve Your Seat',
     primary: false,
     features: [
-      { label: 'Group format (10 max)', icon: Users },
-      { label: 'Build a real tool in 4 hours', icon: Cpu },
-      { label: 'Hands-on, guided by Kyle', icon: Shield },
+      { label: 'In-person, Madison AL office', icon: MapPin },
+      { label: 'Small group (10 max)', icon: Users },
+      { label: 'Build a real AI tool in 4 hours', icon: Cpu },
       { label: 'Take the tool home and use it', icon: CheckCircle },
-      { label: 'Monthly sessions in Madison, AL', icon: Clock },
+      { label: 'Kyle leads every session', icon: Shield },
     ],
     useCases: [
-      'Business owners who want to learn before committing',
+      'Business owners who want to see AI work before committing',
       'Teams exploring AI for the first time',
-      'Anyone skeptical of AI who needs to see it firsthand',
+      'Anyone skeptical who needs to see it in action',
     ],
   },
   {
-    name: 'Corporate AI Audit',
-    price: '$15K–$25K',
-    unit: 'flat fee',
-    duration: '2–4 weeks',
+    name: 'AI Consulting & Process Review',
+    price: 'Custom quote',
+    unit: 'based on scope',
+    showPrice: false,
+    duration: 'Typically 2–4 weeks',
     description:
-      'A full assessment of your business processes, identifying every place AI can reduce cost or increase output — with a prioritized implementation roadmap.',
-    tagline: 'Find the money',
+      'Kyle comes on-site, maps your workflows, identifies every place AI can reduce cost or increase output, and delivers a prioritized plan. Priced based on the size and complexity of your operation.',
+    tagline: 'Find the opportunity',
     href: '/contact',
-    ctaText: 'Schedule a Call',
+    ctaText: 'Request a Quote',
     primary: true,
     features: [
-      { label: 'Full business process review', icon: BarChart3 },
-      { label: 'AI opportunity map', icon: Cpu },
+      { label: 'On-site business process review', icon: BarChart3 },
+      { label: 'AI opportunity mapping', icon: Cpu },
       { label: 'Prioritized implementation plan', icon: CheckCircle },
-      { label: 'Executive presentation', icon: Users },
       { label: 'ROI estimates per opportunity', icon: BarChart3 },
+      { label: 'Executive-ready presentation', icon: Users },
     ],
     useCases: [
-      'Companies with 10–100 employees ready to modernize',
-      'Leadership teams that need data before committing to builds',
-      'Businesses spending too much on manual tasks and SaaS',
+      'Companies with 5–100 employees ready to modernize',
+      'Owners who need a clear picture before building',
+      'Businesses spending too much time on manual processes',
     ],
   },
   {
     name: 'Custom AI Build',
-    price: '$25K–$50K+',
-    unit: 'per project',
-    duration: '4–12 weeks',
+    price: 'Custom quote',
+    unit: 'based on scope',
+    showPrice: false,
+    duration: 'Typically 4–12 weeks',
     description:
-      'Done-for-you custom AI systems built into your existing workflows. We engineer, deploy, train, and hand you the keys.',
-    tagline: 'Deploy the system',
+      'Done-for-you custom AI systems built into your existing workflows. Priced based on complexity and scope — discussed during an in-person meeting.',
+    tagline: 'Build the system',
     href: '/contact',
     ctaText: 'Start the Conversation',
     primary: false,
     features: [
       { label: 'Full custom AI development', icon: Cpu },
-      { label: 'Integration with existing software', icon: Shield },
-      { label: 'Staff training + documentation', icon: Users },
+      { label: 'Integration with your existing software', icon: Shield },
+      { label: 'On-site staff training + docs', icon: Users },
       { label: 'You own all code and IP', icon: CheckCircle },
       { label: 'Optional ongoing support', icon: Clock },
     ],
     useCases: [
-      'Businesses ready to go all-in on AI-first operations',
-      'Companies with specific workflows ripe for automation',
-      'Owners who want the tool built without doing it themselves',
+      'Businesses ready to go all-in on AI operations',
+      'Companies with specific workflows to automate',
+      'Owners who want it built without doing it themselves',
     ],
   },
 ];
 
 const guarantee = [
   'You will never be sold something that doesn\'t fit your business.',
-  'Every deliverable is specific to your workflows — nothing off-the-shelf.',
+  'Every project starts with an in-person conversation — not a sales deck.',
   'You own everything. No lock-in, no subscriptions, no hostage IP.',
-  'If Kyle can\'t help you, he\'ll tell you. He doesn\'t take every project.',
+  'Pricing is discussed openly. No surprises.',
 ];
 
 export default function ServicesPage() {
@@ -116,23 +120,39 @@ export default function ServicesPage() {
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#1488AA]/30 bg-[#1488AA]/10 text-[#1488AA] text-sm font-medium mb-8">
-            Services & Pricing
+            <MapPin size={14} /> North Alabama — In Person Only
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
-            Three ways to go{' '}
-            <span className="text-gradient">AI-first.</span>
+            Three ways to work together —
+            <br />
+            <span className="text-gradient">all in person, in North Alabama.</span>
           </h1>
           <p className="text-xl text-[#CBD5E1]/70 leading-relaxed max-w-2xl mx-auto">
-            Whether you want to dip your toe in or overhaul how your business operates,
-            there&apos;s an engagement designed for where you are right now.
+            Kyle works exclusively with businesses within about 30 miles of Huntsville.
+            Every engagement starts with a face-to-face conversation — at your location or his.
           </p>
+        </div>
+      </section>
+
+      {/* Automation image */}
+      <section className="px-6 pb-0 bg-[#0B0F14]">
+        <div className="max-w-5xl mx-auto">
+          <div className="rounded-2xl overflow-hidden border border-white/5">
+            <Image
+              src="/images/automation.png"
+              alt="AI automation visualization"
+              width={1280}
+              height={720}
+              className="w-full h-64 object-cover"
+            />
+          </div>
         </div>
       </section>
 
       {/* Service tiers */}
       <section className="py-20 px-6 bg-[#0B0F14]">
         <div className="max-w-6xl mx-auto space-y-8">
-          {tiers.map((tier, idx) => (
+          {tiers.map((tier) => (
             <div
               key={tier.name}
               className={`rounded-2xl p-8 md:p-10 border ${
@@ -153,10 +173,19 @@ export default function ServicesPage() {
                     {tier.tagline}
                   </div>
                   <h2 className="text-2xl font-bold text-white mb-3">{tier.name}</h2>
-                  <div className="flex items-baseline gap-2 mb-4">
-                    <span className="text-3xl font-bold text-gradient">{tier.price}</span>
-                    <span className="text-[#CBD5E1]/50 text-sm">{tier.unit}</span>
-                  </div>
+
+                  {tier.showPrice ? (
+                    <div className="flex items-baseline gap-2 mb-4">
+                      <span className="text-3xl font-bold text-gradient">{tier.price}</span>
+                      <span className="text-[#CBD5E1]/50 text-sm">{tier.unit}</span>
+                    </div>
+                  ) : (
+                    <div className="mb-4">
+                      <span className="text-lg font-semibold text-[#CBD5E1]/70">Quoted based on your needs</span>
+                      <p className="text-[#CBD5E1]/40 text-xs mt-1">Discussed during your in-person meeting with Kyle</p>
+                    </div>
+                  )}
+
                   <div className="flex items-center gap-2 text-[#CBD5E1]/50 text-sm mb-6">
                     <Clock size={14} className="text-[#1488AA]" />
                     {tier.duration}
@@ -213,33 +242,44 @@ export default function ServicesPage() {
 
       {/* Process */}
       <section className="py-20 px-6 bg-[#111827]">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-white mb-4">How it works</h2>
-            <p className="text-[#CBD5E1]/60">
-              Every engagement (except the public workshop) follows this pattern.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6">
-            {process.map((step) => (
-              <div key={step.step} className="p-6 rounded-xl bg-[#0B0F14] border border-white/5 hover:border-[#1488AA]/20 transition-colors">
-                <div className="text-4xl font-bold text-gradient mb-4">{step.step}</div>
-                <h3 className="text-white font-semibold text-lg mb-2">{step.title}</h3>
-                <p className="text-[#CBD5E1]/60 text-sm leading-relaxed">{step.desc}</p>
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-white mb-4">How it works</h2>
+              <p className="text-[#CBD5E1]/60 mb-8">
+                Every engagement starts local and in person. No cold contracts, no remote-only work.
+              </p>
+              <div className="space-y-6">
+                {process.map((step) => (
+                  <div key={step.step} className="flex gap-5">
+                    <div className="text-2xl font-bold text-gradient shrink-0 w-8">{step.step}</div>
+                    <div>
+                      <h3 className="text-white font-semibold mb-1">{step.title}</h3>
+                      <p className="text-[#CBD5E1]/60 text-sm leading-relaxed">{step.desc}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+            <div className="rounded-2xl overflow-hidden border border-white/5">
+              <Image
+                src="/images/meeting.png"
+                alt="In-person AI consulting meeting"
+                width={720}
+                height={480}
+                className="w-full h-80 object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Guarantee */}
+      {/* Promise */}
       <section className="py-20 px-6 bg-[#0B0F14]">
         <div className="max-w-3xl mx-auto">
           <div className="p-8 md:p-10 rounded-2xl bg-[#111827] border border-[#1488AA]/20 text-center">
             <h2 className="text-2xl font-bold text-white mb-4">The Four Stones promise</h2>
-            <p className="text-[#CBD5E1]/60 mb-8">
-              No fine print. Just the way Kyle works.
-            </p>
+            <p className="text-[#CBD5E1]/60 mb-8">No fine print. Just how Kyle works.</p>
             <ul className="space-y-4 text-left max-w-xl mx-auto">
               {guarantee.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-[#CBD5E1]/70 text-sm">
@@ -257,12 +297,12 @@ export default function ServicesPage() {
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl font-bold text-white mb-4">Not sure where to start?</h2>
           <p className="text-[#CBD5E1]/60 mb-8">
-            Start with the workshop. It&apos;s the lowest-risk way to see exactly what AI can do
-            for your business before spending more.
+            Start with the $497 workshop in Madison, AL — the lowest-commitment way to see
+            what AI can do for your North Alabama business before spending more.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/workshop" className="px-8 py-4 font-semibold text-white rounded-xl gradient-teal-blue hover:opacity-90 transition-all">
-              Join the $497 Workshop
+              Join the Workshop — $497
             </Link>
             <Link href="/contact" className="px-8 py-4 font-semibold text-[#CBD5E1] rounded-xl border border-white/10 hover:bg-white/5 transition-all">
               Talk to Kyle First
