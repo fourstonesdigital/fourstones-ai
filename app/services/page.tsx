@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, CheckCircle, Clock, Users, Cpu, BarChart3, Shield, MapPin, Video } from 'lucide-react';
 import Image from 'next/image';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 
 const process = [
   {
@@ -120,7 +121,7 @@ export default function ServicesPage() {
           <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
             Three ways to work together —
             <br />
-            <span className="text-gradient">all in North Alabama.</span>
+            <span className="text-gradient accent-serif">all in North Alabama.</span>
           </h1>
           <p className="text-xl text-[#CBD5E1]/70 leading-relaxed max-w-2xl mx-auto">
             Kyle works with businesses in Huntsville, Madison, and the surrounding areas.
@@ -223,12 +224,36 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Statement — light section */}
+      <section className="section-light py-24 md:py-32 px-6">
+        <div className="max-w-4xl mx-auto">
+          <ScrollReveal
+            className="text-2xl md:text-4xl font-semibold leading-[1.35] tracking-tight"
+            dimClass="text-[#0B0F14]/20"
+            brightClass="text-[#0B0F14]"
+          >
+            Every engagement is a flat, one-time fee agreed before any work begins. No retainers, no lock-in, no dependency on Four Stones AI to keep things running. You own the code, the tools, and the outcome.
+          </ScrollReveal>
+
+          <div className="mt-14">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-7 py-3.5 font-semibold text-[#0B0F14] border border-[#0B0F14]/25 rounded-xl hover:bg-[#0B0F14] hover:text-white transition-all"
+            >
+              Start the Conversation <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Process */}
       <section className="py-20 px-6 bg-[#111827]">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-white mb-4">How it works</h2>
+              <h2 className="text-3xl font-bold text-white mb-4">
+                How it <span className="accent-serif text-gradient">works</span>
+              </h2>
               <p className="text-[#CBD5E1]/60 mb-8">
                 Simple, flat engagements. Scope agreed upfront. Work delivered. Keys handed over.
               </p>
@@ -261,7 +286,9 @@ export default function ServicesPage() {
       <section className="py-20 px-6 bg-[#0B0F14]">
         <div className="max-w-3xl mx-auto">
           <div className="p-8 md:p-10 rounded-2xl bg-[#111827] border border-[#1488AA]/20 text-center">
-            <h2 className="text-2xl font-bold text-white mb-4">The Four Stones AI Promise</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">
+              The Four Stones AI <span className="accent-serif text-gradient">Promise</span>
+            </h2>
             <p className="text-[#CBD5E1]/60 mb-8">No fine print. Just how Kyle works.</p>
             <ul className="space-y-4 text-left max-w-xl mx-auto">
               {promise.map((item) => (

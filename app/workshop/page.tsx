@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Clock, Users, MapPin, CheckCircle, Calendar, BookOpen, Wrench, Lightbulb } from 'lucide-react';
 import WorkshopEvents from '@/components/sections/WorkshopEvents';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 
 const whatYouLearn = [
   {
@@ -132,7 +133,7 @@ export default function WorkshopPage() {
             <br />
             Use it yourself.
             <br />
-            <span className="text-gradient">Build something real.</span>
+            <span className="text-gradient accent-serif">Build something real.</span>
           </h1>
           <p className="text-xl text-[#CBD5E1]/70 leading-relaxed max-w-2xl mb-10">
             This 4-hour workshop is equal parts education and application. You leave knowing
@@ -172,12 +173,40 @@ export default function WorkshopPage() {
         </div>
       </section>
 
+      {/* Statement — light section */}
+      <section className="section-light py-24 md:py-32 px-6">
+        <div className="max-w-4xl mx-auto">
+          <ScrollReveal
+            className="text-2xl md:text-4xl font-semibold leading-[1.35] tracking-tight"
+            dimClass="text-[#0B0F14]/20"
+            brightClass="text-[#0B0F14]"
+          >
+            Four hours. Ten seats. One working AI tool that you built yourself, for your own business, before you walk out the door. This is not a seminar about the future of AI — it is a working session about what you can use on Monday morning.
+          </ScrollReveal>
+
+          <div className="mt-14 flex flex-col sm:flex-row gap-4">
+            <a
+              href="#dates"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 font-semibold text-white bg-[#0B0F14] rounded-xl hover:bg-[#111827] transition-all"
+            >
+              See Upcoming Dates <ArrowRight size={16} />
+            </a>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 font-semibold text-[#0B0F14] border border-[#0B0F14]/25 rounded-xl hover:bg-[#0B0F14] hover:text-white transition-all"
+            >
+              Ask Kyle a Question
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* What you get */}
       <section className="py-20 px-6 bg-[#111827]">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="text-3xl font-bold text-white mb-4">
-              Not just a workshop. A turning point.
+              Not just a workshop. <span className="accent-serif text-gradient">A turning point.</span>
             </h2>
             <p className="text-[#CBD5E1]/60 max-w-2xl mx-auto leading-relaxed">
               Most AI events leave you with a notebook full of notes and no idea what to do next.
@@ -213,7 +242,9 @@ export default function WorkshopPage() {
             />
           </div>
           <div>
-            <h2 className="text-3xl font-bold text-white mb-8">Who this is for</h2>
+            <h2 className="text-3xl font-bold text-white mb-8">
+              Who this is <span className="accent-serif text-gradient">for</span>
+            </h2>
             <div className="space-y-6">
               {whoShouldCome.map((item) => (
                 <div key={item.label} className="flex gap-4">

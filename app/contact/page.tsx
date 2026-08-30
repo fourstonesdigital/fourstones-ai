@@ -44,7 +44,8 @@ export default function ContactPage() {
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
-            Let&apos;s meet and talk about your business.
+            Let&apos;s meet and talk about{' '}
+            <span className="accent-serif text-gradient">your business.</span>
           </h1>
           <p className="text-lg text-[#CBD5E1]/70 leading-relaxed max-w-xl mx-auto">
             Kyle works with businesses in the Huntsville–Madison area and surrounding areas.
@@ -59,7 +60,9 @@ export default function ContactPage() {
           {/* Contact info */}
           <div className="md:col-span-2 space-y-6">
             <div>
-              <h2 className="text-white font-bold text-xl mb-6">Get in touch</h2>
+              <h2 className="text-white font-bold text-xl mb-6">
+                Get in <span className="accent-serif text-gradient">touch</span>
+              </h2>
               <div className="space-y-5">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-lg gradient-teal-blue flex items-center justify-center shrink-0">

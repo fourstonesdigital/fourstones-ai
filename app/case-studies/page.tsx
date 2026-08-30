@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle, ExternalLink } from 'lucide-react';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 
 const caseStudies = [
   {
@@ -83,7 +84,7 @@ export default function CaseStudiesPage() {
           <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
             Built before we consulted
             <br />
-            <span className="text-gradient">anyone.</span>
+            <span className="text-gradient accent-serif">anyone.</span>
           </h1>
           <p className="text-xl text-[#CBD5E1]/70 leading-relaxed max-w-2xl">
             Every tool below was built by Kyle for his own business — nGenius Prep.
@@ -92,8 +93,21 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
+      {/* Statement — light section */}
+      <section className="section-light py-24 md:py-32 px-6">
+        <div className="max-w-4xl mx-auto">
+          <ScrollReveal
+            className="text-2xl md:text-4xl font-semibold leading-[1.35] tracking-tight"
+            dimClass="text-[#0B0F14]/20"
+            brightClass="text-[#0B0F14]"
+          >
+            Most consultants show you a portfolio of other people&apos;s businesses. These are the tools Kyle built to run his own — in production, used daily, with real money and real students depending on them.
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Case studies */}
-      <section className="py-12 px-6 bg-[#0B0F14]">
+      <section className="py-24 px-6 bg-[#0B0F14]">
         <div className="max-w-5xl mx-auto space-y-24">
           {caseStudies.map((cs, i) => (
             <div key={cs.slug} className="scroll-mt-24" id={cs.slug}>
@@ -181,7 +195,8 @@ export default function CaseStudiesPage() {
       <section className="py-24 px-6 bg-[#111827] text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl font-bold text-white mb-4">
-            Want something like this for your business?
+            Want something like this for{' '}
+            <span className="accent-serif text-gradient">your business?</span>
           </h2>
           <p className="text-[#CBD5E1]/60 mb-8">
             Start with the $497 AI Implementation Workshop and see what&apos;s possible.
