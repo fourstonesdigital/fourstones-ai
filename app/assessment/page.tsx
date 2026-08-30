@@ -89,10 +89,7 @@ const faqs = [
     q: 'What do you need from me before the visit?',
     a: 'A brief intake form completed at booking — your industry, team size, revenue range, software in use, and what eats the most time. That\'s it. Kyle does the rest on-site.',
   },
-  {
-    q: 'Is the $3,497 price always available?',
-    a: 'No. $3,497 is the workshop-attendee price, available for 48 hours after a workshop ends. The standard price is $4,997. The only way to access the discounted rate is to attend a workshop first.',
-  },
+
 ];
 
 export default function AssessmentPage() {
@@ -289,15 +286,13 @@ export default function AssessmentPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {/* Standard price */}
-            <div className="rounded-2xl bg-[#111827] border border-white/8 p-8 flex flex-col">
-              <div className="text-[#CBD5E1]/50 text-xs font-semibold uppercase tracking-widest mb-4">Standard</div>
+          <div className="max-w-md mx-auto">
+            <div className="rounded-2xl bg-gradient-to-b from-[#1488AA]/15 to-[#0686D4]/5 border border-[#1488AA]/40 p-8 flex flex-col shadow-lg shadow-[#1488AA]/10">
               <div className="flex items-baseline gap-2 mb-2">
-                <span className="text-4xl font-bold text-white">$4,997</span>
+                <span className="text-4xl font-bold text-gradient">$4,997</span>
               </div>
-              <p className="text-[#CBD5E1]/50 text-sm mb-6">Available any time. Book directly.</p>
-              <ul className="space-y-3 mb-8 flex-1">
+              <p className="text-[#CBD5E1]/50 text-sm mb-6">One price. Same deliverables. Book directly.</p>
+              <ul className="space-y-3 mb-8">
                 {[
                   '4 hours on-site with your team',
                   'Software and expense audit',
@@ -314,54 +309,12 @@ export default function AssessmentPage() {
               </ul>
               <Link
                 href="/contact"
-                className="text-center py-3 px-6 font-semibold text-[#1488AA] rounded-xl border border-[#1488AA]/30 hover:bg-[#1488AA]/10 transition-all text-sm"
+                className="text-center py-3 px-6 font-semibold text-white rounded-xl gradient-teal-blue hover:opacity-90 transition-all text-sm"
               >
                 Book the Assessment
               </Link>
             </div>
-
-            {/* Workshop-attendee price */}
-            <div className="relative rounded-2xl bg-gradient-to-b from-[#1488AA]/15 to-[#0686D4]/5 border border-[#1488AA]/40 p-8 flex flex-col shadow-lg shadow-[#1488AA]/10">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full gradient-teal-blue text-white text-xs font-semibold whitespace-nowrap">
-                Workshop Attendee Price
-              </div>
-              <div className="text-[#1488AA] text-xs font-semibold uppercase tracking-widest mb-4">After the Workshop</div>
-              <div className="flex items-baseline gap-2 mb-1">
-                <span className="text-4xl font-bold text-gradient">$3,497</span>
-              </div>
-              <div className="flex items-center gap-2 mb-2">
-                <span className="text-[#CBD5E1]/40 line-through text-sm">$4,997</span>
-                <span className="text-[#1488AA] text-xs font-semibold">Save $1,500</span>
-              </div>
-              <p className="text-[#CBD5E1]/50 text-sm mb-6">Valid 48 hours after workshop ends. Same product — no exceptions.</p>
-              <ul className="space-y-3 mb-8 flex-1">
-                {[
-                  '4 hours on-site with your team',
-                  'Software and expense audit',
-                  'Repetitive task mapping',
-                  'Four Pillars scored report',
-                  '~7-minute video walkthrough',
-                  '60-minute Zoom follow-up call',
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-[#CBD5E1]/70">
-                    <CheckCircle size={16} className="text-[#1488AA] shrink-0 mt-0.5" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/workshop"
-                className="text-center py-3 px-6 font-semibold text-white rounded-xl gradient-teal-blue hover:opacity-90 transition-all text-sm"
-              >
-                Start with the Workshop
-              </Link>
-            </div>
           </div>
-
-          <p className="text-center text-[#CBD5E1]/40 text-xs mt-8 max-w-lg mx-auto leading-relaxed">
-            $3,497 is a hard floor. It is not available outside the 48-hour workshop window.
-            The only path to that price is attending a workshop first.
-          </p>
         </div>
       </section>
 
