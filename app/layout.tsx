@@ -1,10 +1,20 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Fraunces } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+});
+
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  style: ['italic'],
+  weight: ['400', '500', '600'],
+  variable: '--font-fraunces',
+});
 
 export const metadata: Metadata = {
   title: 'Four Stones AI — AI Consulting for Small Business',
@@ -26,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={`scroll-smooth ${inter.variable} ${fraunces.variable}`}>
       <body className={`${inter.className} bg-[#0B0F14] text-[#CBD5E1] antialiased`}>
         <Navbar />
         <main>{children}</main>

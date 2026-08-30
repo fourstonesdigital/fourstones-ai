@@ -6,7 +6,12 @@
   --color-fs-teal: #1488AA;
   --color-fs-blue: #0686D4;
   --color-fs-silver: #CBD5E1;
-  --font-sans: 'Inter', system-ui, sans-serif;
+  /* Light-section tokens (for dark/light alternation) */
+  --color-fs-paper: #ECEFF3;
+  --color-fs-paper-alt: #E2E7ED;
+  --color-fs-ink: #0B0F14;
+  --font-sans: var(--font-inter), 'Inter', system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), Georgia, serif;
 }
 
 * {
@@ -34,6 +39,40 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Serif italic accent for headline emphasis words */
+.accent-serif {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* Light section: inverted surface for dark/light rhythm */
+.section-light {
+  background-color: #ECEFF3;
+  color: #0B0F14;
+}
+.section-light .bg-grid {
+  background-image:
+    linear-gradient(rgba(11, 15, 20, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 15, 20, 0.05) 1px, transparent 1px);
+}
+
+/* Scroll-reveal word fade (RCA-style) */
+.reveal-word {
+  transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-word {
+    transition: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 /* Glow effects */

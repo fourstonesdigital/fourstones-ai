@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, CheckCircle, Zap, Users, TrendingUp, Star, MapPin } from 'lucide-react';
+import { ArrowRight, CheckCircle, Users, TrendingUp, Star, MapPin } from 'lucide-react';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 
 const services = [
   {
@@ -113,7 +114,7 @@ export default function HomePage() {
           <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-6 tracking-tight">
             Stop talking about AI.
             <br />
-            <span className="text-gradient">Start using it.</span>
+            <span className="text-gradient accent-serif">Start using it.</span>
           </h1>
 
           <p className="text-xl text-[#CBD5E1]/80 leading-relaxed max-w-2xl mx-auto mb-10">
@@ -144,6 +145,38 @@ export default function HomePage() {
                 <div className="text-xs text-[#CBD5E1]/50 uppercase tracking-wider">{s.label}</div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Statement — light section, word-by-word scroll reveal */}
+      <section className="section-light py-28 md:py-36 px-6">
+        <div className="max-w-4xl mx-auto">
+          <ScrollReveal
+            className="text-2xl md:text-4xl font-semibold leading-[1.35] tracking-tight"
+            dimClass="text-[#0B0F14]/20"
+            brightClass="text-[#0B0F14]"
+          >
+            Four Stones AI is a Madison-based AI consultancy built to help North Alabama businesses work smarter, not harder. From custom tools that eliminate busywork to systems that run your operation while you sleep, we deliver practical AI that makes a real difference for local businesses.
+          </ScrollReveal>
+
+          <div className="mt-16 grid md:grid-cols-2 gap-10 items-end">
+            <h2 className="text-3xl md:text-5xl font-bold text-[#0B0F14] leading-tight tracking-tight">
+              Smart AI solutions tailored to{' '}
+              <span className="accent-serif">your business</span>
+            </h2>
+            <div className="md:text-right">
+              <p className="text-[#0B0F14]/60 mb-6 leading-relaxed">
+                We build AI systems that streamline operations and free up the hours
+                you&apos;d rather spend somewhere else.
+              </p>
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-2 px-7 py-3.5 font-semibold text-[#0B0F14] border border-[#0B0F14]/25 rounded-xl hover:bg-[#0B0F14] hover:text-white transition-all"
+              >
+                Explore AI Services <ArrowRight size={16} />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -220,7 +253,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Three ways to work together
+              Three ways to <span className="accent-serif text-gradient">work together</span>
             </h2>
             <p className="text-[#CBD5E1]/60 max-w-xl mx-auto">
               All engagements start with a conversation — in person at your location or on Zoom, whatever works for you.
