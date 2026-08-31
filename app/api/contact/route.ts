@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
   });
 
   const emailBody = `
-New inquiry from fourstones.ai
+New customer inquiry — fourstones.ai contact form
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Name:     ${name}
@@ -39,7 +39,7 @@ ${message || '(no message)'}
       from: '"Four Stones AI" <fourstonesdigital@gmail.com>',
       to: 'fourstonesdigital@gmail.com',
       replyTo: email,
-      subject: `New inquiry: ${name}${business ? ` — ${business}` : ''} (${interest || 'General'})`,
+      subject: `[fourstones.ai] New inquiry: ${name}${business ? ` — ${business}` : ''} (${interest || 'General'})`,
       text: emailBody,
     });
   } catch (err) {
