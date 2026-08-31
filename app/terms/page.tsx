@@ -75,6 +75,7 @@ export default function TermsPage() {
               7771 Hwy 72 W, Suite C<br />
               Madison, AL 35758<br />
               (256) 809-0048<br />
+              <a href="mailto:support@fourstones.ai">support@fourstones.ai</a><br />
               <Link href="/contact" className="text-[#1488AA] hover:text-[#0686D4]">Contact form</Link>
             </address>
           </div>

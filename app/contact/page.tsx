@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { MapPin, Send, CheckCircle, Phone } from 'lucide-react';
+import { MapPin, Send, CheckCircle, Phone, Mail } from 'lucide-react';
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -84,6 +84,17 @@ export default function ContactPage() {
                     <div className="text-white font-medium text-sm">Phone</div>
                     <a href="tel:+12568090048" className="text-[#CBD5E1]/60 hover:text-white text-sm mt-1 block transition-colors">
                       (256) 809-0048
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg gradient-teal-blue flex items-center justify-center shrink-0">
+                    <Mail size={18} className="text-white" />
+                  </div>
+                  <div>
+                    <div className="text-white font-medium text-sm">Email</div>
+                    <a href="mailto:support@fourstones.ai" className="text-[#CBD5E1]/60 hover:text-white text-sm mt-1 block transition-colors">
+                      support@fourstones.ai
                     </a>
                   </div>
                 </div>

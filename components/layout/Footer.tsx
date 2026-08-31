@@ -49,6 +49,7 @@ export default function Footer() {
               7771 Hwy 72 W, Suite C<br />
               Madison, AL 35758<br /><br />
               <a href="tel:+12568090048" className="hover:text-white transition-colors">(256) 809-0048</a><br />
+              <a href="mailto:support@fourstones.ai" className="hover:text-white transition-colors">support@fourstones.ai</a><br />
               <a href="/contact" className="text-[#1488AA] hover:text-white transition-colors mt-1 inline-block">
                 Send a message →
               </a>

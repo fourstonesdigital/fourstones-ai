@@ -17,7 +17,7 @@ export default function PrivacyPage() {
 
           <div>
             <h2 className="text-white text-xl font-semibold mb-3">1. Who We Are</h2>
-            <p>Four Stones AI is a DBA of Four Stones Digital LLC, located at 7771 Hwy 72 W, Suite C, Madison, AL 35758. We provide AI consulting services to small and medium-sized businesses in the Huntsville, Madison, and Decatur area and surrounding North Alabama communities. You can reach us at (256) 809-0048 or through the contact form at <Link href="/contact" className="text-[#1488AA] hover:text-[#0686D4]">fourstones.ai/contact</Link>.</p>
+            <p>Four Stones AI is a DBA of Four Stones Digital LLC, located at 7771 Hwy 72 W, Suite C, Madison, AL 35758. We provide AI consulting services to small and medium-sized businesses in the Huntsville, Madison, and Decatur area and surrounding North Alabama communities. You can reach us at (256) 809-0048, support@fourstones.ai, or through the contact form at <Link href="/contact" className="text-[#1488AA] hover:text-[#0686D4]">fourstones.ai/contact</Link>.</p>
           </div>
 
           <div>
@@ -53,7 +53,7 @@ export default function PrivacyPage() {
 
           <div>
             <h2 className="text-white text-xl font-semibold mb-3">5. Data Retention</h2>
-            <p>We retain contact form submissions for as long as necessary to respond to your inquiry and maintain a business relationship. You may request deletion of your information at any time by contacting us at (256) 809-0048.</p>
+            <p>We retain contact form submissions for as long as necessary to respond to your inquiry and maintain a business relationship. You may request deletion of your information at any time by contacting us at (256) 809-0048 or support@fourstones.ai.</p>
           </div>
 
           <div>
@@ -74,7 +74,7 @@ export default function PrivacyPage() {
 
           <div>
             <h2 className="text-white text-xl font-semibold mb-3">8. Your Rights</h2>
-            <p>You have the right to request access to, correction of, or deletion of any personal information we hold about you. To exercise these rights, contact us at (256) 809-0048 or through the <Link href="/contact" className="text-[#1488AA] hover:text-[#0686D4]">contact form</Link>.</p>
+            <p>You have the right to request access to, correction of, or deletion of any personal information we hold about you. To exercise these rights, contact us at (256) 809-0048, support@fourstones.ai, or through the <Link href="/contact" className="text-[#1488AA] hover:text-[#0686D4]">contact form</Link>.</p>
           </div>
 
           <div>
@@ -89,7 +89,8 @@ export default function PrivacyPage() {
               Four Stones AI / Four Stones Digital LLC<br />
               7771 Hwy 72 W, Suite C<br />
               Madison, AL 35758<br />
-              (256) 809-0048
+              (256) 809-0048<br />
+              <a href="mailto:support@fourstones.ai">support@fourstones.ai</a>
             </address>
           </div>
 
