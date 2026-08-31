@@ -214,14 +214,13 @@ export default function ContactPage() {
                       className="w-full px-4 py-3 rounded-lg bg-[#0B0F14] border border-white/10 text-white focus:outline-none focus:border-[#1488AA]/50 transition-colors text-sm"
                     >
                       <option value="">Select your industry</option>
-                      <option>HVAC / Home Services</option>
+                      <option>Home Services (HVAC, Electrical, Plumbing, Home Repair)</option>
                       <option>Law Firm</option>
                       <option>Dental / Medical</option>
                       <option>Insurance</option>
                       <option>Real Estate</option>
                       <option>Accounting / Finance</option>
-                      <option>Contractors & Trades</option>
-                      <option>Retail / Local Business</option>
+                      <option>Retail</option>
                       <option>Other</option>
                     </select>
                   </div>
