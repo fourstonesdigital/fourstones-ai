@@ -217,7 +217,7 @@ export default function CaseStudiesPage() {
               href="/contact"
               className="px-8 py-4 font-semibold text-[#CBD5E1] rounded-xl border border-white/10 hover:bg-white/5 transition-all"
             >
-              Talk to Kyle
+              Get in Touch
             </Link>
           </div>
         </div>

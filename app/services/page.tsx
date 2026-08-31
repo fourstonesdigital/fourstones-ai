@@ -315,7 +315,7 @@ export default function ServicesPage() {
               Join the Workshop
             </Link>
             <Link href="/contact" className="px-8 py-4 font-semibold text-[#CBD5E1] rounded-xl border border-white/10 hover:bg-white/5 transition-all">
-              Talk to Kyle First
+              Get in Touch
             </Link>
           </div>
         </div>
