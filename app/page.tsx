@@ -6,7 +6,7 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 const services = [
   {
     name: 'AI Implementation Workshop',
-    price: '$497',
+    price: '',
     showPrice: true,
     per: 'per person',
     description:
@@ -17,7 +17,7 @@ const services = [
       'In person — Madison, AL office',
       'Works for HVAC, law, dental, trades, and more',
     ],
-    cta: 'Reserve Your Seat — $497',
+    cta: 'Reserve Your Seat',
     href: '/workshop',
     highlight: false,
   },
@@ -126,7 +126,7 @@ export default function HomePage() {
               href="/workshop"
               className="group px-8 py-4 text-base font-semibold text-white rounded-xl gradient-teal-blue hover:opacity-90 shadow-lg hover:shadow-[#1488AA]/30 transition-all flex items-center gap-2"
             >
-              Reserve Your Seat — $497
+              Reserve Your Seat
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
@@ -278,7 +278,7 @@ export default function HomePage() {
                 )}
                 <div className="mb-6">
                   <h3 className="text-white font-bold text-xl mb-2">{s.name}</h3>
-                  {s.showPrice ? (
+                  {s.showPrice && s.price ? (
                     <div className="flex items-baseline gap-2 mb-4">
                       <span className="text-3xl font-bold text-gradient">{s.price}</span>
                       <span className="text-[#CBD5E1]/50 text-sm">{s.per}</span>
@@ -384,12 +384,12 @@ export default function HomePage() {
                 Local business. Local consultant. Real results.
               </h2>
               <p className="text-[#CBD5E1]/70 mb-8">
-                Start with the $497 workshop at our Madison, AL office. Walk out with a working
+                Start with the workshop at our Madison, AL office. Walk out with a working
                 AI tool built for your business. No fluff, no slides — just results.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/workshop" className="group px-8 py-4 font-semibold text-white rounded-xl gradient-teal-blue hover:opacity-90 flex items-center gap-2 justify-center">
-                  Reserve Your Seat — $497
+                  Reserve Your Seat
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link href="/contact" className="px-8 py-4 font-semibold text-[#CBD5E1] rounded-xl border border-white/10 hover:bg-white/5 transition-all">

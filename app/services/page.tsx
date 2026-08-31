@@ -29,7 +29,7 @@ const process = [
 const tiers = [
   {
     name: 'AI Implementation Workshop',
-    price: '$497',
+    price: '',
     unit: 'per person',
     showPrice: true,
     duration: '4-hour in-person session',
@@ -37,7 +37,7 @@ const tiers = [
       'A hands-on workshop for business owners, managers, and motivated employees who want to understand AI, learn to use it, and leave with a working tool built for their specific business.',
     tagline: 'Start here',
     href: '/workshop',
-    ctaText: 'Reserve Your Seat — $497',
+    ctaText: 'Reserve Your Seat',
     features: [
       { label: 'In-person, Madison AL office', icon: MapPin },
       { label: 'Small group (10 max)', icon: Users },
@@ -312,7 +312,7 @@ export default function ServicesPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/workshop" className="px-8 py-4 font-semibold text-white rounded-xl gradient-teal-blue hover:opacity-90 transition-all">
-              Join the Workshop — $497
+              Join the Workshop
             </Link>
             <Link href="/contact" className="px-8 py-4 font-semibold text-[#CBD5E1] rounded-xl border border-white/10 hover:bg-white/5 transition-all">
               Talk to Kyle First

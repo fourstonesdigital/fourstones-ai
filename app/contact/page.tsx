@@ -104,7 +104,7 @@ export default function ContactPage() {
             <div className="p-6 rounded-xl bg-[#0B0F14] border border-[#1488AA]/20">
               <h3 className="text-white font-semibold mb-3">Prefer to start with a workshop?</h3>
               <p className="text-[#CBD5E1]/60 text-sm leading-relaxed mb-4">
-                The $497 in-person workshop in Madison is the fastest way to see what
+                The in-person workshop in Madison is the fastest way to see what
                 AI can do for your business — no commitment beyond the day.
               </p>
               <a href="/workshop" className="inline-flex items-center gap-2 text-[#1488AA] hover:text-[#0686D4] text-sm font-medium transition-colors">
