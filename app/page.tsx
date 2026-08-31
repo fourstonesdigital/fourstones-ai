@@ -118,7 +118,7 @@ export default function HomePage() {
           </h1>
 
           <p className="text-xl text-[#CBD5E1]/80 leading-relaxed max-w-2xl mx-auto mb-10">
-            Four Stones AI works with businesses in the Huntsville, Madison, and Decatur area and surrounding North Alabama communities — in person or on Zoom. Real AI tools, built for real business problems.
+            Four Stones AI works with businesses in Huntsville, Madison, Decatur, and surrounding North Alabama communities — in person or on Zoom. Real AI tools, built for real business problems.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
