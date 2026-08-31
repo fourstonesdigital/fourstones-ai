@@ -13,6 +13,7 @@ export default function ContactPage() {
     smsConsent: false,
     business: '',
     industry: '',
+    revenue: '',
     interest: '',
     message: '',
   });
@@ -224,6 +225,21 @@ export default function ContactPage() {
                       <option>Other</option>
                     </select>
                   </div>
+                </div>
+
+                <div>
+                  <label className="block text-white text-sm font-medium mb-2">Annual revenue</label>
+                  <select
+                    value={form.revenue}
+                    onChange={(e) => setForm({ ...form, revenue: e.target.value })}
+                    className="w-full px-4 py-3 rounded-lg bg-[#0B0F14] border border-white/10 text-white focus:outline-none focus:border-[#1488AA]/50 transition-colors text-sm"
+                  >
+                    <option value="">Select a range</option>
+                    <option>Under $500K</option>
+                    <option>$500K – $1M</option>
+                    <option>$1M – $5M</option>
+                    <option>Over $5M</option>
+                  </select>
                 </div>
 
                 <div>

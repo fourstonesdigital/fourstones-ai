@@ -3,7 +3,7 @@ import nodemailer from 'nodemailer';
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
-  const { name, email, phone, smsConsent, business, industry, interest, message } = body;
+  const { name, email, phone, smsConsent, business, industry, revenue, interest, message } = body;
 
   if (!name || !email || !phone) {
     return NextResponse.json({ error: 'Name, email, and phone are required' }, { status: 400 });
@@ -28,6 +28,7 @@ SMS OK:   ${smsConsent ? 'Yes — consented to SMS' : 'No — did not consent to
 
 Business: ${business || 'Not provided'}
 Industry: ${industry || 'Not provided'}
+Revenue:  ${revenue || 'Not provided'}
 Interest: ${interest || 'Not provided'}
 
 Message:
