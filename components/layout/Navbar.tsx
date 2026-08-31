@@ -59,7 +59,7 @@ export default function Navbar() {
             href="/contact"
             className="px-4 py-2 text-sm font-medium text-white rounded-lg gradient-teal-blue hover:opacity-90 transition-opacity"
           >
-            Talk to Kyle
+            Get in Touch
           </Link>
         </div>
 
