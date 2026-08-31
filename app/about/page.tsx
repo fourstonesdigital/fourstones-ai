@@ -59,8 +59,7 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           {/* Photo */}
           <div>
-            <div className="relative">
-              <div className="aspect-square rounded-2xl overflow-hidden border border-[#1488AA]/20">
+            <div className="aspect-square rounded-2xl overflow-hidden border border-[#1488AA]/20">
                 <Image
                   src="/images/kyle.jpg"
                   alt="Kyle Montgomery — Four Stones AI"
@@ -69,18 +68,6 @@ export default function AboutPage() {
                   className="w-full h-full object-cover object-top"
                   priority
                 />
-              </div>
-
-              {/* Floating stat badges */}
-              <div className="absolute -bottom-5 -right-3 md:-right-6 gradient-teal-blue rounded-xl px-5 py-3 shadow-xl shadow-[#1488AA]/25">
-                <div className="text-white text-xl font-bold leading-none">EE PhD</div>
-                <div className="text-white/80 text-xs mt-1 whitespace-nowrap">Purdue University</div>
-              </div>
-
-              <div className="absolute -top-4 -left-3 md:-left-6 bg-[#0B0F14] border border-[#1488AA]/30 rounded-xl px-5 py-3 shadow-xl">
-                <div className="text-white text-xl font-bold leading-none">10+</div>
-                <div className="text-[#CBD5E1]/60 text-xs mt-1 whitespace-nowrap">AI systems shipped</div>
-              </div>
             </div>
           </div>
 
