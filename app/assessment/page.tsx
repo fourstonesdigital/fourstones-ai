@@ -278,7 +278,7 @@ export default function AssessmentPage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="text-3xl font-bold text-white mb-4">
-              One product. <span className="accent-serif text-gradient">One price.</span>
+              What you get and <span className="accent-serif text-gradient">what it costs.</span>
             </h2>
             <p className="text-[#CBD5E1]/60 max-w-xl mx-auto leading-relaxed">
               Everything listed below is included. No tiers, no upsells, no stripped-down version.
@@ -290,7 +290,7 @@ export default function AssessmentPage() {
               <div className="flex items-baseline gap-2 mb-2">
                 <span className="text-4xl font-bold text-gradient">$4,997</span>
               </div>
-              <p className="text-[#CBD5E1]/50 text-sm mb-6">One price. Same deliverables. Book directly.</p>
+              <p className="text-[#CBD5E1]/50 text-sm mb-6">Everything above, start to finish. No tiers, no add-ons.</p>
               <ul className="space-y-3 mb-8">
                 {[
                   '4 hours on-site with your team',
@@ -356,7 +356,7 @@ export default function AssessmentPage() {
                   href="/contact"
                   className="group px-8 py-4 font-semibold text-white rounded-xl gradient-teal-blue hover:opacity-90 flex items-center gap-2 justify-center"
                 >
-                  Book the Assessment — $4,997
+                  Book the Assessment
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
