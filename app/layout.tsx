@@ -19,7 +19,7 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   title: 'Four Stones AI — AI Consulting for Small Business',
   description:
-    'Four Stones AI helps small and medium-sized businesses build real AI tools that save time and money. Workshops, custom builds, and hands-on consulting in Huntsville, Madison, Decatur, and surrounding North Alabama communities.',
+    'AI consulting for small businesses in Huntsville, Madison, Decatur, and surrounding North Alabama. Workshops, custom builds, and hands-on consulting that save real time and money.',
   keywords: 'AI consulting, small business AI, Huntsville Alabama, Madison Alabama, Decatur Alabama, North Alabama AI, AI automation, custom AI tools',
   openGraph: {
     title: 'Four Stones AI',
