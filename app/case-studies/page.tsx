@@ -13,7 +13,7 @@ const caseStudies = [
     location: 'Madison, AL',
     image: '/images/case-study-os-login.png',
     imageAlt: 'nGenius Prep OS — custom business management platform',
-    url: 'https://os.ngeniusprep.com',
+    url: null,
     challenge: `nGenius Prep was running on a patchwork of third-party tools — a CRM here, a scheduling system there, a separate tutoring management platform on top. Monthly SaaS costs were climbing, data lived in three different places, and the staff was constantly switching between tools to do basic work. Kyle needed something that actually fit the business.`,
     solution: `Kyle built nGenius OS from scratch — a custom web application that consolidates every core business function into a single platform. Student management, session scheduling, tutor assignments, attendance tracking, billing history, and internal reporting all live in one place. The system is role-based: admins, tutors, and students each see exactly what they need.`,
     outcome: [
@@ -35,7 +35,7 @@ const caseStudies = [
     location: 'Madison, AL',
     image: '/images/case-study-mock-test.png',
     imageAlt: 'nGenius Prep Digital ACT Mock Test — student testing platform',
-    url: 'https://mock.ngeniusprep.com',
+    url: null,
     challenge: `Administering practice ACT exams meant printed tests, manual answer sheets, and hours of scoring by hand. For a tutoring business doing regular mock tests with multiple students, this was a significant time drain. Off-the-shelf test prep platforms existed but were expensive, generic, and didn't match the actual ACT format or nGenius's specific curriculum needs.`,
     solution: `Kyle built a custom digital mock test platform purpose-built for nGenius students. Students receive a unique access code from their tutor, take a timed ACT-aligned exam in their browser with real test conditions (section timing, navigation constraints), and receive an instant detailed score report the moment they submit. Tutors get immediate insight into exactly where each student needs work.`,
     outcome: [
@@ -132,15 +132,19 @@ export default function CaseStudiesPage() {
                     />
                   </div>
                   <div className="flex items-center gap-2">
-                    <a
-                      href={cs.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-[#1488AA] hover:text-[#0686D4] text-sm font-medium transition-colors"
-                    >
-                      View live <ExternalLink size={13} />
-                    </a>
-                    <span className="text-[#CBD5E1]/20">·</span>
+                    {cs.url && (
+                      <>
+                        <a
+                          href={cs.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-[#1488AA] hover:text-[#0686D4] text-sm font-medium transition-colors"
+                        >
+                          View live <ExternalLink size={13} />
+                        </a>
+                        <span className="text-[#CBD5E1]/20">·</span>
+                      </>
+                    )}
                     <span className="text-[#CBD5E1]/40 text-xs font-mono">{cs.stack}</span>
                   </div>
                 </div>
