@@ -60,12 +60,12 @@ const services = [
 const stats = [
   { value: 'EE PhD', label: 'Engineering credentials' },
   { value: '10+', label: 'AI systems built & deployed' },
-  { value: 'Local', label: 'Huntsville, Madison & surrounding areas' },
+  { value: 'Local', label: 'Huntsville, Madison, Decatur & surrounding areas' },
   { value: 'Local', label: 'In person or Zoom — your call' },
 ];
 
 const localAreas = [
-  'Huntsville', 'Madison', 'Athens',
+  'Huntsville', 'Madison', 'Decatur', 'Athens',
   'North Alabama', 'Tennessee Valley', 'and surrounding areas',
 ];
 
@@ -91,7 +91,7 @@ const faqs = [
   },
   {
     q: 'What area do you serve?',
-    a: 'Huntsville, Madison, and the surrounding North Alabama area. If you\'re local, you\'re in the right place.',
+    a: 'Huntsville, Madison, Decatur, and the surrounding North Alabama area. If you\'re local, you\'re in the right place.',
   },
   {
     q: 'How is this different from ChatGPT?',
@@ -118,7 +118,7 @@ export default function HomePage() {
           </h1>
 
           <p className="text-xl text-[#CBD5E1]/80 leading-relaxed max-w-2xl mx-auto mb-10">
-            Four Stones AI works with businesses in the Huntsville–Madison area and surrounding North Alabama communities — in person or on Zoom. Real AI tools, built for real business problems.
+            Four Stones AI works with businesses in the Huntsville, Madison, and Decatur area and surrounding North Alabama communities — in person or on Zoom. Real AI tools, built for real business problems.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -157,7 +157,7 @@ export default function HomePage() {
             dimClass="text-[#0B0F14]/20"
             brightClass="text-[#0B0F14]"
           >
-            Four Stones AI is a Madison-based AI consultancy built to help North Alabama businesses work smarter, not harder. From custom tools that eliminate busywork to systems that run your operation while you sleep, we deliver practical AI that makes a real difference for local businesses.
+            Four Stones AI is a North Alabama AI consultancy built to help local businesses work smarter, not harder. From custom tools that eliminate busywork to systems that run your operation while you sleep, we deliver practical AI that makes a real difference for local businesses.
           </ScrollReveal>
 
           <div className="mt-16 grid md:grid-cols-2 gap-10 items-end">
@@ -196,7 +196,7 @@ export default function HomePage() {
               </p>
               <p className="text-[#CBD5E1]/70 leading-relaxed mb-8">
                 Whether you&apos;re an HVAC company in Athens, a law firm in Huntsville, or
-                a contractor in Madison — if you&apos;re in the area and ready to put AI
+                a contractor in Decatur — if you&apos;re in the area and ready to put AI
                 to work, this is the call to make.
               </p>
               <Link
@@ -241,7 +241,7 @@ export default function HomePage() {
             <div>
               <div className="text-[#1488AA] text-xs font-semibold uppercase tracking-widest mb-2">Serving North Alabama</div>
               <div className="text-white text-2xl md:text-3xl font-bold leading-snug">
-                Huntsville · Madison · Athens<br />and surrounding communities
+                Huntsville · Madison · Decatur · Athens<br />and surrounding communities
               </div>
             </div>
           </div>
@@ -321,7 +321,7 @@ export default function HomePage() {
             <div>
               <h2 className="text-2xl font-bold text-white mb-4">Serving these communities</h2>
               <p className="text-[#CBD5E1]/60 mb-6 text-sm leading-relaxed">
-                Huntsville, Madison, and surrounding areas. If your business is local,
+                Huntsville, Madison, Decatur, and surrounding areas. If your business is local,
                 Kyle can be at your door.
               </p>
               <div className="flex flex-wrap gap-2 mb-8">

@@ -111,7 +111,7 @@ const faqs = [
   },
   {
     q: 'Is this in person?',
-    a: 'Yes. Held at the Four Stones AI office in Madison, AL. This workshop is for businesses in the Huntsville–Madison area and surrounding areas. Check Eventbrite for the latest dates and start times.',
+    a: 'Yes. Held at the Four Stones AI office in Madison, AL. This workshop is for businesses in the Huntsville, Madison, and Decatur area and surrounding areas. Check Eventbrite for the latest dates and start times.',
   },
   {
     q: 'What\'s the refund policy?',
@@ -257,7 +257,7 @@ export default function WorkshopPage() {
               ))}
             </div>
             <p className="text-[#CBD5E1]/40 text-xs mt-8 leading-relaxed">
-              Huntsville, Madison, and surrounding areas.
+              Huntsville, Madison, Decatur, and surrounding areas.
             </p>
           </div>
         </div>

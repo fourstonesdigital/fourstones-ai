@@ -25,7 +25,7 @@ const whatHappens = [
   },
   {
     icon: Video,
-    title: '~7-minute video walkthrough',
+    title: 'Video overview of findings',
     desc: 'A forwardable overview of the findings. If your business partner, spouse, or CFO wasn\'t in the room, send them this. It covers the headline number and the top three opportunities.',
   },
   {
@@ -71,7 +71,7 @@ const reportSections = [
 const faqs = [
   {
     q: 'What kinds of businesses is this for?',
-    a: 'Service businesses in the Huntsville–Madison area with real operational workflows — HVAC, law, dental, insurance, real estate, accounting, contractors, and similar. If you have a team doing repetitive work, you\'re a candidate.',
+    a: 'Service businesses in the Huntsville, Madison, and Decatur area with real operational workflows — HVAC, law, dental, insurance, real estate, accounting, contractors, and similar. If you have a team doing repetitive work, you\'re a candidate.',
   },
   {
     q: 'What if I\'m not ready to buy a custom build?',
@@ -79,7 +79,7 @@ const faqs = [
   },
   {
     q: 'How far will you travel for the on-site visit?',
-    a: 'Kyle is based in Madison, AL. The on-site component covers businesses within roughly 60 minutes. If you\'re outside that range, reach out — edge cases are evaluated individually.',
+    a: 'The on-site component covers businesses within 30 miles of Huntsville. If you\'re outside that range, reach out — edge cases are evaluated individually.',
   },
   {
     q: 'How long does the full process take?',
@@ -102,7 +102,7 @@ export default function AssessmentPage() {
         </div>
         <div className="relative z-10 max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1488AA]/30 bg-[#1488AA]/10 text-[#1488AA] text-xs font-medium mb-6">
-            <MapPin size={12} /> In-Person · Huntsville–Madison Area
+            <MapPin size={12} /> In-Person · Huntsville · Madison · Decatur
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
             Find every dollar
@@ -134,7 +134,7 @@ export default function AssessmentPage() {
 
           <div className="flex flex-wrap gap-6 mt-12">
             {[
-              { icon: MapPin, label: 'On-site · Madison, AL area' },
+              { icon: MapPin, label: 'On-site · Huntsville, Madison & Decatur area' },
               { icon: FileText, label: 'Written report + video + Zoom call' },
               { icon: Clock, label: 'Half-day on-site · full findings delivered' },
             ].map(({ icon: Icon, label }) => (
@@ -281,8 +281,7 @@ export default function AssessmentPage() {
               One product. <span className="accent-serif text-gradient">One price.</span>
             </h2>
             <p className="text-[#CBD5E1]/60 max-w-xl mx-auto leading-relaxed">
-              The deliverables are identical regardless of when or how you buy.
-              The only variable is context.
+              Everything listed below is included. No tiers, no upsells, no stripped-down version.
             </p>
           </div>
 
@@ -298,7 +297,7 @@ export default function AssessmentPage() {
                   'Software and expense audit',
                   'Repetitive task mapping',
                   'Four Pillars scored report',
-                  '~7-minute video walkthrough',
+                  'Video overview of findings',
                   '60-minute Zoom follow-up call',
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-[#CBD5E1]/70">
@@ -340,7 +339,7 @@ export default function AssessmentPage() {
             <div className="absolute inset-0 bg-grid opacity-30" />
             <div className="relative z-10">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1488AA]/30 bg-[#1488AA]/10 text-[#1488AA] text-xs font-medium mb-6">
-                <MapPin size={12} /> In-Person · Huntsville–Madison Area
+                <MapPin size={12} /> In-Person · Huntsville · Madison · Decatur
               </div>
               <h2 className="text-3xl font-bold text-white mb-4">
                 Find out what AI is worth

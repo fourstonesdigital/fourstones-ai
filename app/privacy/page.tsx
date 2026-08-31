@@ -17,7 +17,7 @@ export default function PrivacyPage() {
 
           <div>
             <h2 className="text-white text-xl font-semibold mb-3">1. Who We Are</h2>
-            <p>Four Stones AI is a DBA of Four Stones Digital LLC, located at 7771 Hwy 72 W, Suite C, Madison, AL 35758. We provide AI consulting services to small and medium-sized businesses in the Huntsville–Madison area and surrounding North Alabama communities. You can reach us at (256) 809-0048 or through the contact form at <Link href="/contact" className="text-[#1488AA] hover:text-[#0686D4]">fourstones.ai/contact</Link>.</p>
+            <p>Four Stones AI is a DBA of Four Stones Digital LLC, located at 7771 Hwy 72 W, Suite C, Madison, AL 35758. We provide AI consulting services to small and medium-sized businesses in the Huntsville, Madison, and Decatur area and surrounding North Alabama communities. You can reach us at (256) 809-0048 or through the contact form at <Link href="/contact" className="text-[#1488AA] hover:text-[#0686D4]">fourstones.ai/contact</Link>.</p>
           </div>
 
           <div>

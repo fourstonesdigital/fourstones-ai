@@ -48,7 +48,7 @@ export default function ContactPage() {
             <span className="accent-serif text-gradient">your business.</span>
           </h1>
           <p className="text-lg text-[#CBD5E1]/70 leading-relaxed max-w-xl mx-auto">
-            Kyle works with businesses in the Huntsville–Madison area and surrounding areas.
+            Kyle works with businesses in the Huntsville, Madison, and Decatur area and surrounding areas.
             Fill out the form and he&apos;ll be in touch within one business day.
           </p>
         </div>
