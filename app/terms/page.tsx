@@ -5,7 +5,7 @@ export const metadata = {
 };
 
 export default function TermsPage() {
-  const updated = 'August 29, 2026';
+  const updated = 'September 1, 2026';
 
   return (
     <section className="pt-32 pb-24 px-6">
@@ -38,7 +38,9 @@ export default function TermsPage() {
 
           <div>
             <h2 className="text-white text-xl font-semibold mb-3">4. Intellectual Property</h2>
-            <p>For custom AI builds: all code, documentation, and deliverables produced under a paid engagement are owned by the client upon receipt of full payment, unless otherwise agreed in writing. Four Stones AI retains no ongoing rights or access to client-specific systems after handoff.</p>
+            <p>Upon receipt of full payment, Client owns all custom deliverables created specifically for Client under a paid engagement, including source code, configurations, and documentation. Four Stones AI retains no ongoing rights or access to Client-specific systems after handoff.</p>
+            <p className="mt-3">Four Stones AI retains ownership of any pre-existing tools, frameworks, libraries, or general-purpose components (&ldquo;Background IP&rdquo;) incorporated into the deliverables. Client receives a perpetual, royalty-free license to use such Background IP solely as part of the delivered work.</p>
+            <p className="mt-3">Four Stones AI further retains the right to develop similar solutions for other clients using general skills, knowledge, architectural patterns, and techniques acquired during any engagement, provided such work does not directly reproduce Client&rsquo;s proprietary business logic, confidential data, or unique trade secrets.</p>
             <p className="mt-3">Website content, brand assets, and materials produced by Four Stones AI for its own use (including this website) remain the property of Four Stones Digital LLC.</p>
           </div>
 
