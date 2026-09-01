@@ -30,7 +30,7 @@ export default function TermsPage() {
             <p>Workshop registration is handled through Eventbrite. By registering you agree to:</p>
             <ul className="list-disc pl-6 space-y-1 mt-3">
               <li>Attend in person at the Madison, AL location on the registered date</li>
-              <li>The refund policy: full refund if cancelled at least 48 hours before the session; no refund for no-shows or cancellations inside 48 hours</li>
+              <li>The refund policy: full refund if cancelled at least 3 days before the session; if you miss due to illness or another unforeseen circumstance, we will transfer your registration to a future workshop date — no cash refund; no refund or transfer for no-shows without prior notice</li>
               <li>Eventbrite's own terms of service governing the transaction</li>
             </ul>
             <p className="mt-4">Four Stones AI reserves the right to cancel or reschedule sessions with reasonable notice. In the event of cancellation by Four Stones AI, a full refund will be issued.</p>

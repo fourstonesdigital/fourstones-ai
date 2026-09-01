@@ -115,7 +115,7 @@ const faqs = [
   },
   {
     q: 'What\'s the refund policy?',
-    a: 'Full refund if you cancel at least 48 hours before the session. No refund for no-shows.'
+    a: 'Full refund if you cancel at least 3 days before the session. If you miss due to illness or an unforeseen circumstance, we will transfer your registration to a future workshop date. No refund or transfer for no-shows without prior notice.'
   },
 ];
 
@@ -324,7 +324,7 @@ export default function WorkshopPage() {
               Questions? Contact Kyle
             </Link>
             <p className="text-center text-[#CBD5E1]/40 text-xs mt-4">
-              Full refund if cancelled at least 48 hours before session
+              Full refund if cancelled at least 3 days before session
             </p>
           </div>
         </div>
