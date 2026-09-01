@@ -60,17 +60,25 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="text-white text-xl font-semibold mb-3">8. Governing Law</h2>
-            <p>These terms are governed by the laws of the State of Alabama. Any disputes will be resolved in the courts of Madison County, Alabama.</p>
+            <h2 className="text-white text-xl font-semibold mb-3">8. Dispute Resolution &amp; Arbitration</h2>
+            <p>Any dispute, claim, or controversy arising out of or relating to these terms or any services provided by Four Stones AI — including questions about the existence, validity, or termination of this agreement — will be resolved exclusively through binding individual arbitration, not in court.</p>
+            <p className="mt-3">Arbitration will be conducted by a single arbitrator under the rules of the American Arbitration Association (AAA) or a mutually agreed alternative. The arbitration will take place in Madison County, Alabama, or remotely by mutual agreement. The arbitrator&rsquo;s decision is final and may be entered as a judgment in any court of competent jurisdiction.</p>
+            <p className="mt-3"><strong className="text-white">Class action waiver:</strong> All claims must be brought in an individual capacity. You waive any right to bring or participate in a class action, class arbitration, or representative proceeding.</p>
+            <p className="mt-3"><strong className="text-white">Exceptions:</strong> Either party may seek emergency injunctive relief from a court to prevent irreparable harm pending arbitration. Claims that qualify for small claims court may be brought there instead of arbitration.</p>
           </div>
 
           <div>
-            <h2 className="text-white text-xl font-semibold mb-3">9. Changes</h2>
+            <h2 className="text-white text-xl font-semibold mb-3">9. Governing Law</h2>
+            <p>These terms are governed by the laws of the State of Alabama, without regard to conflict-of-law principles. To the extent any dispute proceeds in court (including enforcement of an arbitration award), the parties consent to jurisdiction in Madison County, Alabama.</p>
+          </div>
+
+          <div>
+            <h2 className="text-white text-xl font-semibold mb-3">10. Changes</h2>
             <p>We may update these terms at any time. Changes are effective when posted. Continued use of this site after changes constitutes acceptance.</p>
           </div>
 
           <div>
-            <h2 className="text-white text-xl font-semibold mb-3">10. Contact</h2>
+            <h2 className="text-white text-xl font-semibold mb-3">11. Contact</h2>
             <p>Questions about these terms:</p>
             <address className="not-italic mt-3">
               Four Stones AI / Four Stones Digital LLC<br />
