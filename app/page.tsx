@@ -62,7 +62,7 @@ const stats = [
   { value: 'EE PhD', label: 'Engineering credentials' },
   { value: '10+', label: 'AI systems built & deployed' },
   { value: 'Local', label: 'Huntsville, Madison, Decatur & surrounding areas' },
-  { value: 'Local', label: 'In person or Zoom — your call' },
+  { value: 'Both', label: 'In-person or Zoom' },
 ];
 
 const localAreas = [
@@ -104,7 +104,7 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center justify-center bg-grid overflow-hidden pt-24">
+      <section className="relative min-h-[85vh] flex items-center justify-center bg-grid overflow-hidden pt-24">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#1488AA]/10 rounded-full blur-[120px]" />
           <div className="absolute top-1/3 left-1/3 w-[400px] h-[400px] bg-[#0686D4]/8 rounded-full blur-[100px]" />
@@ -132,29 +132,31 @@ export default function HomePage() {
             </Link>
             <Link
               href="/contact"
-              className="px-8 py-4 text-base font-semibold text-[#CBD5E1] rounded-xl border border-white/15 hover:bg-white/5 hover:border-[#1488AA]/50 transition-all"
+              className="px-8 py-4 text-base font-semibold text-[#CBD5E1] rounded-xl border border-white/25 hover:bg-white/5 hover:border-[#1488AA]/50 transition-all"
             >
               Get in Touch
             </Link>
           </div>
 
           {/* Stats */}
-          <div className="flex flex-wrap justify-center md:grid md:grid-cols-4 mt-20 pt-10 border-t border-white/10">
-            {stats.map((s) => (
-              <div key={s.label} className="text-center border-r border-white/10 last:border-r-0 px-6 first:pl-0 py-2 md:py-0">
-                <div className="text-3xl font-bold text-white mb-1">{s.value}</div>
-                <div className="text-xs text-[#CBD5E1]/70 uppercase tracking-wider">{s.label}</div>
-              </div>
-            ))}
+          <div className="border border-white/10 rounded-2xl px-8 py-6 mt-16">
+            <div className="flex flex-wrap justify-center md:grid md:grid-cols-4">
+              {stats.map((s) => (
+                <div key={s.label} className="text-center border-r border-white/10 last:border-r-0 px-6 first:pl-0 py-2 md:py-0">
+                  <div className="text-3xl font-bold text-white mb-1">{s.value}</div>
+                  <div className="text-xs text-[#CBD5E1]/90 uppercase tracking-wider">{s.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Statement — light section, word-by-word scroll reveal */}
-      <section className="section-light py-28 md:py-36 px-6">
+      <section className="section-light py-28 md:py-36 px-6 border-t-4 border-[#1488AA]">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal
-            className="text-2xl md:text-4xl font-semibold leading-[1.35] tracking-tight"
+            className="text-2xl md:text-[2.75rem] font-semibold leading-[1.4] tracking-tight"
             dimClass="text-[#0B0F14]/20"
             brightClass="text-[#0B0F14]"
           >
@@ -162,7 +164,7 @@ export default function HomePage() {
           </ScrollReveal>
 
           <div className="mt-16 grid md:grid-cols-2 gap-10 items-end">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#0B0F14] leading-tight tracking-tight">
+            <h2 className="text-4xl md:text-6xl font-bold text-[#0B0F14] leading-tight tracking-tight">
               Smart AI solutions tailored to{' '}
               <span className="accent-serif">your business</span>
             </h2>
@@ -213,9 +215,9 @@ export default function HomePage() {
                 { icon: Users, title: 'Built for your workflow', desc: 'Not a generic tool. Custom AI designed around how your specific business actually runs — your data, your processes, your team.' },
                 { icon: TrendingUp, title: 'ROI you can measure', desc: 'Time saved, money recovered, staff hours freed up. Kyle focuses on results that show up in your bottom line.' },
               ].map(({ icon: Icon, title, desc }) => (
-                <div key={title} className="flex gap-4 p-7 rounded-xl bg-[#0B0F14] border border-white/8 hover:border-[#1488AA]/30 hover:shadow-lg hover:shadow-[#1488AA]/5 transition-all duration-200">
-                  <div className="w-10 h-10 rounded-lg gradient-teal-blue flex items-center justify-center shrink-0">
-                    <Icon size={18} className="text-white" />
+                <div key={title} className="flex gap-4 p-6 rounded-xl bg-[#0B0F14] border border-white/12 shadow-lg shadow-black/30 hover:border-[#1488AA]/30 hover:shadow-lg hover:shadow-[#1488AA]/5 transition-all duration-200">
+                  <div className="w-12 h-12 rounded-lg gradient-teal-blue flex items-center justify-center shrink-0">
+                    <Icon size={20} className="text-white" />
                   </div>
                   <div>
                     <h3 className="text-white font-semibold text-lg mb-1">{title}</h3>
@@ -266,19 +268,19 @@ export default function HomePage() {
             {services.map((s) => (
               <div
                 key={s.name}
-                className={`relative rounded-2xl p-8 border flex flex-col transition-[transform,shadow,border-color] duration-200 ${
+                className={`relative rounded-2xl p-9 border flex flex-col transition-[transform,shadow,border-color] duration-200 ${
                   s.highlight
                     ? 'bg-gradient-to-b from-[#1488AA]/15 to-[#0686D4]/5 border-[#1488AA]/40 shadow-xl shadow-[#1488AA]/15 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#1488AA]/20'
-                    : 'bg-[#0F1623] border border-white/8 hover:border-[#1488AA]/30 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20 transition-all duration-200'
+                    : 'bg-[#0F1623] border border-white/10 hover:border-[#1488AA]/30 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20 transition-all duration-200'
                 }`}
               >
                 {s.highlight && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full gradient-teal-blue text-white text-xs font-semibold whitespace-nowrap">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-5 py-1.5 rounded-full gradient-teal-blue text-white text-sm font-semibold whitespace-nowrap">
                     Most Requested
                   </div>
                 )}
                 <div className="mb-6">
-                  <h3 className="text-white font-bold text-xl mb-2">{s.name}</h3>
+                  <h3 className="text-white font-bold text-2xl mb-2">{s.name}</h3>
                   {s.showPrice && s.price ? (
                     <div className="flex items-baseline gap-2 mb-4">
                       <span className="text-3xl font-bold text-gradient">{s.price}</span>
@@ -286,7 +288,7 @@ export default function HomePage() {
                     </div>
                   ) : (
                     <div className="mb-4">
-                      <span className="text-base font-medium text-[#CBD5E1]/70">Quoted based on your needs</span>
+                      <span className="text-base font-medium text-[#CBD5E1]/80">Quoted based on your needs</span>
                     </div>
                   )}
                   <p className="text-[#CBD5E1]/80 text-sm leading-relaxed">{s.description}</p>
@@ -327,7 +329,7 @@ export default function HomePage() {
               </p>
               <div className="flex flex-wrap gap-2 mb-8">
                 {localAreas.map((area) => (
-                  <span key={area} className="px-4 py-2 rounded-full bg-[#0B0F14] border border-[#1488AA]/20 text-[#CBD5E1]/80 text-sm hover:text-white hover:border-[#1488AA]/50 hover:bg-[#1488AA]/5 transition-all duration-150 cursor-default">
+                  <span key={area} className="px-5 py-2.5 rounded-full bg-[#0B0F14] border border-[#1488AA]/20 text-[#CBD5E1]/80 text-sm font-medium hover:text-white hover:border-[#1488AA]/50 hover:bg-[#1488AA]/10 transition-all duration-150 cursor-default">
                     {area}
                   </span>
                 ))}
@@ -335,7 +337,7 @@ export default function HomePage() {
               <h2 className="text-2xl font-bold text-white mb-4">Industries we work with</h2>
               <div className="flex flex-wrap gap-2">
                 {industries.map((ind) => (
-                  <span key={ind} className="px-4 py-2 rounded-full bg-[#0B0F14] border border-white/12 text-[#CBD5E1]/80 text-sm hover:border-[#1488AA]/30 hover:text-white hover:bg-[#1488AA]/5 transition-all duration-150 cursor-default">
+                  <span key={ind} className="px-5 py-2.5 rounded-full bg-[#0B0F14] border border-white/12 text-[#CBD5E1]/80 text-sm font-medium hover:border-[#1488AA]/30 hover:text-white hover:bg-[#1488AA]/10 transition-all duration-150 cursor-default">
                     {ind}
                   </span>
                 ))}
@@ -357,7 +359,8 @@ export default function HomePage() {
       {/* FAQ */}
       <section className="py-24 px-6 bg-[#0B0F14]">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">Common questions</h2>
+          <h2 className="text-4xl font-bold text-white text-center mb-4">Common questions</h2>
+          <p className="text-[#CBD5E1]/60 text-center mb-12 text-sm">Click any question to expand it.</p>
           <FAQAccordion items={faqs} />
         </div>
       </section>
@@ -371,10 +374,10 @@ export default function HomePage() {
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1488AA]/30 bg-[#1488AA]/10 text-[#1488AA] text-xs font-medium mb-6">
                 <MapPin size={12} /> North Alabama — In Person
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">
                 Local business. Local consultant. Real results.
               </h2>
-              <p className="text-[#CBD5E1]/80 mb-8">
+              <p className="text-[#CBD5E1]/90 mb-8">
                 Start with the workshop at our Madison, AL office. Walk out with a working
                 AI tool built for your business. No fluff, no slides — just results.
               </p>

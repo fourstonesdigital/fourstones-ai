@@ -18,7 +18,7 @@ export default function FAQAccordion({ items }: { items: FAQItem[] }) {
         <div
           key={faq.q}
           className={`rounded-xl bg-[#111827] border overflow-hidden transition-colors duration-200 ${
-            open === i ? 'border-[#1488AA]/30' : 'border-white/8 hover:border-[#1488AA]/20'
+            open === i ? 'border-[#1488AA]/40' : 'border-white/15 hover:border-[#1488AA]/25'
           }`}
         >
           <button
