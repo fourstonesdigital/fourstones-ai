@@ -67,12 +67,30 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
   .reveal-word {
     transition: none !important;
   }
   html {
     scroll-behavior: auto;
   }
+}
+
+/* Touch-safe hover utility */
+@media (hover: hover) and (pointer: fine) {
+  .hover-lift:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Tactile active state utility */
+.btn-press:active {
+  transform: scale(0.97);
+  transition: transform 100ms ease;
 }
 
 /* Glow effects */

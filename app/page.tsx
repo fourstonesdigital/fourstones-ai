@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, CheckCircle, Users, TrendingUp, Star, MapPin } from 'lucide-react';
+import { ArrowRight, CheckCircle, Users, TrendingUp, MapPin } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import FAQAccordion from '@/components/ui/FAQAccordion';
 
 const services = [
   {
@@ -265,10 +266,10 @@ export default function HomePage() {
             {services.map((s) => (
               <div
                 key={s.name}
-                className={`relative rounded-2xl p-8 border flex flex-col ${
+                className={`relative rounded-2xl p-8 border flex flex-col transition-[transform,shadow,border-color] duration-200 ${
                   s.highlight
-                    ? 'bg-gradient-to-b from-[#1488AA]/15 to-[#0686D4]/5 border-[#1488AA]/40 shadow-lg shadow-[#1488AA]/10'
-                    : 'bg-[#111827] border-white/5 hover:border-[#1488AA]/20 transition-colors'
+                    ? 'bg-gradient-to-b from-[#1488AA]/15 to-[#0686D4]/5 border-[#1488AA]/40 shadow-lg shadow-[#1488AA]/10 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#1488AA]/20'
+                    : 'bg-[#111827] border-white/5 hover:border-[#1488AA]/20 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20'
                 }`}
               >
                 {s.highlight && (
@@ -357,17 +358,7 @@ export default function HomePage() {
       <section className="py-24 px-6 bg-[#0B0F14]">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold text-white text-center mb-12">Common questions</h2>
-          <div className="space-y-4">
-            {faqs.map((faq) => (
-              <div key={faq.q} className="p-6 rounded-xl bg-[#111827] border border-white/5">
-                <h3 className="text-white font-semibold mb-3 flex items-start gap-3">
-                  <Star size={16} className="text-[#1488AA] shrink-0 mt-0.5" />
-                  {faq.q}
-                </h3>
-                <p className="text-[#CBD5E1]/70 text-sm leading-relaxed pl-7">{faq.a}</p>
-              </div>
-            ))}
-          </div>
+          <FAQAccordion items={faqs} />
         </div>
       </section>
 

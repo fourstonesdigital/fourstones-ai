@@ -20,14 +20,14 @@ export default function Button({
   className,
   external,
 }: ButtonProps) {
-  const base = 'inline-flex items-center gap-2 font-semibold rounded-lg transition-all duration-200';
+  const base = 'inline-flex items-center gap-2 font-semibold rounded-lg transition-[colors,opacity,shadow,transform] duration-200 active:scale-[0.97] active:duration-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1488AA] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B0F14]';
   const sizes = {
     sm: 'px-4 py-2 text-sm',
     md: 'px-6 py-3 text-sm',
     lg: 'px-8 py-4 text-base',
   };
   const variants = {
-    primary: 'gradient-teal-blue text-white hover:opacity-90 shadow-lg hover:shadow-[#1488AA]/25',
+    primary: 'gradient-teal-blue text-white hover:opacity-90 shadow-lg hover:shadow-[#1488AA]/25 focus-visible:ring-[#1488AA]',
     outline: 'border border-[#1488AA] text-[#1488AA] hover:bg-[#1488AA]/10',
     ghost: 'text-[#CBD5E1] hover:text-white hover:bg-white/5',
   };

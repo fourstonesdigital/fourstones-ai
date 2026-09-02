@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -50,14 +51,14 @@ export default function Navbar() {
             <Link
               key={l.href}
               href={l.href}
-              className="text-[#CBD5E1] hover:text-white text-sm transition-colors"
+              className="relative text-[#CBD5E1] hover:text-white text-sm transition-colors after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-[#1488AA] after:transition-[width] after:duration-200 hover:after:w-full"
             >
               {l.label}
             </Link>
           ))}
           <Link
             href="/contact"
-            className="px-4 py-2 text-sm font-medium text-white rounded-lg gradient-teal-blue hover:opacity-90 transition-opacity"
+            className="px-4 py-2 text-sm font-medium text-white rounded-lg gradient-teal-blue hover:opacity-90 transition-[opacity,transform] duration-200 active:scale-[0.97] active:duration-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1488AA] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B0F14]"
           >
             Get in Touch
           </Link>
@@ -73,20 +74,28 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile menu */}
-      {open && (
-        <div className="md:hidden bg-[#111827] border-t border-white/5 px-6 py-6 flex flex-col gap-4">
-          {navLinks.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className="text-[#CBD5E1] hover:text-white text-base transition-colors"
-            >
-              {l.label}
-            </Link>
-          ))}
-        </div>
-      )}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.15, ease: 'easeOut' }}
+            className="md:hidden bg-[#111827] border-t border-white/5 px-6 py-6 flex flex-col gap-4"
+          >
+            {navLinks.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="text-[#CBD5E1] hover:text-white text-base transition-colors"
+              >
+                {l.label}
+              </Link>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
