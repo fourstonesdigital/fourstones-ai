@@ -13,17 +13,19 @@ export default function FAQAccordion({ items }: { items: FAQItem[] }) {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-3">
       {items.map((faq, i) => (
         <div
           key={faq.q}
-          className="rounded-xl bg-[#111827] border border-white/5 overflow-hidden"
+          className={`rounded-xl bg-[#111827] border overflow-hidden transition-colors duration-200 ${
+            open === i ? 'border-[#1488AA]/30' : 'border-white/8 hover:border-[#1488AA]/20'
+          }`}
         >
           <button
             onClick={() => setOpen(open === i ? null : i)}
             className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-white/5 transition-colors"
           >
-            <h3 className="text-white font-semibold flex items-start gap-3 pr-4">
+            <h3 className="text-white font-semibold text-base flex items-start gap-3 pr-4">
               <Star size={16} className="text-[#1488AA] shrink-0 mt-0.5" />
               {faq.q}
             </h3>
@@ -44,7 +46,7 @@ export default function FAQAccordion({ items }: { items: FAQItem[] }) {
                 transition={{ duration: 0.2, ease: 'easeOut' }}
                 className="overflow-hidden"
               >
-                <p className="text-[#CBD5E1]/70 text-sm leading-relaxed px-6 pb-5 pl-[52px]">
+                <p className="text-[#CBD5E1]/80 text-sm leading-relaxed px-6 pb-5 pl-[52px]">
                   {faq.a}
                 </p>
               </motion.div>

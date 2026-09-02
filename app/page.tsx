@@ -132,18 +132,18 @@ export default function HomePage() {
             </Link>
             <Link
               href="/contact"
-              className="px-8 py-4 text-base font-semibold text-[#CBD5E1] rounded-xl border border-white/10 hover:bg-white/5 hover:border-[#1488AA]/40 transition-all"
+              className="px-8 py-4 text-base font-semibold text-[#CBD5E1] rounded-xl border border-white/15 hover:bg-white/5 hover:border-[#1488AA]/50 transition-all"
             >
               Get in Touch
             </Link>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 pt-10 border-t border-white/5">
+          <div className="flex flex-wrap justify-center md:grid md:grid-cols-4 mt-20 pt-10 border-t border-white/10">
             {stats.map((s) => (
-              <div key={s.label} className="text-center">
-                <div className="text-2xl font-bold text-white mb-1">{s.value}</div>
-                <div className="text-xs text-[#CBD5E1]/50 uppercase tracking-wider">{s.label}</div>
+              <div key={s.label} className="text-center border-r border-white/10 last:border-r-0 px-6 first:pl-0 py-2 md:py-0">
+                <div className="text-3xl font-bold text-white mb-1">{s.value}</div>
+                <div className="text-xs text-[#CBD5E1]/70 uppercase tracking-wider">{s.label}</div>
               </div>
             ))}
           </div>
@@ -162,18 +162,18 @@ export default function HomePage() {
           </ScrollReveal>
 
           <div className="mt-16 grid md:grid-cols-2 gap-10 items-end">
-            <h2 className="text-3xl md:text-5xl font-bold text-[#0B0F14] leading-tight tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#0B0F14] leading-tight tracking-tight">
               Smart AI solutions tailored to{' '}
               <span className="accent-serif">your business</span>
             </h2>
             <div className="md:text-right">
-              <p className="text-[#0B0F14]/60 mb-6 leading-relaxed">
+              <p className="text-[#0B0F14]/70 mb-6 leading-relaxed">
                 We build AI systems that streamline operations and free up the hours
                 you&apos;d rather spend somewhere else.
               </p>
               <Link
                 href="/services"
-                className="inline-flex items-center gap-2 px-7 py-3.5 font-semibold text-[#0B0F14] border border-[#0B0F14]/25 rounded-xl hover:bg-[#0B0F14] hover:text-white transition-all"
+                className="inline-flex items-center gap-2 px-7 py-3.5 font-semibold text-[#0B0F14] border border-[#0B0F14]/25 rounded-xl hover:bg-[#0B0F14] hover:text-white transition-all active:scale-[0.97]"
               >
                 Explore AI Services <ArrowRight size={16} />
               </Link>
@@ -213,13 +213,13 @@ export default function HomePage() {
                 { icon: Users, title: 'Built for your workflow', desc: 'Not a generic tool. Custom AI designed around how your specific business actually runs — your data, your processes, your team.' },
                 { icon: TrendingUp, title: 'ROI you can measure', desc: 'Time saved, money recovered, staff hours freed up. Kyle focuses on results that show up in your bottom line.' },
               ].map(({ icon: Icon, title, desc }) => (
-                <div key={title} className="flex gap-4 p-5 rounded-xl bg-[#0B0F14] border border-white/5 hover:border-[#1488AA]/20 transition-colors">
+                <div key={title} className="flex gap-4 p-7 rounded-xl bg-[#0B0F14] border border-white/8 hover:border-[#1488AA]/30 hover:shadow-lg hover:shadow-[#1488AA]/5 transition-all duration-200">
                   <div className="w-10 h-10 rounded-lg gradient-teal-blue flex items-center justify-center shrink-0">
                     <Icon size={18} className="text-white" />
                   </div>
                   <div>
-                    <h3 className="text-white font-semibold mb-1">{title}</h3>
-                    <p className="text-[#CBD5E1]/60 text-sm leading-relaxed">{desc}</p>
+                    <h3 className="text-white font-semibold text-lg mb-1">{title}</h3>
+                    <p className="text-[#CBD5E1]/80 text-sm leading-relaxed">{desc}</p>
                   </div>
                 </div>
               ))}
@@ -268,8 +268,8 @@ export default function HomePage() {
                 key={s.name}
                 className={`relative rounded-2xl p-8 border flex flex-col transition-[transform,shadow,border-color] duration-200 ${
                   s.highlight
-                    ? 'bg-gradient-to-b from-[#1488AA]/15 to-[#0686D4]/5 border-[#1488AA]/40 shadow-lg shadow-[#1488AA]/10 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#1488AA]/20'
-                    : 'bg-[#111827] border-white/5 hover:border-[#1488AA]/20 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20'
+                    ? 'bg-gradient-to-b from-[#1488AA]/15 to-[#0686D4]/5 border-[#1488AA]/40 shadow-xl shadow-[#1488AA]/15 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#1488AA]/20'
+                    : 'bg-[#0F1623] border border-white/8 hover:border-[#1488AA]/30 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20 transition-all duration-200'
                 }`}
               >
                 {s.highlight && (
@@ -286,14 +286,14 @@ export default function HomePage() {
                     </div>
                   ) : (
                     <div className="mb-4">
-                      <span className="text-base font-medium text-[#CBD5E1]/60">Quoted based on your needs</span>
+                      <span className="text-base font-medium text-[#CBD5E1]/70">Quoted based on your needs</span>
                     </div>
                   )}
-                  <p className="text-[#CBD5E1]/70 text-sm leading-relaxed">{s.description}</p>
+                  <p className="text-[#CBD5E1]/80 text-sm leading-relaxed">{s.description}</p>
                 </div>
                 <ul className="space-y-3 mb-8 flex-1">
                   {s.features.map((f) => (
-                    <li key={f} className="flex items-start gap-3 text-sm text-[#CBD5E1]/70">
+                    <li key={f} className="flex items-start gap-3 text-sm text-[#CBD5E1]/85 gap-y-1">
                       <CheckCircle size={16} className="text-[#1488AA] shrink-0 mt-0.5" />
                       {f}
                     </li>
@@ -327,7 +327,7 @@ export default function HomePage() {
               </p>
               <div className="flex flex-wrap gap-2 mb-8">
                 {localAreas.map((area) => (
-                  <span key={area} className="px-4 py-2 rounded-full bg-[#0B0F14] border border-[#1488AA]/20 text-[#CBD5E1]/70 text-sm hover:text-white hover:border-[#1488AA]/50 transition-all">
+                  <span key={area} className="px-4 py-2 rounded-full bg-[#0B0F14] border border-[#1488AA]/20 text-[#CBD5E1]/80 text-sm hover:text-white hover:border-[#1488AA]/50 hover:bg-[#1488AA]/5 transition-all duration-150 cursor-default">
                     {area}
                   </span>
                 ))}
@@ -335,7 +335,7 @@ export default function HomePage() {
               <h2 className="text-2xl font-bold text-white mb-4">Industries we work with</h2>
               <div className="flex flex-wrap gap-2">
                 {industries.map((ind) => (
-                  <span key={ind} className="px-4 py-2 rounded-full bg-[#0B0F14] border border-white/8 text-[#CBD5E1]/70 text-sm hover:border-[#1488AA]/30 hover:text-white transition-all">
+                  <span key={ind} className="px-4 py-2 rounded-full bg-[#0B0F14] border border-white/12 text-[#CBD5E1]/80 text-sm hover:border-[#1488AA]/30 hover:text-white hover:bg-[#1488AA]/5 transition-all duration-150 cursor-default">
                     {ind}
                   </span>
                 ))}
@@ -365,16 +365,16 @@ export default function HomePage() {
       {/* CTA */}
       <section className="py-24 px-6 bg-[#111827]">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="relative p-12 rounded-2xl bg-gradient-to-b from-[#1488AA]/10 to-[#0686D4]/5 border border-[#1488AA]/20 overflow-hidden">
+          <div className="relative p-12 rounded-2xl bg-gradient-to-b from-[#1488AA]/10 to-[#0686D4]/5 border border-[#1488AA]/20 shadow-2xl shadow-[#1488AA]/10 overflow-hidden">
             <div className="absolute inset-0 bg-grid opacity-30" />
             <div className="relative z-10">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1488AA]/30 bg-[#1488AA]/10 text-[#1488AA] text-xs font-medium mb-6">
                 <MapPin size={12} /> North Alabama — In Person
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
                 Local business. Local consultant. Real results.
               </h2>
-              <p className="text-[#CBD5E1]/70 mb-8">
+              <p className="text-[#CBD5E1]/80 mb-8">
                 Start with the workshop at our Madison, AL office. Walk out with a working
                 AI tool built for your business. No fluff, no slides — just results.
               </p>
@@ -383,7 +383,7 @@ export default function HomePage() {
                   Reserve Your Seat
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <Link href="/contact" className="px-8 py-4 font-semibold text-[#CBD5E1] rounded-xl border border-white/10 hover:bg-white/5 transition-all">
+                <Link href="/contact" className="px-8 py-4 font-semibold text-[#CBD5E1] rounded-xl border border-white/15 hover:bg-white/5 hover:border-[#1488AA]/40 transition-all">
                   Get in Touch
                 </Link>
               </div>
