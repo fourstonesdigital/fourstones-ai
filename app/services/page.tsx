@@ -283,43 +283,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* What this looks like */}
-      <section className="py-16 px-6 bg-[#0B0F14]">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl font-bold text-white mb-10 text-center">
-            What this looks like
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <div className="rounded-xl overflow-hidden border border-white/5 mb-3">
-                <Image
-                  src="/images/workflow-before-after.png"
-                  alt="Messy manual workflow transformed into a clean automated system"
-                  width={720}
-                  height={480}
-                  className="w-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <p className="text-[#CBD5E1]/50 text-sm text-center">From scattered process to a system you actually use.</p>
-            </div>
-            <div>
-              <div className="rounded-xl overflow-hidden border border-white/5 mb-3">
-                <Image
-                  src="/images/dashboard-ai-ops.png"
-                  alt="Operational dashboard showing scheduling and reporting tools"
-                  width={720}
-                  height={480}
-                  className="w-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <p className="text-[#CBD5E1]/50 text-sm text-center">Representative of the operational tools Kyle builds — scheduling, follow-up, reporting.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Statement — light section */}
       <section className="section-light py-24 md:py-32 px-6">
         <div className="max-w-4xl mx-auto">
