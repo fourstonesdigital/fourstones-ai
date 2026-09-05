@@ -189,96 +189,98 @@ export default function ServicesPage() {
           {tiers.map((tier) => (
             <div
               key={tier.name}
-              className={`rounded-2xl border overflow-hidden transition-colors ${
+              className={`group rounded-2xl border overflow-hidden transition-colors ${
                 tier.highlight
                   ? 'bg-gradient-to-b from-[#1488AA]/12 to-[#0686D4]/5 border-[#1488AA]/40 shadow-lg shadow-[#1488AA]/10'
-                  : 'bg-[#111827] border-white/5 hover:border-[#1488AA]/20'
+                  : 'bg-[#111827] border-white/5 hover:border-[#1488AA]/25'
               }`}
             >
-              <div className="flex flex-col md:flex-row">
-                {/* Image — left column, square-cropped, full card height */}
+              <div className="grid grid-cols-1 md:grid-cols-12 md:items-stretch">
+
+                {/* Image — left panel, full card height */}
                 {tier.image && (
-                  <div className="relative md:w-64 lg:w-80 shrink-0 h-48 md:h-auto">
+                  <div className="relative md:col-span-5 lg:col-span-4 aspect-[16/9] md:aspect-auto md:min-h-[460px] overflow-hidden">
                     <Image
                       src={tier.image}
                       alt={tier.imageAlt!}
                       fill
-                      className="object-cover"
-                      loading="lazy"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+                      priority={tier.tagline === 'Start here'}
+                      loading={tier.tagline === 'Start here' ? undefined : 'lazy'}
                     />
+                    {/* Mobile: bottom fade. Desktop: right-edge dissolve into card bg */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F14]/75 via-transparent to-transparent md:[background:linear-gradient(to_right,transparent_65%,#111827_100%)]" />
+                    <div className="absolute inset-0 ring-1 ring-inset ring-white/5" />
                   </div>
                 )}
-                <div className="p-8 md:p-10 flex-1">
-                <div className="grid md:grid-cols-3 gap-8">
-                  {/* Left: Info */}
-                  <div className="md:col-span-1">
-                    <div className="text-xs text-[#1488AA] uppercase tracking-widest font-semibold mb-2">
-                      {tier.tagline}
-                    </div>
-                    <h2 className="text-2xl font-bold text-white mb-3">{tier.name}</h2>
 
-                    {tier.showPrice ? (
-                      <div className="flex items-baseline gap-2 mb-4">
-                        <span className="text-3xl font-bold text-gradient">{tier.price}</span>
-                        <span className="text-[#CBD5E1]/50 text-sm">{tier.unit}</span>
-                      </div>
-                    ) : (
-                      <div className="mb-4">
-                        <span className="text-base font-medium text-[#CBD5E1]/60">{tier.price || 'Quoted based on needs'}</span>
-                        <p className="text-[#CBD5E1]/40 text-xs mt-1">Scope and pricing discussed upfront</p>
-                      </div>
-                    )}
+                {/* Content — right panel */}
+                <div className={`p-6 sm:p-8 md:p-10 flex flex-col ${
+                  tier.image ? 'md:col-span-7 lg:col-span-8' : 'md:col-span-12'
+                }`}>
+                  {/* Top: 2-col grid — identity+CTA left, features right */}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 flex-1">
 
-                    <div className="flex items-center gap-2 text-[#CBD5E1]/50 text-sm mb-6">
-                      <Clock size={14} className="text-[#1488AA]" />
-                      {tier.duration}
+                    {/* A: Identity + CTA */}
+                    <div className="flex flex-col">
+                      <p className="text-xs uppercase tracking-[0.16em] text-[#1488AA] font-semibold">{tier.tagline}</p>
+                      <h2 className="mt-2 text-2xl font-bold text-white">{tier.name}</h2>
+                      <div className="mt-3 flex items-baseline gap-3">
+                        {tier.showPrice ? (
+                          <>
+                            <span className="text-3xl font-bold text-gradient">{tier.price}</span>
+                            <span className="text-sm text-[#CBD5E1]/50">{tier.unit}</span>
+                          </>
+                        ) : (
+                          <span className="text-base font-medium text-[#CBD5E1]/60">{tier.price || 'Scope & pricing discussed upfront'}</span>
+                        )}
+                      </div>
+                      <div className="flex items-center gap-2 text-[#CBD5E1]/50 text-sm mt-2">
+                        <Clock size={13} className="text-[#1488AA]" />
+                        {tier.duration}
+                      </div>
+                      <p className="mt-4 text-[15px] leading-relaxed text-[#CBD5E1]/70">{tier.description}</p>
+                      <div className="mt-6 lg:mt-auto lg:pt-6">
+                        <Link
+                          href={tier.href}
+                          className={`inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-all ${
+                            tier.highlight
+                              ? 'gradient-teal-blue text-white hover:opacity-90'
+                              : 'border border-[#1488AA]/40 text-[#1488AA] hover:bg-[#1488AA]/10'
+                          }`}
+                        >
+                          {tier.ctaText} <ArrowRight size={16} />
+                        </Link>
+                      </div>
                     </div>
-                    <p className="text-[#CBD5E1]/70 text-sm leading-relaxed mb-6">
-                      {tier.description}
-                    </p>
-                    <Link
-                      href={tier.href}
-                      className={`inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-all ${
-                        tier.highlight
-                          ? 'gradient-teal-blue text-white hover:opacity-90'
-                          : 'border border-[#1488AA]/40 text-[#1488AA] hover:bg-[#1488AA]/10'
-                      }`}
-                    >
-                      {tier.ctaText} <ArrowRight size={16} />
-                    </Link>
+
+                    {/* B: What's included */}
+                    <div>
+                      <p className="text-xs uppercase tracking-[0.16em] text-[#CBD5E1]/40 font-semibold">What&apos;s included</p>
+                      <ul className="mt-4 space-y-3">
+                        {tier.features.map(({ label, icon: Icon }) => (
+                          <li key={label} className="flex items-center gap-3 text-sm text-[#CBD5E1]/70">
+                            <Icon size={15} className="text-[#1488AA] shrink-0" />
+                            {label}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
 
-                  {/* Middle: Features */}
-                  <div>
-                    <h3 className="text-white text-sm font-semibold mb-4 uppercase tracking-wider">
-                      What&apos;s included
-                    </h3>
-                    <ul className="space-y-3">
-                      {tier.features.map(({ label, icon: Icon }) => (
-                        <li key={label} className="flex items-center gap-3 text-sm text-[#CBD5E1]/70">
-                          <Icon size={15} className="text-[#1488AA] shrink-0" />
-                          {label}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Right: Use cases */}
-                  <div>
-                    <h3 className="text-white text-sm font-semibold mb-4 uppercase tracking-wider">
-                      Right for you if...
-                    </h3>
-                    <ul className="space-y-3">
+                  {/* C: Use-case pills — full-width footer */}
+                  <div className="mt-8 pt-6 border-t border-white/5">
+                    <p className="text-xs uppercase tracking-[0.16em] text-[#CBD5E1]/40 font-semibold mb-3">Right for you if&hellip;</p>
+                    <ul className="flex flex-wrap gap-2">
                       {tier.useCases.map((uc) => (
-                        <li key={uc} className="flex items-start gap-3 text-sm text-[#CBD5E1]/70">
-                          <span className="w-4 h-4 rounded-full gradient-teal-blue flex items-center justify-center shrink-0 mt-0.5 text-white text-[10px]">✓</span>
+                        <li key={uc} className="rounded-full border border-[#1488AA]/25 bg-[#1488AA]/10 px-3.5 py-1.5 text-sm text-[#CBD5E1]/75">
                           {uc}
                         </li>
                       ))}
                     </ul>
                   </div>
                 </div>
-              </div>
               </div>
             </div>
           ))}
