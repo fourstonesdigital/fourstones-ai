@@ -65,7 +65,7 @@ export default function AboutPage() {
                   alt="Kyle Montgomery, founder of Four Stones AI"
                   width={800}
                   height={1000}
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-top"
                   priority
                 />
             </div>
