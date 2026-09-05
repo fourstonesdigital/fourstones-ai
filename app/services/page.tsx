@@ -166,22 +166,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services banner */}
-      <section className="px-6 pb-0 bg-[#0B0F14]">
-        <div className="max-w-5xl mx-auto">
-          <div className="rounded-2xl overflow-hidden border border-white/5">
-            <Image
-              src="/images/services-banner-operations.png"
-              alt="Small business operations and systems, professional environment"
-              width={1280}
-              height={720}
-              className="w-full object-cover"
-              style={{ aspectRatio: '16/9' }}
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </section>
+
 
       {/* Service tiers */}
       <section className="py-20 px-6 bg-[#0B0F14]">
