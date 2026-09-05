@@ -39,8 +39,8 @@ const tiers = [
     href: '/workshop',
     ctaText: 'Reserve Your Seat',
     highlight: false,
-    image: null,
-    imageAlt: null,
+    image: '/images/workshop-hands-on.png',
+    imageAlt: 'Kyle Montgomery speaking at an AI workshop',
     features: [
       { label: 'In-person, Madison AL office', icon: MapPin },
       { label: 'Small group (10 seats max)', icon: Users },
@@ -66,8 +66,8 @@ const tiers = [
     href: '/assessment',
     ctaText: 'Book the Assessment',
     highlight: true,
-    image: null,
-    imageAlt: null,
+    image: '/images/card-assessment.png',
+    imageAlt: 'Business consultant reviewing a report with a small business owner',
     features: [
       { label: '1-hour on-site owner conversation', icon: MapPin },
       { label: 'Written AI Opportunity Report', icon: BarChart3 },
@@ -93,8 +93,8 @@ const tiers = [
     href: '/contact',
     ctaText: 'Ask About Concierge',
     highlight: false,
-    image: null,
-    imageAlt: null,
+    image: '/images/card-concierge.png',
+    imageAlt: 'Small business owner working with a coach on a video call',
     features: [
       { label: 'Monthly calls + async support', icon: RefreshCw },
       { label: 'Guided AI tool building', icon: Cpu },
@@ -120,8 +120,8 @@ const tiers = [
     href: '/contact',
     ctaText: 'Start the Conversation',
     highlight: false,
-    image: null,
-    imageAlt: null,
+    image: '/images/card-custom-build.png',
+    imageAlt: 'Technical consultant building software at multiple monitors',
     features: [
       { label: 'Full custom AI development', icon: Cpu },
       { label: 'Integration with your existing software', icon: Shield },
@@ -189,25 +189,26 @@ export default function ServicesPage() {
           {tiers.map((tier) => (
             <div
               key={tier.name}
-              className={`rounded-2xl border flex flex-col overflow-hidden transition-colors ${
+              className={`rounded-2xl border overflow-hidden transition-colors ${
                 tier.highlight
                   ? 'bg-gradient-to-b from-[#1488AA]/12 to-[#0686D4]/5 border-[#1488AA]/40 shadow-lg shadow-[#1488AA]/10'
                   : 'bg-[#111827] border-white/5 hover:border-[#1488AA]/20'
               }`}
             >
-              {tier.image && (
-                <div className="h-32 overflow-hidden">
-                  <Image
-                    src={tier.image}
-                    alt={tier.imageAlt!}
-                    width={1200}
-                    height={128}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-              )}
-              <div className="p-8 md:p-10">
+              <div className="flex flex-col md:flex-row">
+                {/* Image — left column, square-cropped, full card height */}
+                {tier.image && (
+                  <div className="relative md:w-64 lg:w-80 shrink-0 h-48 md:h-auto">
+                    <Image
+                      src={tier.image}
+                      alt={tier.imageAlt!}
+                      fill
+                      className="object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
+                <div className="p-8 md:p-10 flex-1">
                 <div className="grid md:grid-cols-3 gap-8">
                   {/* Left: Info */}
                   <div className="md:col-span-1">
@@ -277,6 +278,7 @@ export default function ServicesPage() {
                     </ul>
                   </div>
                 </div>
+              </div>
               </div>
             </div>
           ))}
