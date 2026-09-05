@@ -59,13 +59,13 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           {/* Photo */}
           <div>
-            <div className="aspect-square rounded-2xl overflow-hidden border border-[#1488AA]/20">
+            <div className="rounded-2xl overflow-hidden border border-[#1488AA]/20" style={{aspectRatio:'4/5'}}>
                 <Image
-                  src="/images/kyle.jpg"
-                  alt="Kyle Montgomery — Four Stones AI"
+                  src="/images/kyle-portrait.jpg"
+                  alt="Kyle Montgomery, founder of Four Stones AI"
                   width={800}
-                  height={800}
-                  className="w-full h-full object-cover object-top"
+                  height={1000}
+                  className="w-full h-full object-cover object-center"
                   priority
                 />
             </div>
