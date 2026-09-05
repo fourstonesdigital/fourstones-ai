@@ -356,13 +356,13 @@ export default function HomePage() {
               className="w-full object-cover"
               loading="lazy"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0B0F14]/70 via-transparent to-[#0B0F14]/40 flex items-center px-10">
-              <div>
+            <div className="absolute inset-0 flex items-center px-10">
+              <div className="bg-[#0B0F14]/80 backdrop-blur-sm rounded-2xl px-8 py-6 max-w-lg">
                 <div className="text-[#1488AA] text-xs font-semibold uppercase tracking-widest mb-2">Serving North Alabama</div>
                 <div className="text-white text-2xl md:text-3xl font-bold leading-snug">
                   Huntsville · Madison · Decatur · Athens<br />and surrounding communities
                 </div>
-                <p className="text-[#CBD5E1]/70 mt-3 text-sm max-w-sm">
+                <p className="text-[#CBD5E1]/70 mt-3 text-sm">
                   If your business is local, Kyle can be at your door.
                 </p>
               </div>
