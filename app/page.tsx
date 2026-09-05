@@ -6,7 +6,7 @@ import FAQAccordion from '@/components/ui/FAQAccordion';
 
 const services = [
   {
-    name: 'AI Implementation Workshop',
+    name: 'AI Workshop',
     price: '$97',
     showPrice: true,
     per: 'per person',
