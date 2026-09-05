@@ -28,19 +28,19 @@ const process = [
 
 const tiers = [
   {
-    name: 'AI Implementation Workshop',
+    name: 'AI Workshop',
     price: '$97',
     unit: 'per person',
     showPrice: true,
     duration: '4-hour in-person session',
     description:
       'A hands-on workshop for business owners, managers, and motivated employees who want to understand AI, learn to use it, and leave with a working tool built for their specific business.',
-    tagline: 'Tier 1 — Start here',
+    tagline: 'Start here',
     href: '/workshop',
     ctaText: 'Reserve Your Seat',
     highlight: false,
-    image: '/images/workshop-hands-on.png',
-    imageAlt: 'Small-group hands-on working session',
+    image: null,
+    imageAlt: null,
     features: [
       { label: 'In-person, Madison AL office', icon: MapPin },
       { label: 'Small group (10 seats max)', icon: Users },
@@ -62,7 +62,7 @@ const tiers = [
     duration: '1-hour on-site + report + call',
     description:
       'Kyle visits your business, spends one hour asking the right questions, and delivers a written report identifying your top AI opportunities — scored and ranked across the Four Pillars. Includes a short video overview and a 1-hour Zoom follow-up call.',
-    tagline: 'Tier 2 — Find the opportunity',
+    tagline: 'Find the opportunity',
     href: '/assessment',
     ctaText: 'Book the Assessment',
     highlight: true,
@@ -89,7 +89,7 @@ const tiers = [
     duration: 'Ongoing · month-to-month',
     description:
       'Done-with-you AI implementation. Kyle works alongside you every month — guiding you through building and deploying AI tools in your own business. You build the capability; he makes sure you\'re doing it right.',
-    tagline: 'Tier 3 option — Done with you',
+    tagline: 'Done with you',
     href: '/contact',
     ctaText: 'Ask About Concierge',
     highlight: false,
@@ -116,7 +116,7 @@ const tiers = [
     duration: 'Typically 4–12 weeks',
     description:
       'Done-for-you. Kyle builds and deploys custom AI systems into your existing workflows, trains your team on-site, and hands you the keys. Flat project fee agreed before work begins. You own all code and IP.',
-    tagline: 'Tier 3 option — Done for you',
+    tagline: 'Done for you',
     href: '/contact',
     ctaText: 'Start the Conversation',
     highlight: false,
@@ -366,10 +366,10 @@ export default function ServicesPage() {
             </div>
             <div className="rounded-2xl overflow-hidden border border-white/5">
               <Image
-                src="/images/assessment-clarity-session.png"
-                alt="Business consultant meeting with a small business owner"
-                width={1536}
-                height={1024}
+                src="/images/kyle-workshop-2.jpg"
+                alt="Kyle Montgomery speaking at an AI workshop in front of a smartboard"
+                width={1280}
+                height={720}
                 className="w-full h-80 object-cover"
                 loading="lazy"
               />
