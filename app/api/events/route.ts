@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 const ORG_ID = '3012290031039';
 const TOKEN = process.env.EVENTBRITE_API_KEY;
 
-export const revalidate = 3600; // cache 1 hour
+export const dynamic = 'force-dynamic';
 
 export async function GET() {
   if (!TOKEN) {
