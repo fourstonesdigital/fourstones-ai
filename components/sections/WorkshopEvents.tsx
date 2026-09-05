@@ -94,7 +94,7 @@ export default function WorkshopEvents() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg gradient-teal-blue text-white font-semibold text-xs hover:opacity-90 transition-all whitespace-nowrap"
               >
-                Reserve — $497 <ArrowRight size={13} />
+                Reserve — $97 <ArrowRight size={13} />
               </a>
             )}
           </div>
