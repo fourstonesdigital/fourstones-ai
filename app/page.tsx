@@ -351,8 +351,8 @@ export default function HomePage() {
             <Image
               src="/images/service-area-map.png"
               alt="Stylized map of Huntsville, Madison, Decatur and surrounding North Alabama communities"
-              width={1280}
-              height={640}
+              width={800}
+              height={300}
               className="w-full object-cover"
               loading="lazy"
             />
