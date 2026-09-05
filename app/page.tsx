@@ -39,9 +39,9 @@ const services = [
     ],
     cta: 'Book the Assessment',
     href: '/assessment',
-    highlight: true,
-    image: null,
-    imageAlt: null,
+    highlight: false,
+    image: '/images/card-assessment.png',
+    imageAlt: 'Business consultant reviewing a report with a small business owner',
   },
   {
     name: 'AI Concierge',
@@ -59,8 +59,8 @@ const services = [
     cta: 'Ask About Concierge',
     href: '/contact',
     highlight: false,
-    image: null,
-    imageAlt: null,
+    image: '/images/card-concierge.png',
+    imageAlt: 'Small business owner working on a laptop with a coach on a video call',
   },
   {
     name: 'Custom AI Build',
@@ -78,8 +78,8 @@ const services = [
     cta: 'Start the Conversation',
     href: '/contact',
     highlight: false,
-    image: null,
-    imageAlt: null,
+    image: '/images/card-custom-build.png',
+    imageAlt: 'Technical consultant building software at a desk with multiple monitors',
   },
 ];
 
@@ -289,11 +289,6 @@ export default function HomePage() {
                     : 'bg-[#0F1623] border border-white/10 hover:border-[#1488AA]/30 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20 transition-all duration-200'
                 }`}
               >
-                {s.highlight && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-5 py-1.5 rounded-full gradient-teal-blue text-white text-sm font-semibold whitespace-nowrap z-10">
-                    Most Requested
-                  </div>
-                )}
 
                 {/* Workshop image strip */}
                 {s.image && (
