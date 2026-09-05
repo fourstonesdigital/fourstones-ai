@@ -66,8 +66,8 @@ const tiers = [
     href: '/assessment',
     ctaText: 'Book the Assessment',
     highlight: true,
-    image: '/images/card-assessment.png',
-    imageAlt: 'Business consultant reviewing a report with a small business owner',
+    image: null,
+    imageAlt: null,
     features: [
       { label: '1-hour on-site owner conversation', icon: MapPin },
       { label: 'Written AI Opportunity Report', icon: BarChart3 },
@@ -93,8 +93,8 @@ const tiers = [
     href: '/contact',
     ctaText: 'Ask About Concierge',
     highlight: false,
-    image: '/images/card-concierge.png',
-    imageAlt: 'Small business owner working with a coach on a video call',
+    image: null,
+    imageAlt: null,
     features: [
       { label: 'Monthly calls + async support', icon: RefreshCw },
       { label: 'Guided AI tool building', icon: Cpu },
@@ -120,8 +120,8 @@ const tiers = [
     href: '/contact',
     ctaText: 'Start the Conversation',
     highlight: false,
-    image: '/images/card-custom-build.png',
-    imageAlt: 'Technical consultant building software at a desk with multiple monitors',
+    image: null,
+    imageAlt: null,
     features: [
       { label: 'Full custom AI development', icon: Cpu },
       { label: 'Integration with your existing software', icon: Shield },
