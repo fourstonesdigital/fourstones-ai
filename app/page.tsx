@@ -163,8 +163,8 @@ export default function HomePage() {
             priority
           />
           {/* Dark-grid + navy overlay for readability */}
-          <div className="absolute inset-0 bg-grid opacity-40" />
-          <div className="absolute inset-0 bg-[#0B0F14]/60" />
+          <div className="absolute inset-0 bg-grid opacity-30" />
+          <div className="absolute inset-0 bg-[#0B0F14]/75" />
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
