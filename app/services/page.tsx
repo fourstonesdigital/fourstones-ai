@@ -1,46 +1,49 @@
 import Link from 'next/link';
-import { ArrowRight, CheckCircle, Clock, Users, Cpu, BarChart3, Shield, MapPin, Video } from 'lucide-react';
+import { ArrowRight, CheckCircle, Clock, Users, Cpu, BarChart3, Shield, MapPin, Video, RefreshCw } from 'lucide-react';
 import Image from 'next/image';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 
 const process = [
   {
     step: '01',
-    title: 'Reach out',
-    desc: 'Fill out the contact form or sign up for the workshop. Kyle responds within one business day.',
+    title: 'Start with the workshop or reach out directly',
+    desc: 'The $97 workshop is the lowest-friction starting point. Or if you already know you need an assessment or a build, fill out the contact form and Kyle responds within one business day.',
   },
   {
     step: '02',
-    title: 'Initial conversation — your way',
-    desc: 'Kyle is happy to meet in person at your location or his Madison office, or jump on a Zoom call — whatever is most convenient for you. The goal is to understand your business and figure out where AI can make the biggest difference.',
+    title: 'Book the AI Opportunity Assessment',
+    desc: 'Kyle visits your business for one hour, asks the right questions, and delivers a written report identifying your top AI opportunities — ranked and scored. This is where the real picture of your business emerges.',
   },
   {
     step: '03',
-    title: 'Agree on scope and price',
-    desc: 'Everything is a flat, one-time engagement. Kyle proposes a clear scope, you agree on the price, and work begins. No ongoing fees, no retainers, no surprises.',
+    title: 'Choose your path forward',
+    desc: 'After the assessment you have three options: implement the findings yourself, work with Kyle monthly through the AI Concierge program, or have Kyle build and deploy everything for you as a custom project.',
   },
   {
     step: '04',
     title: 'Build, deploy, hand off',
-    desc: 'Kyle builds the tool, deploys it into your workflow, trains your team on-site, and hands you the keys. You own everything.',
+    desc: 'If you choose the custom build: Kyle engineers it, deploys it into your workflow, trains your team on-site, and hands you the keys. Flat project fee. You own everything.',
   },
 ];
 
 const tiers = [
   {
     name: 'AI Implementation Workshop',
-    price: '',
+    price: '$97',
     unit: 'per person',
     showPrice: true,
     duration: '4-hour in-person session',
     description:
       'A hands-on workshop for business owners, managers, and motivated employees who want to understand AI, learn to use it, and leave with a working tool built for their specific business.',
-    tagline: 'Start here',
+    tagline: 'Tier 1 — Start here',
     href: '/workshop',
     ctaText: 'Reserve Your Seat',
+    highlight: false,
+    image: '/images/workshop-hands-on.png',
+    imageAlt: 'Small-group hands-on working session',
     features: [
       { label: 'In-person, Madison AL office', icon: MapPin },
-      { label: 'Small group (10 max)', icon: Users },
+      { label: 'Small group (10 seats max)', icon: Users },
       { label: 'AI education + live demos', icon: Cpu },
       { label: 'Hands-on tool building', icon: CheckCircle },
       { label: 'See Eventbrite for dates', icon: Clock },
@@ -52,51 +55,84 @@ const tiers = [
     ],
   },
   {
-    name: 'AI Consulting & Process Review',
-    price: 'Quoted based on your needs',
-    unit: '',
-    showPrice: false,
-    duration: 'Typically 2–4 weeks',
+    name: 'AI Opportunity Assessment',
+    price: '$997',
+    unit: 'flat fee',
+    showPrice: true,
+    duration: '1-hour on-site + report + call',
     description:
-      'Kyle meets with you in person or on Zoom, maps your business workflows, identifies where AI can reduce cost or increase output, and delivers a prioritized plan. Scope and pricing agreed upfront.',
-    tagline: 'Find the opportunity',
-    href: '/contact',
-    ctaText: 'Request a Quote',
+      'Kyle visits your business, spends one hour asking the right questions, and delivers a written report identifying your top AI opportunities — scored and ranked across the Four Pillars. Includes a short video overview and a 1-hour Zoom follow-up call.',
+    tagline: 'Tier 2 — Find the opportunity',
+    href: '/assessment',
+    ctaText: 'Book the Assessment',
+    highlight: true,
+    image: null,
+    imageAlt: null,
     features: [
-      { label: 'In-person or Zoom — your preference', icon: Video },
-      { label: 'Full business process review', icon: BarChart3 },
-      { label: 'AI opportunity mapping', icon: Cpu },
-      { label: 'Prioritized implementation plan', icon: CheckCircle },
-      { label: 'Flat one-time fee, agreed upfront', icon: Shield },
+      { label: '1-hour on-site owner conversation', icon: MapPin },
+      { label: 'Written AI Opportunity Report', icon: BarChart3 },
+      { label: 'Opportunities scored across Four Pillars', icon: Cpu },
+      { label: '~5-minute video overview', icon: Video },
+      { label: '1-hour Zoom follow-up call', icon: CheckCircle },
     ],
     useCases: [
-      'You run a business with 5+ employees and want to know exactly where AI can help',
-      'You need a clear, prioritized plan before committing to a build',
-      'You\'re spending too much time on manual processes and want expert eyes on the operation',
+      'You want a clear, ranked list of where AI can make a real difference in your business',
+      'You\'re not sure where to start and want expert eyes on your operation',
+      'You want a real deliverable — not a discovery call — before committing to anything bigger',
+    ],
+  },
+  {
+    name: 'AI Concierge',
+    price: 'Monthly retainer',
+    unit: '',
+    showPrice: false,
+    duration: 'Ongoing · month-to-month',
+    description:
+      'Done-with-you AI implementation. Kyle works alongside you every month — guiding you through building and deploying AI tools in your own business. You build the capability; he makes sure you\'re doing it right.',
+    tagline: 'Tier 3 option — Done with you',
+    href: '/contact',
+    ctaText: 'Ask About Concierge',
+    highlight: false,
+    image: null,
+    imageAlt: null,
+    features: [
+      { label: 'Monthly calls + async support', icon: RefreshCw },
+      { label: 'Guided AI tool building', icon: Cpu },
+      { label: 'You build; Kyle coaches', icon: Users },
+      { label: 'Month-to-month, no lock-in', icon: Shield },
+      { label: 'Pricing based on scope and cadence', icon: CheckCircle },
+    ],
+    useCases: [
+      'You want to build AI capability in-house, not outsource it',
+      'You learn by doing and want expert guidance to keep you on track',
+      'You have time to implement but need someone who knows what right looks like',
     ],
   },
   {
     name: 'Custom AI Build',
-    price: 'Quoted based on your needs',
+    price: 'Project fee',
     unit: '',
     showPrice: false,
     duration: 'Typically 4–12 weeks',
     description:
-      'Done-for-you custom AI systems built into your existing workflows. Kyle engineers it, deploys it, trains your team, and hands you the keys. Flat one-time fee agreed on scope before work begins.',
-    tagline: 'Build the system',
+      'Done-for-you. Kyle builds and deploys custom AI systems into your existing workflows, trains your team on-site, and hands you the keys. Flat project fee agreed before work begins. You own all code and IP.',
+    tagline: 'Tier 3 option — Done for you',
     href: '/contact',
     ctaText: 'Start the Conversation',
+    highlight: false,
+    image: null,
+    imageAlt: null,
     features: [
-      { label: 'In-person or Zoom kickoff', icon: Video },
       { label: 'Full custom AI development', icon: Cpu },
       { label: 'Integration with your existing software', icon: Shield },
       { label: 'On-site staff training + documentation', icon: Users },
-      { label: 'You own all code and IP', icon: CheckCircle },
+      { label: 'Flat project fee, agreed upfront', icon: CheckCircle },
+      { label: 'You own all code and IP', icon: Shield },
     ],
     useCases: [
-      'You know what you want to automate and are ready to have it built',
-      'You have specific workflows that eat time and money every week',
+      'You know what you want and are ready to have it built',
       'You want a finished system — not a roadmap — delivered and handed off',
+      'You don\'t want to build it yourself; you want it done right and running',
     ],
   },
 ];
@@ -104,8 +140,8 @@ const tiers = [
 const promise = [
   'Every engagement starts with a conversation — in person or on Zoom, whatever works for you.',
   'Scope and price are agreed before any work begins. No surprises.',
-  'All projects are flat, one-time fees. Kyle doesn\'t charge ongoing retainers for his services.',
-  'You own everything built. No lock-in, no dependency on Four Stones AI to keep it running.',
+  'Custom builds are flat project fees. Concierge is month-to-month with no long-term lock-in.',
+  'You own everything built. No dependency on Four Stones AI to keep it running.',
   'If Kyle can\'t help you, he\'ll tell you. He doesn\'t take every project.',
 ];
 
@@ -119,14 +155,13 @@ export default function ServicesPage() {
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
-            Three ways to work together —
+            Four ways to work together —
             <br />
             <span className="text-gradient accent-serif">all in North Alabama.</span>
           </h1>
           <p className="text-xl text-[#CBD5E1]/70 leading-relaxed max-w-2xl mx-auto">
-            Kyle works with businesses in Huntsville, Madison, and the surrounding areas.
-            Every engagement starts with a conversation — in person or on Zoom, whatever
-            works best for you.
+            Start with the workshop. Get the assessment. Then choose your path — done with you,
+            or done for you. Every engagement starts with a conversation.
           </p>
         </div>
       </section>
@@ -150,19 +185,21 @@ export default function ServicesPage() {
 
       {/* Service tiers */}
       <section className="py-20 px-6 bg-[#0B0F14]">
-        <div className="max-w-6xl mx-auto space-y-8">
-          {tiers.map((tier) => {
-            const isWorkshop = tier.name === 'AI Implementation Workshop';
-            return (
+        <div className="max-w-6xl mx-auto space-y-6">
+          {tiers.map((tier) => (
             <div
               key={tier.name}
-              className="rounded-2xl border bg-[#111827] border-white/5 hover:border-[#1488AA]/20 transition-colors overflow-hidden"
+              className={`rounded-2xl border flex flex-col overflow-hidden transition-colors ${
+                tier.highlight
+                  ? 'bg-gradient-to-b from-[#1488AA]/12 to-[#0686D4]/5 border-[#1488AA]/40 shadow-lg shadow-[#1488AA]/10'
+                  : 'bg-[#111827] border-white/5 hover:border-[#1488AA]/20'
+              }`}
             >
-              {isWorkshop && (
+              {tier.image && (
                 <div className="h-32 overflow-hidden">
                   <Image
-                    src="/images/workshop-hands-on.png"
-                    alt="Small-group hands-on working session"
+                    src={tier.image}
+                    alt={tier.imageAlt!}
                     width={1200}
                     height={128}
                     className="w-full h-full object-cover"
@@ -171,79 +208,82 @@ export default function ServicesPage() {
                 </div>
               )}
               <div className="p-8 md:p-10">
-              <div className="grid md:grid-cols-3 gap-8">
-                {/* Left: Info */}
-                <div className="md:col-span-1">
-                  <div className="text-xs text-[#1488AA] uppercase tracking-widest font-semibold mb-2">
-                    {tier.tagline}
-                  </div>
-                  <h2 className="text-2xl font-bold text-white mb-3">{tier.name}</h2>
-
-                  {tier.showPrice ? (
-                    <div className="flex items-baseline gap-2 mb-4">
-                      <span className="text-3xl font-bold text-gradient">{tier.price}</span>
-                      <span className="text-[#CBD5E1]/50 text-sm">{tier.unit}</span>
+                <div className="grid md:grid-cols-3 gap-8">
+                  {/* Left: Info */}
+                  <div className="md:col-span-1">
+                    <div className="text-xs text-[#1488AA] uppercase tracking-widest font-semibold mb-2">
+                      {tier.tagline}
                     </div>
-                  ) : (
-                    <div className="mb-4">
-                      <span className="text-base font-medium text-[#CBD5E1]/60">Quoted based on your needs</span>
-                      <p className="text-[#CBD5E1]/40 text-xs mt-1">Flat one-time fee — scope and price agreed before work begins</p>
+                    <h2 className="text-2xl font-bold text-white mb-3">{tier.name}</h2>
+
+                    {tier.showPrice ? (
+                      <div className="flex items-baseline gap-2 mb-4">
+                        <span className="text-3xl font-bold text-gradient">{tier.price}</span>
+                        <span className="text-[#CBD5E1]/50 text-sm">{tier.unit}</span>
+                      </div>
+                    ) : (
+                      <div className="mb-4">
+                        <span className="text-base font-medium text-[#CBD5E1]/60">{tier.price || 'Quoted based on needs'}</span>
+                        <p className="text-[#CBD5E1]/40 text-xs mt-1">Scope and pricing discussed upfront</p>
+                      </div>
+                    )}
+
+                    <div className="flex items-center gap-2 text-[#CBD5E1]/50 text-sm mb-6">
+                      <Clock size={14} className="text-[#1488AA]" />
+                      {tier.duration}
                     </div>
-                  )}
-
-                  <div className="flex items-center gap-2 text-[#CBD5E1]/50 text-sm mb-6">
-                    <Clock size={14} className="text-[#1488AA]" />
-                    {tier.duration}
+                    <p className="text-[#CBD5E1]/70 text-sm leading-relaxed mb-6">
+                      {tier.description}
+                    </p>
+                    <Link
+                      href={tier.href}
+                      className={`inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-all ${
+                        tier.highlight
+                          ? 'gradient-teal-blue text-white hover:opacity-90'
+                          : 'border border-[#1488AA]/40 text-[#1488AA] hover:bg-[#1488AA]/10'
+                      }`}
+                    >
+                      {tier.ctaText} <ArrowRight size={16} />
+                    </Link>
                   </div>
-                  <p className="text-[#CBD5E1]/70 text-sm leading-relaxed mb-6">
-                    {tier.description}
-                  </p>
-                  <Link
-                    href={tier.href}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-all border border-[#1488AA]/40 text-[#1488AA] hover:bg-[#1488AA]/10"
-                  >
-                    {tier.ctaText} <ArrowRight size={16} />
-                  </Link>
-                </div>
 
-                {/* Middle: Features */}
-                <div>
-                  <h3 className="text-white text-sm font-semibold mb-4 uppercase tracking-wider">
-                    What&apos;s included
-                  </h3>
-                  <ul className="space-y-3">
-                    {tier.features.map(({ label, icon: Icon }) => (
-                      <li key={label} className="flex items-center gap-3 text-sm text-[#CBD5E1]/70">
-                        <Icon size={15} className="text-[#1488AA] shrink-0" />
-                        {label}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                  {/* Middle: Features */}
+                  <div>
+                    <h3 className="text-white text-sm font-semibold mb-4 uppercase tracking-wider">
+                      What&apos;s included
+                    </h3>
+                    <ul className="space-y-3">
+                      {tier.features.map(({ label, icon: Icon }) => (
+                        <li key={label} className="flex items-center gap-3 text-sm text-[#CBD5E1]/70">
+                          <Icon size={15} className="text-[#1488AA] shrink-0" />
+                          {label}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-                {/* Right: Use cases */}
-                <div>
-                  <h3 className="text-white text-sm font-semibold mb-4 uppercase tracking-wider">
-                    Right for you if...
-                  </h3>
-                  <ul className="space-y-3">
-                    {tier.useCases.map((uc) => (
-                      <li key={uc} className="flex items-start gap-3 text-sm text-[#CBD5E1]/70">
-                        <span className="w-4 h-4 rounded-full gradient-teal-blue flex items-center justify-center shrink-0 mt-0.5 text-white text-[10px]">✓</span>
-                        {uc}
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Right: Use cases */}
+                  <div>
+                    <h3 className="text-white text-sm font-semibold mb-4 uppercase tracking-wider">
+                      Right for you if...
+                    </h3>
+                    <ul className="space-y-3">
+                      {tier.useCases.map((uc) => (
+                        <li key={uc} className="flex items-start gap-3 text-sm text-[#CBD5E1]/70">
+                          <span className="w-4 h-4 rounded-full gradient-teal-blue flex items-center justify-center shrink-0 mt-0.5 text-white text-[10px]">✓</span>
+                          {uc}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          );
-          })}
+          ))}
         </div>
       </section>
 
-      {/* What this looks like — two-column visual strip */}
+      {/* What this looks like */}
       <section className="py-16 px-6 bg-[#0B0F14]">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-2xl font-bold text-white mb-10 text-center">
@@ -288,9 +328,8 @@ export default function ServicesPage() {
             dimClass="text-[#0B0F14]/20"
             brightClass="text-[#0B0F14]"
           >
-            Every engagement is a flat, one-time fee agreed before any work begins. No retainers, no lock-in, no dependency on Four Stones AI to keep things running. You own the code, the tools, and the outcome.
+            Every engagement is scoped and priced before any work begins. No surprises, no lock-in. Custom builds hand you the keys. Concierge keeps you in the driver seat. Either way, you own the outcome.
           </ScrollReveal>
-
           <div className="mt-14">
             <Link
               href="/contact"
@@ -311,7 +350,7 @@ export default function ServicesPage() {
                 How it <span className="accent-serif text-gradient">works</span>
               </h2>
               <p className="text-[#CBD5E1]/60 mb-8">
-                Simple, flat engagements. Scope agreed upfront. Work delivered. Keys handed over.
+                Workshop → Assessment → Choose your path. Simple, flat engagements. Scope agreed upfront.
               </p>
               <div className="space-y-6">
                 {process.map((step) => (
@@ -327,11 +366,12 @@ export default function ServicesPage() {
             </div>
             <div className="rounded-2xl overflow-hidden border border-white/5">
               <Image
-                src="/images/meeting.png"
-                alt="In-person AI consulting meeting"
-                width={720}
-                height={480}
+                src="/images/assessment-clarity-session.png"
+                alt="Business consultant meeting with a small business owner"
+                width={1536}
+                height={1024}
                 className="w-full h-80 object-cover"
+                loading="lazy"
               />
             </div>
           </div>
@@ -363,15 +403,15 @@ export default function ServicesPage() {
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl font-bold text-white mb-4">Not sure where to start?</h2>
           <p className="text-[#CBD5E1]/60 mb-8">
-            Start with the AI Implementation Workshop — the lowest-commitment way to see
-            what AI can do for your business before spending more.
+            Most businesses start with the $97 workshop, then book an assessment. The assessment
+            tells you exactly where to go next.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/workshop" className="px-8 py-4 font-semibold text-white rounded-xl gradient-teal-blue hover:opacity-90 transition-all">
-              Join the Workshop
+              Join the Workshop — $97
             </Link>
-            <Link href="/contact" className="px-8 py-4 font-semibold text-[#CBD5E1] rounded-xl border border-white/10 hover:bg-white/5 transition-all">
-              Get in Touch
+            <Link href="/assessment" className="px-8 py-4 font-semibold text-[#CBD5E1] rounded-xl border border-white/10 hover:bg-white/5 transition-all">
+              Book the Assessment — $997
             </Link>
           </div>
         </div>

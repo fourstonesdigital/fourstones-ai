@@ -3,41 +3,27 @@ import Image from 'next/image';
 import { ArrowRight, MapPin, CheckCircle, FileText, Video, Phone, Search, Clock, Layers } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 
-// ─── AI Clarity Session ($997) ───────────────────────────────────────────────
-
-const clarityDeliverables = [
+const deliverables = [
   {
     icon: Search,
-    title: '1-hour on-site conversation',
-    desc: 'Kyle comes to your location and sits down with you — and whoever runs the day-to-day. Structured questions about your workflows, your team\'s time, your software stack, and where things break down. No prep required. Just show up and talk.',
+    title: '1-hour on-site visit',
+    desc: 'Kyle comes to your location and sits down with you and your team. Structured conversation about your workflows, where time gets lost, what your staff does repeatedly, and where things break down. No prep required.',
   },
   {
     icon: FileText,
-    title: 'Written AI Clarity Report',
-    desc: 'A focused 2–3 page document identifying your top 3–5 AI opportunities, each scored across the Four Pillars (Revenue, Time, Experience, Ownership). Includes three quick wins you can implement yourself — free, no outside help needed.',
+    title: 'Written AI Opportunity Report',
+    desc: 'A focused document identifying your top AI opportunities, each scored across the Four Pillars: Revenue, Time, Experience, and Ownership. Includes three quick wins you can act on immediately — for free.',
   },
   {
     icon: Video,
     title: 'Short video overview',
-    desc: 'A ~5-minute walkthrough of the report findings — forwardable to a business partner, spouse, or CFO who wasn\'t in the room.',
+    desc: 'A ~5-minute walkthrough of the findings — forwardable to a business partner, spouse, or CFO who wasn\'t in the room.',
   },
   {
     icon: Phone,
     title: '1-hour Zoom follow-up call',
-    desc: 'Walk through the report together. Ask every question. Understand exactly what the opportunities are and what it would take to go get them. No pressure, no pitch — just clarity.',
+    desc: 'Walk through the report together. Ask every question. Kyle explains each opportunity and lays out your options for what comes next — no pressure, no pitch.',
   },
-];
-
-const deepDeliverables = [
-  '4 hours on-site — shadow staff at their actual desks',
-  'Line-by-line software and expense audit',
-  'Full repetitive task mapping across every role',
-  'Complete Four Pillars scored opportunity register',
-  'Comprehensive workflow map — current state documented',
-  'Full 7-section written report with prioritized roadmap',
-  'Projected annual impact in hours and dollars',
-  '~7-min video overview of all findings',
-  '60-minute Zoom follow-up call',
 ];
 
 const fourPillars = [
@@ -47,11 +33,22 @@ const fourPillars = [
   { number: '04', name: 'Ownership', desc: 'Do you own it? Custom builds mean you own the code and IP — no vendor lock-in, no subscription risk.' },
 ];
 
-const clarityFaqs = [
+const afterAssessment = [
   {
-    q: 'What\'s the difference between the Clarity Session and the Deep Assessment?',
-    a: 'The Clarity Session is a 1-hour owner conversation — you walk Kyle through your business in your own words, he identifies your top opportunities, and you get a focused report. The Deep Assessment is a full half-day engagement: Kyle shadows your staff, audits every tool and expense line, maps every workflow, and produces a comprehensive 7-section roadmap. The Clarity Session is the right first step for most businesses. The Deep Assessment is for businesses ready to commit to a major AI implementation.',
+    label: 'Implement on your own',
+    desc: 'The report is yours. The quick wins are actionable without any outside help. Many clients do exactly this.',
   },
+  {
+    label: 'AI Concierge — done with you',
+    desc: 'Kyle works alongside you month-to-month, guiding you through building and deploying AI tools in your business yourself. You do the work; he makes sure you do it right.',
+  },
+  {
+    label: 'Custom Build — done for you',
+    desc: 'Kyle builds and deploys everything in your business. You own all the code and IP. Flat project fee, agreed before work begins.',
+  },
+];
+
+const faqs = [
   {
     q: 'What kinds of businesses is this for?',
     a: 'Service businesses in the Huntsville, Madison, and Decatur area with real operational workflows — HVAC, law, dental, insurance, real estate, accounting, contractors, and similar. If you have a team doing repetitive work, you\'re a candidate.',
@@ -61,8 +58,8 @@ const clarityFaqs = [
     a: 'No. Fill out a brief intake form when you book — your industry, team size, and what eats the most time. That\'s it. Kyle runs the conversation from there.',
   },
   {
-    q: 'What if I want to go deeper after the Clarity Session?',
-    a: 'Many clients do. After the Clarity Session, if a full Deep Assessment or custom build makes sense, Kyle will tell you directly. There\'s no obligation, and the cost of the Clarity Session applies toward a Deep Assessment if you book within 30 days.',
+    q: 'What happens after the assessment?',
+    a: 'You have three options: implement the findings on your own using the report, work with Kyle monthly through the AI Concierge program as he guides you through building, or have Kyle build and deploy everything for you as a custom project. There\'s no pressure to go further — the report stands on its own.',
   },
   {
     q: 'How far will you travel for the on-site visit?',
@@ -71,6 +68,10 @@ const clarityFaqs = [
   {
     q: 'How quickly do I get the report?',
     a: 'The written report and video are delivered within 5 business days of the on-site visit. The Zoom follow-up call is scheduled at your convenience after you\'ve had time to read it.',
+  },
+  {
+    q: 'What if I\'m not ready to build anything yet?',
+    a: 'That\'s fine. The assessment is a standalone product. You get a report, a video, and a call. You own everything in it. There\'s no obligation to go further.',
   },
 ];
 
@@ -84,26 +85,26 @@ export default function AssessmentPage() {
         </div>
         <div className="relative z-10 max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1488AA]/30 bg-[#1488AA]/10 text-[#1488AA] text-xs font-medium mb-6">
-            <MapPin size={12} /> In-Person · Huntsville · Madison · Decatur
+            <MapPin size={12} /> In-Person · North Alabama
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
-            One hour.
+            One hour. Every AI
             <br />
-            Your top AI opportunities,
+            opportunity in your
             <br />
-            <span className="text-gradient accent-serif">on paper.</span>
+            <span className="text-gradient accent-serif">business, ranked.</span>
           </h1>
           <p className="text-xl text-[#CBD5E1]/70 leading-relaxed max-w-2xl mb-10">
             Kyle visits your business, asks the right questions, and delivers a written report,
-            a short video, and a 1-hour call to walk through the findings. No fluff. A real
-            deliverable for $997.
+            a short video, and a 1-hour call to walk through exactly where AI can make a real
+            difference — and what to do about it. $997, flat.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="/contact"
               className="group px-8 py-4 text-base font-semibold text-white rounded-xl gradient-teal-blue hover:opacity-90 shadow-lg transition-all flex items-center gap-2 justify-center"
             >
-              Book a Clarity Session
+              Book the Assessment
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <a
@@ -143,33 +144,27 @@ export default function AssessmentPage() {
               href="/contact"
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 font-semibold text-white bg-[#0B0F14] rounded-xl hover:bg-[#111827] transition-all"
             >
-              Book a Clarity Session <ArrowRight size={16} />
+              Book the Assessment — $997 <ArrowRight size={16} />
             </Link>
-            <a
-              href="#compare"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 font-semibold text-[#0B0F14] border border-[#0B0F14]/25 rounded-xl hover:bg-[#0B0F14] hover:text-white transition-all"
-            >
-              Compare Options
-            </a>
           </div>
         </div>
       </section>
 
-      {/* What you get — Clarity Session */}
+      {/* What you get */}
       <section className="py-20 px-6 bg-[#111827]" id="whats-included">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
-            <div className="text-[#1488AA] text-xs font-semibold uppercase tracking-widest mb-3">AI Clarity Session — $997</div>
+            <div className="text-[#1488AA] text-xs font-semibold uppercase tracking-widest mb-3">AI Opportunity Assessment — $997</div>
             <h2 className="text-3xl font-bold text-white mb-4">
               What you get. <span className="accent-serif text-gradient">All of it.</span>
             </h2>
             <p className="text-[#CBD5E1]/60 max-w-2xl mx-auto leading-relaxed">
-              One hour on-site. A focused report on your top opportunities. A video you can
-              forward to a partner or CFO. A call to walk through it all. That&apos;s the whole thing.
+              One hour on-site. A focused report on your top AI opportunities. A video you can
+              forward. A call to walk through everything. That&apos;s the whole thing — $997 flat.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6 mb-16">
-            {clarityDeliverables.map(({ icon: Icon, title, desc }) => (
+            {deliverables.map(({ icon: Icon, title, desc }) => (
               <div key={title} className="flex gap-5 p-6 rounded-xl bg-[#0B0F14] border border-white/5 hover:border-[#1488AA]/20 transition-colors">
                 <div className="w-12 h-12 rounded-xl gradient-teal-blue flex items-center justify-center shrink-0">
                   <Icon size={22} className="text-white" />
@@ -186,7 +181,7 @@ export default function AssessmentPage() {
           <div className="rounded-2xl overflow-hidden border border-white/5">
             <Image
               src="/images/assessment-clarity-session.png"
-              alt="Business consultant and small business owner in conversation at a conference table"
+              alt="Business consultant and small business owner in conversation"
               width={1536}
               height={1024}
               className="w-full h-72 md:h-96 object-cover"
@@ -208,9 +203,9 @@ export default function AssessmentPage() {
                 across <span className="accent-serif text-gradient">Four Pillars.</span>
               </h2>
               <p className="text-[#CBD5E1]/60 leading-relaxed mb-6">
-                The Four Pillars are the filter Kyle uses to evaluate every AI opportunity in your
-                business. Each one gets scored 1–5. The weighted total determines what goes at the
-                top of your report — so you know exactly where to start.
+                The Four Pillars are the filter Kyle uses to evaluate every AI opportunity
+                in your business. Each one gets scored 1–5. The weighted total determines
+                what goes at the top of your report — so you know exactly where to start.
               </p>
               <p className="text-[#CBD5E1]/60 leading-relaxed">
                 It&apos;s what makes this a <em>report</em> instead of an opinion.
@@ -231,7 +226,7 @@ export default function AssessmentPage() {
         </div>
       </section>
 
-      {/* Report image */}
+      {/* Report + image */}
       <section className="py-20 px-6 bg-[#111827]">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="rounded-2xl overflow-hidden border border-white/5">
@@ -251,15 +246,15 @@ export default function AssessmentPage() {
             </h2>
             <p className="text-[#CBD5E1]/60 leading-relaxed mb-6">
               Not a slide deck. Not a list of observations. A focused document with your top
-              opportunities ranked by impact — plus three quick wins you can implement yourself,
-              for free, before spending another dollar.
+              AI opportunities ranked by impact — plus three quick wins you can implement
+              yourself, for free, before spending another dollar.
             </p>
             <ul className="space-y-3">
               {[
-                'Top 3–5 AI opportunities, scored and ranked',
+                'Top AI opportunities, scored and ranked by impact',
                 'Three quick wins — free, no outside help needed',
                 'Plain-English explanation of each opportunity',
-                'Build recommendations — scope only, no pressure',
+                'Your options for what comes next — no pressure',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-sm text-[#CBD5E1]/70">
                   <CheckCircle size={15} className="text-[#1488AA] shrink-0 mt-0.5" />
@@ -271,97 +266,89 @@ export default function AssessmentPage() {
         </div>
       </section>
 
-      {/* Pricing — two options */}
-      <section className="py-20 px-6 bg-[#0B0F14]" id="compare">
-        <div className="max-w-4xl mx-auto">
+      {/* After the assessment — 3 paths */}
+      <section className="py-20 px-6 bg-[#0B0F14]">
+        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
+            <div className="text-[#1488AA] text-xs font-semibold uppercase tracking-widest mb-3">After the Assessment</div>
             <h2 className="text-3xl font-bold text-white mb-4">
-              Two ways to <span className="accent-serif text-gradient">get started.</span>
+              You choose <span className="accent-serif text-gradient">what comes next.</span>
             </h2>
             <p className="text-[#CBD5E1]/60 max-w-xl mx-auto leading-relaxed">
-              The Clarity Session is the right first step for most businesses. The Deep Assessment
-              is for businesses ready to commit to a major AI build.
+              The assessment stands on its own. But if you want to go further, there are
+              three ways to work together — and no pressure to choose one until you&apos;re ready.
             </p>
           </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Clarity Session */}
-            <div className="rounded-2xl bg-gradient-to-b from-[#1488AA]/15 to-[#0686D4]/5 border border-[#1488AA]/40 p-8 flex flex-col shadow-lg shadow-[#1488AA]/10">
-              <div className="mb-6">
-                <div className="text-[#1488AA] text-xs font-semibold uppercase tracking-widest mb-2">Most Popular</div>
-                <h3 className="text-white font-bold text-xl mb-1">AI Clarity Session</h3>
-                <div className="flex items-baseline gap-2 mb-3">
-                  <span className="text-4xl font-bold text-gradient">$997</span>
+          <div className="grid md:grid-cols-3 gap-6">
+            {afterAssessment.map(({ label, desc }, i) => (
+              <div key={label} className="p-6 rounded-xl bg-[#111827] border border-white/5 hover:border-[#1488AA]/20 transition-colors">
+                <div className="w-8 h-8 rounded-lg gradient-teal-blue flex items-center justify-center mb-4 text-white font-bold text-sm">
+                  {i + 1}
                 </div>
-                <p className="text-[#CBD5E1]/60 text-sm leading-relaxed">
-                  The right starting point. One hour on-site, a focused report, a video, and a call.
-                </p>
+                <h3 className="text-white font-semibold text-base mb-2">{label}</h3>
+                <p className="text-[#CBD5E1]/60 text-sm leading-relaxed">{desc}</p>
               </div>
-              <ul className="space-y-3 mb-8 flex-1">
-                {[
-                  '1 hour on-site owner conversation',
-                  'Top 3–5 opportunities, scored and ranked',
-                  'Written report (2–3 pages)',
-                  '~5-minute video overview',
-                  '1-hour Zoom follow-up call',
-                  'Three free quick wins included',
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-[#CBD5E1]/70">
-                    <CheckCircle size={15} className="text-[#1488AA] shrink-0 mt-0.5" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/contact"
-                className="text-center py-3 px-6 font-semibold text-white rounded-xl gradient-teal-blue hover:opacity-90 transition-all text-sm"
-              >
-                Book a Clarity Session
-              </Link>
-              <p className="text-center text-[#CBD5E1]/40 text-xs mt-3">
-                Cost applies toward Deep Assessment if booked within 30 days.
-              </p>
-            </div>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-2 text-[#1488AA] hover:text-[#0686D4] text-sm font-medium transition-colors"
+            >
+              Learn more about each option <ArrowRight size={15} />
+            </Link>
+          </div>
+        </div>
+      </section>
 
-            {/* Deep Assessment */}
-            <div className="rounded-2xl bg-[#0F1623] border border-white/10 p-8 flex flex-col hover:border-[#1488AA]/30 transition-colors">
-              <div className="mb-6">
-                <div className="text-[#CBD5E1]/40 text-xs font-semibold uppercase tracking-widest mb-2">For Serious Buyers</div>
-                <h3 className="text-white font-bold text-xl mb-1">Four Pillars Deep Assessment</h3>
-                <div className="flex items-baseline gap-2 mb-3">
-                  <span className="text-4xl font-bold text-white">$4,997</span>
-                </div>
-                <p className="text-[#CBD5E1]/60 text-sm leading-relaxed">
-                  A full half-day engagement. Every workflow mapped, every tool audited,
-                  comprehensive roadmap delivered.
-                </p>
-              </div>
-              <ul className="space-y-3 mb-8 flex-1">
-                {deepDeliverables.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-[#CBD5E1]/60">
-                    <CheckCircle size={15} className="text-[#1488AA]/60 shrink-0 mt-0.5" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/contact"
-                className="text-center py-3 px-6 font-semibold text-[#1488AA] rounded-xl border border-[#1488AA]/30 hover:bg-[#1488AA]/10 transition-all text-sm"
-              >
-                Ask About the Deep Assessment
-              </Link>
+      {/* Pricing */}
+      <section className="py-20 px-6 bg-[#111827]">
+        <div className="max-w-md mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-white mb-3">
+              Simple <span className="accent-serif text-gradient">pricing.</span>
+            </h2>
+            <p className="text-[#CBD5E1]/60 leading-relaxed">
+              Everything listed is included. One flat fee, agreed before anything starts.
+            </p>
+          </div>
+          <div className="rounded-2xl bg-gradient-to-b from-[#1488AA]/15 to-[#0686D4]/5 border border-[#1488AA]/40 p-8 flex flex-col shadow-lg shadow-[#1488AA]/10">
+            <div className="flex items-baseline gap-2 mb-2">
+              <span className="text-5xl font-bold text-gradient">$997</span>
             </div>
+            <p className="text-[#CBD5E1]/50 text-sm mb-8">Flat fee. No tiers, no add-ons.</p>
+            <ul className="space-y-3 mb-8">
+              {[
+                '1-hour on-site visit',
+                'Written AI Opportunity Report',
+                '~5-minute video overview',
+                '1-hour Zoom follow-up call',
+                'Three quick wins included',
+                'Ranked opportunities across Four Pillars',
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3 text-sm text-[#CBD5E1]/70">
+                  <CheckCircle size={15} className="text-[#1488AA] shrink-0 mt-0.5" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <Link
+              href="/contact"
+              className="text-center py-3.5 px-6 font-semibold text-white rounded-xl gradient-teal-blue hover:opacity-90 transition-all"
+            >
+              Book the Assessment
+            </Link>
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-20 px-6 bg-[#111827]">
+      <section className="py-20 px-6 bg-[#0B0F14]">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold text-white text-center mb-12">Questions</h2>
           <div className="space-y-4">
-            {clarityFaqs.map((faq) => (
-              <div key={faq.q} className="p-6 rounded-xl bg-[#0B0F14] border border-white/5">
+            {faqs.map((faq) => (
+              <div key={faq.q} className="p-6 rounded-xl bg-[#111827] border border-white/5">
                 <h3 className="text-white font-semibold mb-3">{faq.q}</h3>
                 <p className="text-[#CBD5E1]/70 text-sm leading-relaxed">{faq.a}</p>
               </div>
@@ -371,7 +358,7 @@ export default function AssessmentPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6 bg-[#0B0F14] text-center">
+      <section className="py-20 px-6 bg-[#111827] text-center">
         <div className="max-w-2xl mx-auto">
           <div className="relative p-12 rounded-2xl bg-gradient-to-b from-[#1488AA]/10 to-[#0686D4]/5 border border-[#1488AA]/20 overflow-hidden">
             <div className="absolute inset-0 bg-grid opacity-30" />
@@ -380,20 +367,20 @@ export default function AssessmentPage() {
                 <MapPin size={12} /> In-Person · North Alabama
               </div>
               <h2 className="text-3xl font-bold text-white mb-4">
-                One hour. Your top opportunities,
+                One hour. Every opportunity,
                 <br />
                 <span className="accent-serif text-gradient">ranked and on paper.</span>
               </h2>
               <p className="text-[#CBD5E1]/70 mb-8 leading-relaxed">
                 Kyle comes to you, asks the right questions, and hands you a clear picture
-                of where AI can make a real difference in your business. Start there.
+                of where AI can make a real difference in your business.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/contact"
                   className="group px-8 py-4 font-semibold text-white rounded-xl gradient-teal-blue hover:opacity-90 flex items-center gap-2 justify-center"
                 >
-                  Book a Clarity Session — $997
+                  Book the Assessment — $997
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link

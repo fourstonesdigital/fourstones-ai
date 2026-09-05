@@ -7,7 +7,7 @@ import FAQAccordion from '@/components/ui/FAQAccordion';
 const services = [
   {
     name: 'AI Implementation Workshop',
-    price: '',
+    price: '$97',
     showPrice: true,
     per: 'per person',
     description:
@@ -25,33 +25,52 @@ const services = [
     imageAlt: 'Small-group hands-on working session',
   },
   {
-    name: 'AI Consulting & Process Review',
-    price: 'Quoted based on your needs',
-    showPrice: false,
-    per: '',
+    name: 'AI Opportunity Assessment',
+    price: '$997',
+    showPrice: true,
+    per: 'flat fee',
     description:
-      'Kyle comes to your business, maps your workflows in person, identifies every AI opportunity, and delivers a prioritized plan. Scope and pricing discussed during your initial meeting.',
+      'Kyle visits your business for one hour, asks the right questions, and delivers a written report ranking your top AI opportunities. Includes a short video and a 1-hour Zoom call to walk through everything.',
     features: [
-      'On-site business process review',
-      'AI opportunity assessment',
-      'Prioritized implementation plan',
-      'Pricing based on size and complexity',
+      '1-hour on-site owner conversation',
+      'Written AI Opportunity Report',
+      'Opportunities scored across Four Pillars',
+      '~5-min video + 1-hour Zoom follow-up',
     ],
-    cta: 'Request a Quote',
-    href: '/contact',
+    cta: 'Book the Assessment',
+    href: '/assessment',
     highlight: true,
     image: null,
     imageAlt: null,
   },
   {
-    name: 'Custom AI Build',
-    price: 'Quoted based on your needs',
+    name: 'AI Concierge',
+    price: 'Monthly retainer',
     showPrice: false,
     per: '',
     description:
-      'Done-for-you custom AI tools built into your existing workflows. We engineer it, deploy it, train your team on-site, and hand you the keys. Scope and pricing discussed in person.',
+      'Done-with-you. Kyle works alongside you monthly — guiding you through building and deploying AI tools in your own business. You build the capability; he makes sure you do it right.',
     features: [
-      'Full custom AI system development',
+      'Monthly calls + async support',
+      'Guided AI tool building',
+      'You build; Kyle coaches',
+      'Month-to-month, no lock-in',
+    ],
+    cta: 'Ask About Concierge',
+    href: '/contact',
+    highlight: false,
+    image: null,
+    imageAlt: null,
+  },
+  {
+    name: 'Custom AI Build',
+    price: 'Project fee',
+    showPrice: false,
+    per: '',
+    description:
+      'Done-for-you. Kyle builds and deploys custom AI systems into your existing workflows, trains your team on-site, and hands you the keys. Flat project fee. You own all code and IP.',
+    features: [
+      'Full custom AI development',
       'Integration with your existing software',
       'On-site staff training + documentation',
       'You own all code and IP',
@@ -252,15 +271,15 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Three ways to <span className="accent-serif text-gradient">work together</span>
+              Four ways to <span className="accent-serif text-gradient">work together</span>
             </h2>
             <p className="text-[#CBD5E1]/60 max-w-xl mx-auto">
-              All engagements start with a conversation — in person at your location or on Zoom, whatever works for you.
-              Start with the workshop, or reach out directly if you already know what you need.
+              Start with the workshop. Get the assessment. Then choose your path — done with you, or done for you.
+              Every engagement starts with a conversation in person or on Zoom.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {services.map((s) => (
               <div
                 key={s.name}
