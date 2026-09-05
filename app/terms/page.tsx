@@ -26,7 +26,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="text-white text-xl font-semibold mb-3">3. AI Workshop</h2>
+            <h2 className="text-white text-xl font-semibold mb-3">3. AI Implementation Workshop</h2>
             <p>Workshop registration is handled through Eventbrite. By registering you agree to:</p>
             <ul className="list-disc pl-6 space-y-1 mt-3">
               <li>Attend in person at the Madison, AL location on the registered date</li>

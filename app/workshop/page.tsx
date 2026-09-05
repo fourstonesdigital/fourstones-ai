@@ -309,7 +309,7 @@ export default function WorkshopPage() {
             </ul>
           </div>
           <div className="rounded-2xl bg-[#111827] border border-[#1488AA]/20 p-8" id="dates">
-            <h3 className="text-white font-bold text-xl mb-2">AI Workshop</h3>
+            <h3 className="text-white font-bold text-xl mb-2">AI Implementation Workshop</h3>
             <div className="flex items-baseline gap-2 mb-1">
               <span className="text-4xl font-bold text-gradient">$97</span>
               <span className="text-[#CBD5E1]/50">per person</span>

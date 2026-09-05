@@ -203,7 +203,7 @@ export default function CaseStudiesPage() {
             <span className="accent-serif text-gradient">your business?</span>
           </h2>
           <p className="text-[#CBD5E1]/60 mb-8">
-            Start with the AI Workshop and see what&apos;s possible.
+            Start with the AI Implementation Workshop and see what&apos;s possible.
             Or reach out directly to talk through a custom build.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

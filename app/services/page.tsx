@@ -28,7 +28,7 @@ const process = [
 
 const tiers = [
   {
-    name: 'AI Workshop',
+    name: 'AI Implementation Workshop',
     price: '$97',
     unit: 'per person',
     showPrice: true,
