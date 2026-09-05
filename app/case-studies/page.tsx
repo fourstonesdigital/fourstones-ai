@@ -195,6 +195,75 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
+      {/* The kind of work we do — visual row */}
+      <section className="py-20 px-6 bg-[#111827]">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl font-bold text-white mb-10 text-center">The kind of work we do</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Workflow before/after */}
+            <div>
+              <div className="rounded-xl overflow-hidden border border-white/5 mb-3">
+                <Image
+                  src="/images/workflow-before-after.png"
+                  alt="Messy manual workflow transformed into a clean automated system"
+                  width={600}
+                  height={400}
+                  className="w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <p className="text-[#CBD5E1]/50 text-sm text-center">From scattered manual workflows to automated systems.</p>
+            </div>
+
+            {/* Dashboard AI ops */}
+            <div>
+              <div className="rounded-xl overflow-hidden border border-white/5 mb-3">
+                <Image
+                  src="/images/dashboard-ai-ops.png"
+                  alt="Operational dashboard showing scheduling and reporting tools"
+                  width={600}
+                  height={400}
+                  className="w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <p className="text-[#CBD5E1]/50 text-sm text-center">Illustrative of operational tools Kyle builds — scheduling, follow-up, reporting. Not a client screenshot.</p>
+            </div>
+
+            {/* Metric proof strip card */}
+            <div>
+              <div className="rounded-xl overflow-hidden border border-white/5 mb-3 relative">
+                <Image
+                  src="/images/metric-proof-strip.png"
+                  alt="Abstract metric and data visualization cards"
+                  width={600}
+                  height={400}
+                  className="w-full object-cover opacity-40"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 flex flex-col justify-center items-center gap-4 p-6">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-white">12+</div>
+                    <div className="text-[#CBD5E1]/70 text-xs uppercase tracking-wider">AI systems built</div>
+                  </div>
+                  <div className="w-full border-t border-white/10" />
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-white">2</div>
+                    <div className="text-[#CBD5E1]/70 text-xs uppercase tracking-wider">Businesses transformed</div>
+                  </div>
+                  <div className="w-full border-t border-white/10" />
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-gradient">Hours</div>
+                    <div className="text-[#CBD5E1]/70 text-xs uppercase tracking-wider">Recovered weekly</div>
+                  </div>
+                </div>
+              </div>
+              <p className="text-[#CBD5E1]/50 text-sm text-center">Impact across nGenius Prep systems built and deployed.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-24 px-6 bg-[#111827] text-center">
         <div className="max-w-2xl mx-auto">

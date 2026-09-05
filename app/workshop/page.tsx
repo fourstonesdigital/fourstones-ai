@@ -234,11 +234,12 @@ export default function WorkshopPage() {
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div className="rounded-2xl overflow-hidden border border-white/5">
             <Image
-              src="/images/meeting.png"
-              alt="In-person workshop session"
+              src="/images/workshop-hands-on.png"
+              alt="Small-group, hands-on AI workshop session — 10 seats max"
               width={720}
               height={480}
               className="w-full h-72 object-cover"
+              loading="lazy"
             />
           </div>
           <div>

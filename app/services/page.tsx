@@ -131,16 +131,18 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Automation image */}
+      {/* Services banner */}
       <section className="px-6 pb-0 bg-[#0B0F14]">
         <div className="max-w-5xl mx-auto">
           <div className="rounded-2xl overflow-hidden border border-white/5">
             <Image
-              src="/images/automation.png"
-              alt="AI automation visualization"
+              src="/images/services-banner-operations.png"
+              alt="Small business operations and systems, professional environment"
               width={1280}
               height={720}
-              className="w-full h-64 object-cover"
+              className="w-full object-cover"
+              style={{ aspectRatio: '16/9' }}
+              loading="lazy"
             />
           </div>
         </div>
@@ -149,11 +151,26 @@ export default function ServicesPage() {
       {/* Service tiers */}
       <section className="py-20 px-6 bg-[#0B0F14]">
         <div className="max-w-6xl mx-auto space-y-8">
-          {tiers.map((tier) => (
+          {tiers.map((tier) => {
+            const isWorkshop = tier.name === 'AI Implementation Workshop';
+            return (
             <div
               key={tier.name}
-              className="rounded-2xl p-8 md:p-10 border bg-[#111827] border-white/5 hover:border-[#1488AA]/20 transition-colors"
+              className="rounded-2xl border bg-[#111827] border-white/5 hover:border-[#1488AA]/20 transition-colors overflow-hidden"
             >
+              {isWorkshop && (
+                <div className="h-32 overflow-hidden">
+                  <Image
+                    src="/images/workshop-hands-on.png"
+                    alt="Small-group hands-on working session"
+                    width={1200}
+                    height={128}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              )}
+              <div className="p-8 md:p-10">
               <div className="grid md:grid-cols-3 gap-8">
                 {/* Left: Info */}
                 <div className="md:col-span-1">
@@ -220,7 +237,46 @@ export default function ServicesPage() {
                 </div>
               </div>
             </div>
-          ))}
+          </div>
+          );
+          })}
+        </div>
+      </section>
+
+      {/* What this looks like — two-column visual strip */}
+      <section className="py-16 px-6 bg-[#0B0F14]">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl font-bold text-white mb-10 text-center">
+            What this looks like
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <div className="rounded-xl overflow-hidden border border-white/5 mb-3">
+                <Image
+                  src="/images/workflow-before-after.png"
+                  alt="Messy manual workflow transformed into a clean automated system"
+                  width={720}
+                  height={480}
+                  className="w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <p className="text-[#CBD5E1]/50 text-sm text-center">From scattered process to a system you actually use.</p>
+            </div>
+            <div>
+              <div className="rounded-xl overflow-hidden border border-white/5 mb-3">
+                <Image
+                  src="/images/dashboard-ai-ops.png"
+                  alt="Operational dashboard showing scheduling and reporting tools"
+                  width={720}
+                  height={480}
+                  className="w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <p className="text-[#CBD5E1]/50 text-sm text-center">Representative of the operational tools Kyle builds — scheduling, follow-up, reporting.</p>
+            </div>
+          </div>
         </div>
       </section>
 

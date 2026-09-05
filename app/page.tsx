@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, CheckCircle, Users, TrendingUp, MapPin } from 'lucide-react';
+import { ArrowRight, CheckCircle } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import FAQAccordion from '@/components/ui/FAQAccordion';
 
@@ -21,6 +21,8 @@ const services = [
     cta: 'Reserve Your Seat',
     href: '/workshop',
     highlight: false,
+    image: '/images/workshop-hands-on.png',
+    imageAlt: 'Small-group hands-on working session',
   },
   {
     name: 'AI Consulting & Process Review',
@@ -38,6 +40,8 @@ const services = [
     cta: 'Request a Quote',
     href: '/contact',
     highlight: true,
+    image: null,
+    imageAlt: null,
   },
   {
     name: 'Custom AI Build',
@@ -55,6 +59,8 @@ const services = [
     cta: 'Start the Conversation',
     href: '/contact',
     highlight: false,
+    image: null,
+    imageAlt: null,
   },
 ];
 
@@ -65,20 +71,43 @@ const stats = [
   { value: 'Both', label: 'In-person or Zoom' },
 ];
 
-const localAreas = [
-  'Huntsville', 'Madison', 'Decatur', 'Athens',
-  'North Alabama', 'Tennessee Valley', 'and surrounding areas',
-];
-
-const industries = [
-  'HVAC & Home Services',
-  'Law Firms',
-  'Dental & Medical Offices',
-  'Insurance Agencies',
-  'Real Estate',
-  'Accounting Firms',
-  'Contractors & Trades',
-  'Local Retailers',
+const industryTiles = [
+  {
+    name: 'HVAC & Home Services',
+    image: '/images/industry-hvac.png',
+    imageAlt: 'Service van in a residential driveway at late afternoon',
+    example: 'Estimate follow-ups, job-costing notes, automated dispatching.',
+  },
+  {
+    name: 'Law Firms',
+    image: '/images/industry-law.png',
+    imageAlt: 'Quiet law-firm conference room',
+    example: 'Intake summaries, deadline tracking, document drafting.',
+  },
+  {
+    name: 'Dental & Medical Offices',
+    image: '/images/industry-dental.png',
+    imageAlt: 'Dental reception desk, calm and modern',
+    example: 'Appointment reminders, patient FAQ bots, billing follow-up.',
+  },
+  {
+    name: 'Insurance Agencies',
+    image: '/images/industry-insurance.png',
+    imageAlt: 'Insurance office, professional and calm',
+    example: 'Quote workflows, renewal tracking, client comms.',
+  },
+  {
+    name: 'Accounting Firms',
+    image: '/images/industry-accounting.png',
+    imageAlt: 'Accounting office, organized and focused',
+    example: 'Document collection, client onboarding, deadline alerts.',
+  },
+  {
+    name: 'Contractors & Trades',
+    image: '/images/industry-trades.png',
+    imageAlt: 'Jobsite table with plans and tools',
+    example: 'Bid follow-up, project updates, subcontractor coordination.',
+  },
 ];
 
 const faqs = [
@@ -104,10 +133,19 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[85vh] flex items-center justify-center bg-grid overflow-hidden pt-24">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#1488AA]/10 rounded-full blur-[120px]" />
-          <div className="absolute top-1/3 left-1/3 w-[400px] h-[400px] bg-[#0686D4]/8 rounded-full blur-[100px]" />
+      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-24">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero-north-alabama-dusk.png"
+            alt="Dusk over a North Alabama city skyline, muted and professional"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Dark-grid + navy overlay for readability */}
+          <div className="absolute inset-0 bg-grid opacity-40" />
+          <div className="absolute inset-0 bg-[#0B0F14]/60" />
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
@@ -139,7 +177,7 @@ export default function HomePage() {
           </div>
 
           {/* Stats */}
-          <div className="border border-white/10 rounded-2xl px-8 py-6 mt-16">
+          <div className="border border-white/10 rounded-2xl px-8 py-6 mt-16 bg-[#0B0F14]/40 backdrop-blur-sm">
             <div className="flex flex-wrap justify-center md:grid md:grid-cols-4">
               {stats.map((s) => (
                 <div key={s.label} className="text-center border-r border-white/10 last:border-r-0 px-6 first:pl-0 py-2 md:py-0">
@@ -162,29 +200,10 @@ export default function HomePage() {
           >
             Four Stones AI is a North Alabama AI consultancy built to help local businesses work smarter, not harder. From custom tools that eliminate busywork to systems that run your operation while you sleep, we deliver practical AI that makes a real difference for local businesses.
           </ScrollReveal>
-
-          <div className="mt-16 grid md:grid-cols-2 gap-10 items-end">
-            <h2 className="text-4xl md:text-6xl font-bold text-[#0B0F14] leading-tight tracking-tight">
-              Smart AI solutions tailored to{' '}
-              <span className="accent-serif">your business</span>
-            </h2>
-            <div className="md:text-right">
-              <p className="text-[#0B0F14]/70 mb-6 leading-relaxed">
-                We build AI systems that streamline operations and free up the hours
-                you&apos;d rather spend somewhere else.
-              </p>
-              <Link
-                href="/services"
-                className="inline-flex items-center gap-2 px-7 py-3.5 font-semibold text-[#0B0F14] border border-[#0B0F14]/25 rounded-xl hover:bg-[#0B0F14] hover:text-white transition-all active:scale-[0.97]"
-              >
-                Explore AI Services <ArrowRight size={16} />
-              </Link>
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* Local positioning */}
+      {/* Positioning — merged split section */}
       <section className="py-24 px-6 bg-[#111827]">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -193,59 +212,36 @@ export default function HomePage() {
                 North Alabama businesses deserve{' '}
                 <span className="text-gradient">a local AI expert.</span>
               </h2>
-              <p className="text-[#CBD5E1]/70 leading-relaxed mb-6">
-                Most AI consultants are somewhere else — sending
-                a Zoom window and a slide deck from three time zones away. Kyle Montgomery is local, based in the Huntsville area, and happy to meet at your office or connect on Zoom to learn your operation firsthand and build something that actually fits how you run things.
-              </p>
-              <p className="text-[#CBD5E1]/70 leading-relaxed mb-8">
-                Whether you&apos;re an HVAC company in Athens, a law firm in Huntsville, or
-                a contractor in Decatur — if you&apos;re in the area and ready to put AI
-                to work, this is the call to make.
-              </p>
+              <div className="space-y-4 text-[#CBD5E1]/70 leading-relaxed mb-8">
+                <p>
+                  Most AI consultants are somewhere else — sending a Zoom window and a slide deck from three time zones away. Kyle Montgomery is local, based in the Huntsville area, and happy to meet at your office or connect on Zoom to learn your operation firsthand.
+                </p>
+                <p>
+                  That means he builds something that actually fits how you run things — not a generic tool repurposed from someone else&apos;s workflow. Whether you&apos;re an HVAC company in Athens that needs automated estimate follow-ups, a law firm in Huntsville tracking client deadlines, or a contractor in Decatur chasing bid responses — the problem is specific, and the solution should be too.
+                </p>
+                <p>
+                  Remote consultants give you a roadmap. Kyle delivers a working system, trains your team on-site, and hands you the keys. No retainers, no dependency — you own everything built.
+                </p>
+                <p>
+                  If your business is local and you&apos;re ready to put AI to work, this is the call to make.
+                </p>
+              </div>
               <Link
-                href="/about"
-                className="inline-flex items-center gap-2 text-[#1488AA] hover:text-[#0686D4] font-medium transition-colors"
+                href="/services"
+                className="inline-flex items-center gap-2 px-7 py-3.5 font-semibold text-white rounded-xl gradient-teal-blue hover:opacity-90 transition-all"
               >
-                Meet Kyle <ArrowRight size={16} />
+                Explore AI Services <ArrowRight size={16} />
               </Link>
             </div>
-            <div className="space-y-4">
-              {[
-                { icon: MapPin, title: 'In person or on Zoom.', desc: 'Kyle comes to you, you come to the office in Madison, or you connect on Zoom — whatever works best for your schedule.' },
-                { icon: Users, title: 'Built for your workflow', desc: 'Not a generic tool. Custom AI designed around how your specific business actually runs — your data, your processes, your team.' },
-                { icon: TrendingUp, title: 'ROI you can measure', desc: 'Time saved, money recovered, staff hours freed up. Kyle focuses on results that show up in your bottom line.' },
-              ].map(({ icon: Icon, title, desc }) => (
-                <div key={title} className="flex gap-4 p-6 rounded-xl bg-[#0B0F14] border border-white/12 shadow-lg shadow-black/30 hover:border-[#1488AA]/30 hover:shadow-lg hover:shadow-[#1488AA]/5 transition-all duration-200">
-                  <div className="w-12 h-12 rounded-lg gradient-teal-blue flex items-center justify-center shrink-0">
-                    <Icon size={20} className="text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-white font-semibold text-lg mb-1">{title}</h3>
-                    <p className="text-[#CBD5E1]/80 text-sm leading-relaxed">{desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Huntsville image banner */}
-      <section className="px-6 bg-[#0B0F14] py-4">
-        <div className="max-w-6xl mx-auto rounded-2xl overflow-hidden border border-white/5 relative">
-          <Image
-            src="/images/huntsville.png"
-            alt="Huntsville Alabama"
-            width={1280}
-            height={480}
-            className="w-full h-56 md:h-72 object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B0F14]/70 via-transparent to-[#0B0F14]/40 flex items-center px-10">
-            <div>
-              <div className="text-[#1488AA] text-xs font-semibold uppercase tracking-widest mb-2">Serving North Alabama</div>
-              <div className="text-white text-2xl md:text-3xl font-bold leading-snug">
-                Huntsville · Madison · Decatur · Athens<br />and surrounding communities
-              </div>
+            <div className="rounded-2xl overflow-hidden border border-white/5">
+              <Image
+                src="/images/workflow-before-after.png"
+                alt="Messy manual workflow transformed into a clean automated system"
+                width={720}
+                height={480}
+                className="w-full object-cover"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
@@ -268,90 +264,126 @@ export default function HomePage() {
             {services.map((s) => (
               <div
                 key={s.name}
-                className={`relative rounded-2xl p-9 border flex flex-col transition-[transform,shadow,border-color] duration-200 ${
+                className={`relative rounded-2xl border flex flex-col transition-[transform,shadow,border-color] duration-200 overflow-hidden ${
                   s.highlight
                     ? 'bg-gradient-to-b from-[#1488AA]/15 to-[#0686D4]/5 border-[#1488AA]/40 shadow-xl shadow-[#1488AA]/15 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#1488AA]/20'
                     : 'bg-[#0F1623] border border-white/10 hover:border-[#1488AA]/30 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20 transition-all duration-200'
                 }`}
               >
                 {s.highlight && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-5 py-1.5 rounded-full gradient-teal-blue text-white text-sm font-semibold whitespace-nowrap">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-5 py-1.5 rounded-full gradient-teal-blue text-white text-sm font-semibold whitespace-nowrap z-10">
                     Most Requested
                   </div>
                 )}
-                <div className="mb-6">
-                  <h3 className="text-white font-bold text-2xl mb-2">{s.name}</h3>
-                  {s.showPrice && s.price ? (
-                    <div className="flex items-baseline gap-2 mb-4">
-                      <span className="text-3xl font-bold text-gradient">{s.price}</span>
-                      <span className="text-[#CBD5E1]/50 text-sm">{s.per}</span>
-                    </div>
-                  ) : (
-                    <div className="mb-4">
-                      <span className="text-base font-medium text-[#CBD5E1]/80">Quoted based on your needs</span>
-                    </div>
-                  )}
-                  <p className="text-[#CBD5E1]/80 text-sm leading-relaxed">{s.description}</p>
+
+                {/* Workshop image strip */}
+                {s.image && (
+                  <div className="h-32 overflow-hidden">
+                    <Image
+                      src={s.image}
+                      alt={s.imageAlt!}
+                      width={600}
+                      height={128}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
+
+                <div className="p-9 flex flex-col flex-1">
+                  <div className="mb-6">
+                    <h3 className="text-white font-bold text-2xl mb-2">{s.name}</h3>
+                    {s.showPrice && s.price ? (
+                      <div className="flex items-baseline gap-2 mb-4">
+                        <span className="text-3xl font-bold text-gradient">{s.price}</span>
+                        <span className="text-[#CBD5E1]/50 text-sm">{s.per}</span>
+                      </div>
+                    ) : (
+                      <div className="mb-4">
+                        <span className="text-base font-medium text-[#CBD5E1]/80">Quoted based on your needs</span>
+                      </div>
+                    )}
+                    <p className="text-[#CBD5E1]/80 text-sm leading-relaxed">{s.description}</p>
+                  </div>
+                  <ul className="space-y-3 mb-8 flex-1">
+                    {s.features.map((f) => (
+                      <li key={f} className="flex items-start gap-3 text-sm text-[#CBD5E1]/85 gap-y-1">
+                        <CheckCircle size={16} className="text-[#1488AA] shrink-0 mt-0.5" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    href={s.href}
+                    className={`text-center py-3 px-6 rounded-lg font-semibold text-sm transition-all ${
+                      s.highlight
+                        ? 'gradient-teal-blue text-white hover:opacity-90'
+                        : 'border border-[#1488AA]/40 text-[#1488AA] hover:bg-[#1488AA]/10'
+                    }`}
+                  >
+                    {s.cta}
+                  </Link>
                 </div>
-                <ul className="space-y-3 mb-8 flex-1">
-                  {s.features.map((f) => (
-                    <li key={f} className="flex items-start gap-3 text-sm text-[#CBD5E1]/85 gap-y-1">
-                      <CheckCircle size={16} className="text-[#1488AA] shrink-0 mt-0.5" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href={s.href}
-                  className={`text-center py-3 px-6 rounded-lg font-semibold text-sm transition-all ${
-                    s.highlight
-                      ? 'gradient-teal-blue text-white hover:opacity-90'
-                      : 'border border-[#1488AA]/40 text-[#1488AA] hover:bg-[#1488AA]/10'
-                  }`}
-                >
-                  {s.cta}
-                </Link>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Automation image + local areas */}
-      <section className="py-24 px-6 bg-[#111827]">
+      {/* Service Area Map */}
+      <section className="px-6 bg-[#0B0F14] py-16">
         <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-start">
-            <div>
-              <h2 className="text-2xl font-bold text-white mb-4">Serving these communities</h2>
-              <p className="text-[#CBD5E1]/60 mb-6 text-sm leading-relaxed">
-                Huntsville, Madison, Decatur, and surrounding areas. If your business is local,
-                Kyle can be at your door.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-8">
-                {localAreas.map((area) => (
-                  <span key={area} className="px-5 py-2.5 rounded-full bg-[#0B0F14] border border-[#1488AA]/20 text-[#CBD5E1]/80 text-sm font-medium hover:text-white hover:border-[#1488AA]/50 hover:bg-[#1488AA]/10 transition-all duration-150 cursor-default">
-                    {area}
-                  </span>
-                ))}
-              </div>
-              <h2 className="text-2xl font-bold text-white mb-4">Industries we work with</h2>
-              <div className="flex flex-wrap gap-2">
-                {industries.map((ind) => (
-                  <span key={ind} className="px-5 py-2.5 rounded-full bg-[#0B0F14] border border-white/12 text-[#CBD5E1]/80 text-sm font-medium hover:border-[#1488AA]/30 hover:text-white hover:bg-[#1488AA]/10 transition-all duration-150 cursor-default">
-                    {ind}
-                  </span>
-                ))}
+          <div className="rounded-2xl overflow-hidden border border-white/5 relative">
+            <Image
+              src="/images/service-area-map.png"
+              alt="Stylized map of Huntsville, Madison, Decatur and surrounding North Alabama communities"
+              width={1280}
+              height={640}
+              className="w-full object-cover"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0B0F14]/70 via-transparent to-[#0B0F14]/40 flex items-center px-10">
+              <div>
+                <div className="text-[#1488AA] text-xs font-semibold uppercase tracking-widest mb-2">Serving North Alabama</div>
+                <div className="text-white text-2xl md:text-3xl font-bold leading-snug">
+                  Huntsville · Madison · Decatur · Athens<br />and surrounding communities
+                </div>
+                <p className="text-[#CBD5E1]/70 mt-3 text-sm max-w-sm">
+                  If your business is local, Kyle can be at your door.
+                </p>
               </div>
             </div>
-            <div className="rounded-2xl overflow-hidden border border-white/5">
-              <Image
-                src="/images/automation.png"
-                alt="AI automation for small business"
-                width={720}
-                height={480}
-                className="w-full h-72 object-cover"
-              />
-            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Industry Grid */}
+      <section className="py-16 px-6 bg-[#0B0F14]">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl font-bold text-white mb-10 text-center">
+            Industries we work with
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+            {industryTiles.map((tile) => (
+              <div
+                key={tile.name}
+                className="bg-[#0B0F14] border border-white/5 hover:border-[#1488AA]/20 rounded-xl overflow-hidden transition-colors duration-200"
+              >
+                <div className="relative" style={{ aspectRatio: '4/3' }}>
+                  <Image
+                    src={tile.image}
+                    alt={tile.imageAlt}
+                    fill
+                    className="object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-5">
+                  <h3 className="text-white font-semibold text-base mb-1">{tile.name}</h3>
+                  <p className="text-[#CBD5E1]/60 text-sm leading-relaxed">{tile.example}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -365,15 +397,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 px-6 bg-[#111827]">
-        <div className="max-w-3xl mx-auto text-center">
+      {/* CTA with hero image background */}
+      <section className="py-24 px-6 relative overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero-north-alabama-dusk.png"
+            alt="Dusk over a North Alabama city skyline, muted and professional"
+            fill
+            className="object-cover"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-[#0B0F14]/75" />
+        </div>
+        <div className="relative z-10 max-w-3xl mx-auto text-center">
           <div className="relative p-12 rounded-2xl bg-gradient-to-b from-[#1488AA]/10 to-[#0686D4]/5 border border-[#1488AA]/20 shadow-2xl shadow-[#1488AA]/10 overflow-hidden">
-            <div className="absolute inset-0 bg-grid opacity-30" />
             <div className="relative z-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1488AA]/30 bg-[#1488AA]/10 text-[#1488AA] text-xs font-medium mb-6">
-                <MapPin size={12} /> North Alabama — In Person
-              </div>
               <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">
                 Local business. Local consultant. Real results.
               </h2>
