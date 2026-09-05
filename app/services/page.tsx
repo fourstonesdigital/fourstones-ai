@@ -65,7 +65,7 @@ const tiers = [
     tagline: 'Find the opportunity',
     href: '/assessment',
     ctaText: 'Book the Assessment',
-    highlight: true,
+    highlight: false,
     image: '/images/card-assessment.png',
     imageAlt: 'Business consultant reviewing a report with a small business owner',
     features: [
