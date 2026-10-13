@@ -7,7 +7,7 @@ const deliverables = [
   {
     icon: Search,
     title: '1-hour on-site visit',
-    desc: 'Kyle comes to your location and sits down with you and your team. Structured conversation about your workflows, where time gets lost, what your staff does repeatedly, and where things break down. No prep required.',
+    desc: 'We come to your location and sit down with you and your team. Structured conversation about your workflows, where time gets lost, what your staff does repeatedly, and where things break down. No prep required.',
   },
   {
     icon: FileText,
@@ -22,7 +22,7 @@ const deliverables = [
   {
     icon: Phone,
     title: '1-hour Zoom follow-up call',
-    desc: 'Walk through the report together. Ask every question. Kyle explains each opportunity and lays out your options for what comes next — no pressure, no pitch.',
+    desc: 'Walk through the report together. Ask every question. We explain each opportunity and lay out your options for what comes next — no pressure, no pitch.',
   },
 ];
 
@@ -40,11 +40,11 @@ const afterAssessment = [
   },
   {
     label: 'AI Concierge — done with you',
-    desc: 'Kyle works alongside you month-to-month, guiding you through building and deploying AI tools in your business yourself. You do the work; he makes sure you do it right.',
+    desc: 'We work alongside you month-to-month, guiding you through building and deploying AI tools in your business yourself. You do the work; we make sure you do it right.',
   },
   {
     label: 'Custom Build — done for you',
-    desc: 'Kyle builds and deploys everything in your business. You own all the code and IP. Flat project fee, agreed before work begins.',
+    desc: 'We build and deploy everything in your business. You own all the code and IP. Flat project fee, agreed before work begins.',
   },
 ];
 
@@ -55,11 +55,11 @@ const faqs = [
   },
   {
     q: 'Do I need to prepare anything?',
-    a: 'No. Fill out a brief intake form when you book — your industry, team size, and what eats the most time. That\'s it. Kyle runs the conversation from there.',
+    a: 'No. Fill out a brief intake form when you book — your industry, team size, and what eats the most time. That\'s it. We run the conversation from there.',
   },
   {
     q: 'What happens after the assessment?',
-    a: 'You have three options: implement the findings on your own using the report, work with Kyle monthly through the AI Concierge program as he guides you through building, or have Kyle build and deploy everything for you as a custom project. There\'s no pressure to go further — the report stands on its own.',
+    a: 'You have three options: implement the findings on your own using the report, work with us monthly through the AI Concierge program as we guide you through building, or have us build and deploy everything for you as a custom project. There\'s no pressure to go further — the report stands on its own.',
   },
   {
     q: 'How far will you travel for the on-site visit?',
@@ -95,7 +95,7 @@ export default function AssessmentPage() {
             <span className="text-gradient accent-serif">business, ranked.</span>
           </h1>
           <p className="text-xl text-[#CBD5E1]/70 leading-relaxed max-w-2xl mb-10">
-            Kyle visits your business, asks the right questions, and delivers a written report,
+            We visit your business, ask the right questions, and deliver a written report,
             a short video, and a 1-hour call to walk through exactly where AI can make a real
             difference — and what to do about it. $997, flat.
           </p>
@@ -137,7 +137,7 @@ export default function AssessmentPage() {
             dimClass="text-[#0B0F14]/20"
             brightClass="text-[#0B0F14]"
           >
-            You are being sold AI from every direction and you cannot tell what is real or what is right for your business. One hour with Kyle gives you a filter — and a ranked list of exactly where it applies to yours.
+            You are being sold AI from every direction and you cannot tell what is real or what is right for your business. One hour with us gives you a filter — and a ranked list of exactly where it applies to yours.
           </ScrollReveal>
           <div className="mt-14 flex flex-col sm:flex-row gap-4">
             <Link
@@ -203,7 +203,7 @@ export default function AssessmentPage() {
                 across <span className="accent-serif text-gradient">Four Pillars.</span>
               </h2>
               <p className="text-[#CBD5E1]/60 leading-relaxed mb-6">
-                The Four Pillars are the filter Kyle uses to evaluate every AI opportunity
+                The Four Pillars are the filter we use to evaluate every AI opportunity
                 in your business. Each one gets scored 1–5. The weighted total determines
                 what goes at the top of your report — so you know exactly where to start.
               </p>
@@ -372,7 +372,7 @@ export default function AssessmentPage() {
                 <span className="accent-serif text-gradient">ranked and on paper.</span>
               </h2>
               <p className="text-[#CBD5E1]/70 mb-8 leading-relaxed">
-                Kyle comes to you, asks the right questions, and hands you a clear picture
+                We come to you, ask the right questions, and hand you a clear picture
                 of where AI can make a real difference in your business.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

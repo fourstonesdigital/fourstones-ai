@@ -30,7 +30,6 @@ export default function Footer() {
                 { href: '/services', label: 'Services' },
                 { href: '/workshop', label: 'Workshop' },
                 { href: '/case-studies', label: 'Case Studies' },
-                { href: '/about', label: 'About' },
                 { href: '/contact', label: 'Contact' },
               ].map((l) => (
                 <li key={l.href}>

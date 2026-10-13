@@ -49,7 +49,7 @@ export default function ContactPage() {
             <span className="accent-serif text-gradient">your business.</span>
           </h1>
           <p className="text-lg text-[#CBD5E1]/70 leading-relaxed max-w-xl mx-auto">
-            Kyle works with businesses in Huntsville, Madison, Decatur, and surrounding areas.
+            We work with businesses in Huntsville, Madison, Decatur, and surrounding areas.
             Fill out the form and he&apos;ll be in touch within one business day.
           </p>
         </div>
@@ -116,7 +116,7 @@ export default function ContactPage() {
             <div className="p-6 rounded-xl bg-[#0B0F14] border border-white/5">
               <h3 className="text-white font-semibold mb-2">How it works</h3>
               <p className="text-[#CBD5E1]/60 text-sm leading-relaxed">
-                Fill out the form and Kyle will be in touch within one business day.
+                Fill out the form and we will be in touch within one business day.
                 He&apos;s happy to meet at your location, the Madison office, or on Zoom — whatever works best for you.
               </p>
             </div>
@@ -132,7 +132,7 @@ export default function ContactPage() {
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-3">Message sent!</h3>
                   <p className="text-[#CBD5E1]/60">
-                    Kyle will be in touch within one business day.
+                    We will be in touch within one business day.
                   </p>
                 </div>
               </div>

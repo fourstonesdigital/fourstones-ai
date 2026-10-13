@@ -57,7 +57,7 @@ export default function WorkshopEvents() {
       <div className="rounded-xl bg-[#0B0F14] border border-white/5 p-6 text-center">
         <p className="text-[#CBD5E1]/50 text-sm mb-2">No upcoming sessions scheduled yet.</p>
         <a href="/contact" className="text-[#1488AA] hover:text-[#0686D4] text-sm transition-colors">
-          Contact Kyle to be notified →
+          Contact us to be notified →
         </a>
       </div>
     );

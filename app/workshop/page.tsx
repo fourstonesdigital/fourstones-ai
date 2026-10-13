@@ -13,7 +13,7 @@ const whatYouLearn = [
   {
     icon: Lightbulb,
     title: 'How to spot AI opportunities in your business',
-    desc: 'Learn the framework Kyle uses to identify which workflows are ripe for automation — so you can keep finding opportunities on your own long after the workshop.',
+    desc: 'Learn the framework we use to identify which workflows are ripe for automation — so you can keep finding opportunities on your own long after the workshop.',
   },
   {
     icon: Wrench,
@@ -37,7 +37,7 @@ const agenda = [
   {
     part: 'Part 2',
     title: 'Live Demos — See It Working',
-    desc: 'Kyle demonstrates AI tools live, applied to real business scenarios relevant to the group. You\'ll see exactly how businesses like yours could be using these tools today — then try them yourself.',
+    desc: 'We demonstrate AI tools live, applied to real business scenarios relevant to the group. You\'ll see exactly how businesses like yours could be using these tools today — then try them yourself.',
     isBreak: false,
   },
   {
@@ -49,13 +49,13 @@ const agenda = [
   {
     part: 'Break',
     title: 'Break + Open Q&A',
-    desc: 'Coffee, questions, conversation. Kyle answers anything — about your business, the tools, what to build, or where to start.',
+    desc: 'Coffee, questions, conversation. We answer anything — about your business, the tools, what to build, or where to start.',
     isBreak: true,
   },
   {
     part: 'Part 4',
     title: 'Build Session — Build Your Tool',
-    desc: 'Guided hands-on building. You pick the AI tool most useful to your business and Kyle walks you through building it step by step. Every participant builds something different, specific to their operation.',
+    desc: 'Guided hands-on building. You pick the AI tool most useful to your business and we walk you through building it step by step. Every participant builds something different, specific to their operation.',
     isBreak: false,
   },
   {
@@ -99,11 +99,11 @@ const faqs = [
   },
   {
     q: 'What will I actually build?',
-    a: 'It depends on your business. Kyle reviews attendees\' industries in advance so the build session is relevant to what you actually do. Common examples: a customer FAQ assistant, an automated follow-up tool, a document drafting system, or an internal knowledge base.',
+    a: 'It depends on your business. We review attendees\' industries in advance so the build session is relevant to what you actually do. Common examples: a customer FAQ assistant, an automated follow-up tool, a document drafting system, or an internal knowledge base.',
   },
   {
     q: 'Will I know how to keep using AI after the workshop?',
-    a: 'Yes — that\'s a core goal. You\'ll leave understanding how the tools work, how to think about AI opportunities, and how to keep building on your own. You\'re not dependent on Kyle to keep going.',
+    a: 'Yes — that\'s a core goal. You\'ll leave understanding how the tools work, how to think about AI opportunities, and how to keep building on your own. You\'re not dependent on us to keep going.',
   },
   {
     q: 'How many people are in each session?',
@@ -153,7 +153,7 @@ export default function WorkshopPage() {
               href="/contact"
               className="px-8 py-4 text-base font-semibold text-[#CBD5E1] rounded-xl border border-white/10 hover:bg-white/5 transition-all text-center"
             >
-              Have Questions? Ask Kyle
+              Have Questions? Ask Us
             </Link>
           </div>
 
@@ -195,7 +195,7 @@ export default function WorkshopPage() {
               href="/contact"
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 font-semibold text-[#0B0F14] border border-[#0B0F14]/25 rounded-xl hover:bg-[#0B0F14] hover:text-white transition-all"
             >
-              Ask Kyle a Question
+              Ask a Question
             </Link>
           </div>
         </div>
@@ -234,7 +234,7 @@ export default function WorkshopPage() {
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div className="rounded-2xl overflow-hidden border border-white/5">
             <Image
-              src="/images/kyle-workshop-1.jpg"
+              src="/images/workshop-session-1.jpg"
               alt="Small-group, hands-on AI workshop session — 10 seats max"
               width={720}
               height={480}
@@ -322,7 +322,7 @@ export default function WorkshopPage() {
               href="/contact"
               className="block w-full text-center py-3 px-6 font-semibold text-[#1488AA] rounded-xl border border-[#1488AA]/30 hover:bg-[#1488AA]/10 transition-all text-sm mt-4"
             >
-              Questions? Contact Kyle
+              Questions? Contact Us
             </Link>
             <p className="text-center text-[#CBD5E1]/40 text-xs mt-4">
               Full refund if cancelled at least 3 days before session

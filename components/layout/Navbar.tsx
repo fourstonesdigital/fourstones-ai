@@ -12,7 +12,6 @@ const navLinks = [
   { href: '/workshop', label: 'Workshop' },
   { href: '/assessment', label: 'Assessment' },
   { href: '/case-studies', label: 'Case Studies' },
-  { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
 ];
 

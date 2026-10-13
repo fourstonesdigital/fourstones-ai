@@ -14,14 +14,14 @@ const caseStudies = [
     image: '/images/case-study-os-login.png',
     imageAlt: 'nGenius Prep OS — custom business management platform',
     url: null,
-    challenge: `nGenius Prep was running on a patchwork of third-party tools — a CRM here, a scheduling system there, a separate tutoring management platform on top. Monthly SaaS costs were climbing, data lived in three different places, and the staff was constantly switching between tools to do basic work. Kyle needed something that actually fit the business.`,
-    solution: `Kyle built nGenius OS from scratch — a custom web application that consolidates every core business function into a single platform. Student management, session scheduling, tutor assignments, attendance tracking, billing history, and internal reporting all live in one place. The system is role-based: admins, tutors, and students each see exactly what they need.`,
+    challenge: `nGenius Prep was running on a patchwork of third-party tools — a CRM here, a scheduling system there, a separate tutoring management platform on top. Monthly SaaS costs were climbing, data lived in three different places, and the staff was constantly switching between tools to do basic work. The business needed something that actually fit how it ran.`,
+    solution: `We built nGenius OS from scratch — a custom web application that consolidates every core business function into a single platform. Student management, session scheduling, tutor assignments, attendance tracking, billing history, and internal reporting all live in one place. The system is role-based: admins, tutors, and students each see exactly what they need.`,
     outcome: [
       'Eliminated $500+/mo in third-party SaaS subscriptions',
       'Single login for all staff — no more tool-switching',
       'Student records, sessions, and billing in one place',
       'Automated reporting that previously required manual export and formatting',
-      'Staff can operate the business day-to-day with minimal oversight from Kyle',
+      'Staff can operate the business day-to-day with minimal oversight from ownership',
     ],
     stack: 'Next.js · TypeScript · PostgreSQL · Prisma · Auth.js · Vercel',
     timeframe: 'Built over several months, continuously improved',
@@ -37,7 +37,7 @@ const caseStudies = [
     imageAlt: 'nGenius Prep Digital ACT Mock Test — student testing platform',
     url: null,
     challenge: `Administering practice ACT exams meant printed tests, manual answer sheets, and hours of scoring by hand. For a tutoring business doing regular mock tests with multiple students, this was a significant time drain. Off-the-shelf test prep platforms existed but were expensive, generic, and didn't match the actual ACT format or nGenius's specific curriculum needs.`,
-    solution: `Kyle built a custom digital mock test platform purpose-built for nGenius students. Students receive a unique access code from their tutor, take a timed ACT-aligned exam in their browser with real test conditions (section timing, navigation constraints), and receive an instant detailed score report the moment they submit. Tutors get immediate insight into exactly where each student needs work.`,
+    solution: `We built a custom digital mock test platform purpose-built for nGenius students. Students receive a unique access code from their tutor, take a timed ACT-aligned exam in their browser with real test conditions (section timing, navigation constraints), and receive an instant detailed score report the moment they submit. Tutors get immediate insight into exactly where each student needs work.`,
     outcome: [
       'Zero manual scoring — results are instant and automatic',
       'Full ACT-aligned format across all five sections',
@@ -58,8 +58,8 @@ const caseStudies = [
     image: '/images/case-study-website.png',
     imageAlt: 'nGenius Prep website — ngeniusprep.com',
     url: 'https://www.ngeniusprep.com',
-    challenge: `The nGenius Prep website was running on WordPress with Elementor — slow to load, difficult to update, and relying on a page builder that made every change feel like a project. SEO performance was mediocre, the design was dated, and there was no clean way to add new pages or content without risking the layout. Kyle wanted something he could actually own and control.`,
-    solution: `Kyle rebuilt the entire site from scratch using Next.js and Tailwind CSS — no page builders, no plugins, no WordPress. The new site is statically generated, loads in under a second, and is structured for SEO from the ground up. Each program page is purpose-built as a sales page. The blog uses a custom renderer with a pre-push guard that prevents draft content from accidentally going live.`,
+    challenge: `The nGenius Prep website was running on WordPress with Elementor — slow to load, difficult to update, and relying on a page builder that made every change feel like a project. SEO performance was mediocre, the design was dated, and there was no clean way to add new pages or content without risking the layout. The business wanted something it could actually own and control.`,
+    solution: `We rebuilt the entire site from scratch using Next.js and Tailwind CSS — no page builders, no plugins, no WordPress. The new site is statically generated, loads in under a second, and is structured for SEO from the ground up. Each program page is purpose-built as a sales page. The blog uses a custom renderer with a pre-push guard that prevents draft content from accidentally going live.`,
     outcome: [
       'Sub-1-second load times on all pages',
       'Full control over every page — no page builder lock-in',
@@ -87,7 +87,7 @@ export default function CaseStudiesPage() {
             <span className="text-gradient accent-serif">anyone.</span>
           </h1>
           <p className="text-xl text-[#CBD5E1]/70 leading-relaxed max-w-2xl">
-            Every tool below was built by Kyle for his own business — nGenius Prep.
+            Every tool below was built by Four Stones AI for our own business — nGenius Prep.
             This is the proof of work. The same approach, applied to your business.
           </p>
         </div>
@@ -101,7 +101,7 @@ export default function CaseStudiesPage() {
             dimClass="text-[#0B0F14]/20"
             brightClass="text-[#0B0F14]"
           >
-            Most consultants show you a portfolio of other people&apos;s businesses. These are the tools Kyle built to run his own — in production, used daily, with real money and real students depending on them.
+            Most consultants show you a portfolio of other people&apos;s businesses. These are the tools we built to run our own — in production, used daily, with real money and real students depending on them.
           </ScrollReveal>
         </div>
       </section>

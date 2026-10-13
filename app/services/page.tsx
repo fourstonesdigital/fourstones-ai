@@ -7,22 +7,22 @@ const process = [
   {
     step: '01',
     title: 'Start with the workshop or reach out directly',
-    desc: 'The $97 workshop is the lowest-friction starting point. Or if you already know you need an assessment or a build, fill out the contact form and Kyle responds within one business day.',
+    desc: 'The $97 workshop is the lowest-friction starting point. Or if you already know you need an assessment or a build, fill out the contact form and we respond within one business day.',
   },
   {
     step: '02',
     title: 'Book the AI Opportunity Assessment',
-    desc: 'Kyle visits your business for one hour, asks the right questions, and delivers a written report identifying your top AI opportunities — ranked and scored. This is where the real picture of your business emerges.',
+    desc: 'We visit your business for one hour, ask the right questions, and deliver a written report identifying your top AI opportunities — ranked and scored. This is where the real picture of your business emerges.',
   },
   {
     step: '03',
     title: 'Choose your path forward',
-    desc: 'After the assessment you have three options: implement the findings yourself, work with Kyle monthly through the AI Concierge program, or have Kyle build and deploy everything for you as a custom project.',
+    desc: 'After the assessment you have three options: implement the findings yourself, work with us monthly through the AI Concierge program, or have us build and deploy everything for you as a custom project.',
   },
   {
     step: '04',
     title: 'Build, deploy, hand off',
-    desc: 'If you choose the custom build: Kyle engineers it, deploys it into your workflow, trains your team on-site, and hands you the keys. Flat project fee. You own everything.',
+    desc: 'If you choose the custom build: we engineer it, deploy it into your workflow, train your team on-site, and hand you the keys. Flat project fee. You own everything.',
   },
 ];
 
@@ -40,7 +40,7 @@ const tiers = [
     ctaText: 'Reserve Your Seat',
     highlight: false,
     image: '/images/workshop-hands-on.png',
-    imageAlt: 'Kyle Montgomery speaking at an AI workshop',
+    imageAlt: 'A Four Stones AI workshop in session',
     features: [
       { label: 'In-person, Madison AL office', icon: MapPin },
       { label: 'Small group (10 seats max)', icon: Users },
@@ -61,7 +61,7 @@ const tiers = [
     showPrice: true,
     duration: '1-hour on-site + report + call',
     description:
-      'Kyle visits your business, spends one hour asking the right questions, and delivers a written report identifying your top AI opportunities — scored and ranked across the Four Pillars. Includes a short video overview and a 1-hour Zoom follow-up call.',
+      'We visit your business, spend one hour asking the right questions, and deliver a written report identifying your top AI opportunities — scored and ranked across the Four Pillars. Includes a short video overview and a 1-hour Zoom follow-up call.',
     tagline: 'Find the opportunity',
     href: '/assessment',
     ctaText: 'Book the Assessment',
@@ -88,7 +88,7 @@ const tiers = [
     showPrice: false,
     duration: 'Ongoing · month-to-month',
     description:
-      'Done-with-you AI implementation. Kyle works alongside you every month — guiding you through building and deploying AI tools in your own business. You build the capability; he makes sure you\'re doing it right.',
+      'Done-with-you AI implementation. We work alongside you every month — guiding you through building and deploying AI tools in your own business. You build the capability; we make sure you\'re doing it right.',
     tagline: 'Done with you',
     href: '/contact',
     ctaText: 'Ask About Concierge',
@@ -98,7 +98,7 @@ const tiers = [
     features: [
       { label: 'Monthly calls + async support', icon: RefreshCw },
       { label: 'Guided AI tool building', icon: Cpu },
-      { label: 'You build; Kyle coaches', icon: Users },
+      { label: 'You build; we coach', icon: Users },
       { label: 'Month-to-month, no lock-in', icon: Shield },
       { label: 'Pricing based on scope and cadence', icon: CheckCircle },
     ],
@@ -115,7 +115,7 @@ const tiers = [
     showPrice: false,
     duration: 'Typically 4–12 weeks',
     description:
-      'Done-for-you. Kyle builds and deploys custom AI systems into your existing workflows, trains your team on-site, and hands you the keys. Flat project fee agreed before work begins. You own all code and IP.',
+      'Done-for-you. We build and deploy custom AI systems into your existing workflows, train your team on-site, and hand you the keys. Flat project fee agreed before work begins. You own all code and IP.',
     tagline: 'Done for you',
     href: '/contact',
     ctaText: 'Start the Conversation',
@@ -142,7 +142,7 @@ const promise = [
   'Scope and price are agreed before any work begins. No surprises.',
   'Custom builds are flat project fees. Concierge is month-to-month with no long-term lock-in.',
   'You own everything built. No dependency on Four Stones AI to keep it running.',
-  'If Kyle can\'t help you, he\'ll tell you. He doesn\'t take every project.',
+  'If we can\'t help you, we\'ll tell you. We don\'t take every project.',
 ];
 
 export default function ServicesPage() {
@@ -318,8 +318,8 @@ export default function ServicesPage() {
             </div>
             <div className="rounded-2xl overflow-hidden border border-white/5">
               <Image
-                src="/images/kyle-workshop-2.jpg"
-                alt="Kyle Montgomery speaking at an AI workshop in front of a smartboard"
+                src="/images/workshop-session-2.jpg"
+                alt="A Four Stones AI workshop session in front of a smartboard"
                 width={1280}
                 height={720}
                 className="w-full h-80 object-cover"
@@ -337,7 +337,7 @@ export default function ServicesPage() {
             <h2 className="text-2xl font-bold text-white mb-4">
               The Four Stones AI <span className="accent-serif text-gradient">Promise</span>
             </h2>
-            <p className="text-[#CBD5E1]/60 mb-8">No fine print. Just how Kyle works.</p>
+            <p className="text-[#CBD5E1]/60 mb-8">No fine print. Just how we work.</p>
             <ul className="space-y-4 text-left max-w-xl mx-auto">
               {promise.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-[#CBD5E1]/70 text-sm">

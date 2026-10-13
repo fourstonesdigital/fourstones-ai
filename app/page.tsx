@@ -30,7 +30,7 @@ const services = [
     showPrice: true,
     per: 'flat fee',
     description:
-      'Kyle visits your business for one hour, asks the right questions, and delivers a written report ranking your top AI opportunities. Includes a short video and a 1-hour Zoom call to walk through everything.',
+      'We visit your business for one hour, ask the right questions, and deliver a written report ranking your top AI opportunities. Includes a short video and a 1-hour Zoom call to walk through everything.',
     features: [
       '1-hour on-site owner conversation',
       'Written AI Opportunity Report',
@@ -49,11 +49,11 @@ const services = [
     showPrice: false,
     per: '',
     description:
-      'Done-with-you. Kyle works alongside you monthly — guiding you through building and deploying AI tools in your own business. You build the capability; he makes sure you do it right.',
+      'Done-with-you. We work alongside you monthly — guiding you through building and deploying AI tools in your own business. You build the capability; we make sure you do it right.',
     features: [
       'Monthly calls + async support',
       'Guided AI tool building',
-      'You build; Kyle coaches',
+      'You build; we coach',
       'Month-to-month, no lock-in',
     ],
     cta: 'Ask About Concierge',
@@ -68,7 +68,7 @@ const services = [
     showPrice: false,
     per: '',
     description:
-      'Done-for-you. Kyle builds and deploys custom AI systems into your existing workflows, trains your team on-site, and hands you the keys. Flat project fee. You own all code and IP.',
+      'Done-for-you. We build and deploy custom AI systems into your existing workflows, train your team on-site, and hand you the keys. Flat project fee. You own all code and IP.',
     features: [
       'Full custom AI development',
       'Integration with your existing software',
@@ -84,7 +84,7 @@ const services = [
 ];
 
 const stats = [
-  { value: 'EE PhD', label: 'Engineering credentials' },
+  { value: 'Engineer-led', label: 'Built by working engineers' },
   { value: '10+', label: 'AI systems built & deployed' },
   { value: 'Local', label: 'Huntsville, Madison, Decatur & surrounding areas' },
   { value: 'Both', label: 'In-person or Zoom' },
@@ -132,11 +132,11 @@ const industryTiles = [
 const faqs = [
   {
     q: 'Do I need to understand AI to work with you?',
-    a: 'No. You understand your business. Kyle handles the AI. Show up with a real problem and he\'ll figure out the solution.',
+    a: 'No. You understand your business. We handle the AI. Show up with a real problem and we\'ll figure out the solution.',
   },
   {
     q: 'Is everything done in person?',
-    a: 'The workshop is always in person at the Madison, AL office. For consulting and custom builds, Kyle is happy to meet at your location, his office, or on Zoom — whatever works best for you.',
+    a: 'The workshop is always in person at the Madison, AL office. For consulting and custom builds, we are happy to meet at your location, our office, or on Zoom — whatever works best for you.',
   },
   {
     q: 'What area do you serve?',
@@ -233,13 +233,13 @@ export default function HomePage() {
               </h2>
               <div className="space-y-4 text-[#CBD5E1]/70 leading-relaxed mb-8">
                 <p>
-                  Most AI consultants are somewhere else — sending a Zoom window and a slide deck from three time zones away. Kyle Montgomery is local, based in the Huntsville area, and happy to meet at your office or connect on Zoom to learn your operation firsthand.
+                  Most AI consultants are somewhere else — sending a Zoom window and a slide deck from three time zones away. Four Stones AI is local, based in the Huntsville area, and happy to meet at your office or connect on Zoom to learn your operation firsthand.
                 </p>
                 <p>
-                  That means he builds something that actually fits how you run things — not a generic tool repurposed from someone else&apos;s workflow. Whether you&apos;re an HVAC company in Athens that needs automated estimate follow-ups, a law firm in Huntsville tracking client deadlines, or a contractor in Decatur chasing bid responses — the problem is specific, and the solution should be too.
+                  That means we build something that actually fits how you run things — not a generic tool repurposed from someone else&apos;s workflow. Whether you&apos;re an HVAC company in Athens that needs automated estimate follow-ups, a law firm in Huntsville tracking client deadlines, or a contractor in Decatur chasing bid responses — the problem is specific, and the solution should be too.
                 </p>
                 <p>
-                  Remote consultants give you a roadmap. Kyle delivers a working system, trains your team on-site, and hands you the keys. No retainers, no dependency — you own everything built.
+                  Remote consultants give you a roadmap. We deliver a working system, train your team on-site, and hand you the keys. No retainers, no dependency — you own everything built.
                 </p>
                 <p>
                   If your business is local and you&apos;re ready to put AI to work, this is the call to make.
@@ -363,7 +363,7 @@ export default function HomePage() {
                   Huntsville · Madison · Decatur · Athens<br />and surrounding communities
                 </div>
                 <p className="text-[#CBD5E1]/70 mt-3 text-sm">
-                  If your business is local, Kyle can be at your door.
+                  If your business is local, we can be at your door.
                 </p>
               </div>
             </div>
