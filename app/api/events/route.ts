@@ -26,22 +26,34 @@ export async function GET() {
 
     const data = await res.json();
 
-    const events = (data.events || []).map((e: {
-      id: string;
-      name: { text: string };
-      start: { local: string };
-      end: { local: string };
-      url: string;
-      ticket_availability?: { is_sold_out: boolean; tickets_available: boolean };
-    }) => ({
-      id: e.id,
-      name: e.name.text,
-      start: e.start.local,
-      end: e.end.local,
-      url: e.url,
-      soldOut: e.ticket_availability?.is_sold_out ?? false,
-      available: e.ticket_availability?.tickets_available ?? true,
-    }));
+    const now = Date.now();
+
+    const events = (data.events || [])
+      .map((e: {
+        id: string;
+        name: { text: string };
+        start: { local: string; utc: string };
+        end: { local: string; utc: string };
+        url: string;
+        ticket_availability?: { is_sold_out: boolean; tickets_available: boolean };
+      }) => ({
+        id: e.id,
+        name: e.name.text,
+        start: e.start.local,
+        end: e.end.local,
+        // UTC timestamps are only used for filtering; `local` drives display.
+        startUtc: e.start.utc,
+        url: e.url,
+        soldOut: e.ticket_availability?.is_sold_out ?? false,
+        available: e.ticket_availability?.tickets_available ?? true,
+      }))
+      // Eventbrite's `status=live` means "published", not "upcoming" — a past
+      // event that was never ended or unpublished keeps coming back. Drop
+      // anything whose start time has passed.
+      .filter((e: { startUtc: string }) => {
+        const start = Date.parse(e.startUtc);
+        return Number.isNaN(start) ? true : start > now;
+      });
 
     return NextResponse.json({ events });
   } catch (err) {

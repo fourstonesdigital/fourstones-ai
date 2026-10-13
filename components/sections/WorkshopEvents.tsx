@@ -8,6 +8,7 @@ interface EventItem {
   name: string;
   start: string;
   end: string;
+  startUtc: string;
   url: string;
   soldOut: boolean;
   available: boolean;
